@@ -5,7 +5,6 @@ var current_page: Node = null
 
 func _ready():
 	change_page("res://scenes/ecran_titre.tscn")
-	MusicController.play_music("res://assets/sounds/temporaire.ogg")
 	GestionDesDossiers.verifie_dossiers(get_tree().current_scene)
 
 func change_page(page_path: String):
