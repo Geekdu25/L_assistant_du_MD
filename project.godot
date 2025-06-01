@@ -1,0 +1,31 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="L'assistant du MD"
+config/description="Cette application est conçue pour aider les maîtres du donjon dans la lourde tache qu'est la gestion de parties de Dungeons & Dragons."
+run/main_scene="uid://ccd5s7qai6j5i"
+config/quit_on_go_back=false
+config/features=PackedStringArray("4.4", "GL Compatibility")
+run/low_processor_mode=true
+boot_splash/image="uid://co14jiqeo0g3m"
+config/icon="uid://dcoh41aa6em5x"
+config/windows_native_icon="res://assets/pictures/icon.ico"
+boot_splash/minimum_display_time=2000
+
+[autoload]
+
+GestionDesDossiers="*res://autoloads/gestion_des_dossiers.tscn"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
