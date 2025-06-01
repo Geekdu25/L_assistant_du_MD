@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c64hp5x4fd2w"]
+
+[ext_resource type="Script" uid="uid://lg4u65mgxrmp" path="res://autoloads/gestion_des_dossiers.gd" id="1_r7jf4"]
+
+[node name="Gestion_des_dossiers" type="Node"]
+script = ExtResource("1_r7jf4")
