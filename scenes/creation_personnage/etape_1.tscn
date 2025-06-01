@@ -76,4 +76,22 @@ theme_override_font_sizes/font_size = 35
 text = "Créer un tout nouveau
  personnage..."
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.768
+anchor_right = 0.5
+anchor_bottom = 0.811
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Accéder aux personnages"
+
+[node name="Ouverture" type="FileDialog" parent="."]
+
 [connection signal="pressed" from="Retour" to="." method="_on_retour_pressed"]
+[connection signal="pressed" from="Fichier" to="." method="_on_fichier_pressed"]
