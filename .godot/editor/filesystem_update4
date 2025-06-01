@@ -3,3 +3,5 @@ res://themes/theme_popup.tres
 res://scenes/a_propos.tscn
 res://scenes/creation_personnage/etape_1.tscn
 res://scenes/creation_personnage/etape_1.gd
+res://scenes/ecran_titre.gd
+res://scenes/ecran_principal.gd
