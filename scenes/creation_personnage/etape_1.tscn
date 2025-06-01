@@ -76,7 +76,7 @@ theme_override_font_sizes/font_size = 35
 text = "Créer un tout nouveau
  personnage..."
 
-[node name="Button" type="Button" parent="."]
+[node name="Personnages" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -92,11 +92,18 @@ theme_override_font_sizes/font_size = 30
 text = "Accéder aux personnages"
 
 [node name="Ouverture" type="FileDialog" parent="."]
-title = "Ouvrir un fichier..."
-ok_button_text = "Ouvrir..."
+title = "Open File(s)"
+ok_button_text = "Open"
 cancel_button_text = "Annuler"
 file_mode = 1
 filters = PackedStringArray("*.xml")
 
+[node name="Avertissement" type="AcceptDialog" parent="."]
+title = "Attention"
+initial_position = 2
+size = Vector2i(121, 100)
+ok_button_text = "J'ai compris"
+
 [connection signal="pressed" from="Retour" to="." method="_on_retour_pressed"]
 [connection signal="pressed" from="Fichier" to="." method="_on_fichier_pressed"]
+[connection signal="pressed" from="Personnages" to="." method="acces_aux_personnages"]

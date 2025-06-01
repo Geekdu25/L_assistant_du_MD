@@ -24,7 +24,12 @@ boot_splash/minimum_display_time=2000
 [autoload]
 
 GestionDesDossiers="*res://autoloads/gestion_des_dossiers.tscn"
-MusicController="*res://autoloads/music_controller.gd"
+MusicController="*res://autoloads/music_controller.tscn"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [rendering]
 

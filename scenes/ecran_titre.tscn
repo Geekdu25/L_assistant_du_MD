@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2crc35pn5y5r"]
+[gd_scene load_steps=3 format=3 uid="uid://b2crc35pn5y5r"]
 
 [ext_resource type="Script" uid="uid://dv1eqnwouskuo" path="res://scenes/ecran_titre.gd" id="1_d5w7p"]
+[ext_resource type="Texture2D" uid="uid://dcoh41aa6em5x" path="res://assets/pictures/plus.png" id="2_c3107"]
 
 [node name="Frame" type="Control"]
 layout_mode = 3
@@ -75,7 +76,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 20
 text = "Réinitialiser les données de sauvegarde"
 
-[node name="Button" type="Button" parent="."]
+[node name="Personnage" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.042
@@ -89,6 +90,36 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 35
 text = "Création de personnage"
 
+[node name="Campagne" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.958
+anchor_top = 0.5
+anchor_right = 0.958
+anchor_bottom = 0.5
+offset_left = -407.0
+offset_top = -28.5
+offset_bottom = 28.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+text = "Gestion des campagnes"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -82.0
+offset_right = 102.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_c3107")
+
 [connection signal="pressed" from="A_propos" to="." method="a_propos_presse"]
 [connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Personnage" to="." method="_on_button_pressed"]

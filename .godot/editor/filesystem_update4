@@ -1,3 +1,8 @@
 res://scenes/ecran_principal.tscn
 res://themes/theme_popup.tres
 res://scenes/ecran_principal.gd
+res://scenes/creation_personnage/etape_1.tscn
+res://autoloads/gestion_des_dossiers.gd
+res://scenes/creation_personnage/etape_1.gd
+res://autoloads/music_controller.gd
+res://scenes/ecran_titre.tscn

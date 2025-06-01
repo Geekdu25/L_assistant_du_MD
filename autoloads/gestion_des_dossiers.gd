@@ -22,6 +22,16 @@ func verifie_dossiers(parent):
 	else:
 		proceed_to_next_scene(parent)
 
+func check_file_in_folder(file:String, folder:String):
+	var dir = DirAccess.open(folder)
+	var i = 0
+	if dir:
+		for subfile in dir.get_files():
+			if subfile.ends_with(file):
+				i += 1
+		return i > 0
+	return false
+
 func _show_popup(missing_folders, parent):
 	# On instancie une nouvelle popup à chaque affichage
 	var popup_instance = preload("res://scenes/interface_utilisateur/popup.tscn").instantiate()
