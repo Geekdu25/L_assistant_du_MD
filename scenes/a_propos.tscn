@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5rr4vcyngm8v"]
+
+[ext_resource type="Script" uid="uid://ddlpmp0kgv7gp" path="res://scenes/a_propos.gd" id="1_nbbjv"]
+
+[node name="Frame" type="Control"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nbbjv")
+
+[node name="arrière-plan" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.164706, 0.368627, 0.352941, 1)
+
+[node name="retour" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.437
+anchor_top = 0.947
+anchor_right = 0.447
+anchor_bottom = 0.947
+offset_top = 374.0
+offset_right = 123.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 35
+text = "Retour"
+
+[node name="Titre" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -245.0
+offset_right = 245.0
+offset_bottom = 84.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "A propos"
+horizontal_alignment = 1
+
+[node name="texte" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -461.0
+offset_top = -236.0
+offset_right = 462.0
+offset_bottom = 227.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "L'assistant du Maître du Donjon est un logiciel ayant pour tâche d'aider les maîtres du donjons dans la lourde et pénible tâche qu'est la gestion d'une partie de dungeons & dragons. Ce logiciel a été conçu par le fabuleux Geekdu25 (et ne me remerciez pas, ça me fait plaisir). 
+
+Ne cherchez pas à payer ce logiciel ; c'est gratuit (enfin surtout pour mes amis et aussi parce que je n'ai pas l'âge de créer une entreprise donc je ne peux pas être rémunéré autrement qu'au noir). 
+
+Cela dit, je vous souhaite une bonne partie pleine de donjons et de dragons (LOL).  "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="retour" to="." method="retour_presse"]

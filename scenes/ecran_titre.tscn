@@ -1,0 +1,94 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2crc35pn5y5r"]
+
+[ext_resource type="Script" uid="uid://dv1eqnwouskuo" path="res://scenes/ecran_titre.gd" id="1_d5w7p"]
+
+[node name="Frame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d5w7p")
+
+[node name="Arrière-plan" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.260533, 0.581782, 0.563231, 1)
+
+[node name="Titre" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.5
+offset_right = 400.5
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "L'assistant du Maître du Donjon"
+
+[node name="A_propos" type="Button" parent="."]
+custom_minimum_size = Vector2(15, 10)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9
+anchor_top = 0.8
+anchor_right = 0.9
+anchor_bottom = 0.8
+offset_left = -180.0
+offset_top = -57.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 35
+text = "A propos"
+
+[node name="Musique" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053
+anchor_top = 0.8
+anchor_right = 0.053
+anchor_bottom = 0.8
+offset_top = -31.0
+offset_right = 178.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 35
+text = "Gestion des musiques"
+
+[node name="Reset" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.521
+anchor_top = 0.926
+anchor_right = 0.532
+anchor_bottom = 0.926
+offset_left = -70.0
+offset_top = -31.0
+offset_right = 156.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "Réinitialiser les données de sauvegarde"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.042
+anchor_top = 0.5
+anchor_right = 0.042
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_right = 194.0
+offset_bottom = 15.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+text = "Création de personnage"
+
+[connection signal="pressed" from="A_propos" to="." method="a_propos_presse"]
+[connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

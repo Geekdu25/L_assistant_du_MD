@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccd5s7qai6j5i"]
+
+[ext_resource type="Script" uid="uid://bpg14i6q4wqhw" path="res://scenes/ecran_principal.gd" id="1_56ye8"]
+
+[node name="Ecran_principal" type="Node"]
+script = ExtResource("1_56ye8")
+
+[node name="PageHolder" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
