@@ -92,6 +92,11 @@ theme_override_font_sizes/font_size = 30
 text = "Accéder aux personnages"
 
 [node name="Ouverture" type="FileDialog" parent="."]
+title = "Ouvrir un fichier..."
+ok_button_text = "Ouvrir..."
+cancel_button_text = "Annuler"
+file_mode = 1
+filters = PackedStringArray("*.xml")
 
 [connection signal="pressed" from="Retour" to="." method="_on_retour_pressed"]
 [connection signal="pressed" from="Fichier" to="." method="_on_fichier_pressed"]
