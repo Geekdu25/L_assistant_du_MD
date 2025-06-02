@@ -44,9 +44,20 @@ Ensuite, vous n'avez qu'à ouvrir le fichier project.godot avec le moteur de jeu
 <hr />
 <a name="fonctions"></a>
 <h1>3. Fonctionnalités</h1>
+Actuellement, le logiciel en étant encore à un stade de développement très bas, les fonctionnalités du logiciel sont limitées.
+<br />
+Néanmoins, j'ai déjà réussi à implémenter les fonctionnalités suivantes : 
+<br />
+<br />
+ - Un système très primaire de gestion des sauvegardes qui permet de créer automatiquement, dès le premier démarrage, les données de sauvegarde nécessaires au bon fonctionnement de l'application.
+ De plus ce système permet de supprimer ces données de sauvegarde efficacement avec un bouton sur l'écran de démarrage de l'application.
+<br />
+ - Le logiciel comporte également un système de gestion de pages permettant à l'application de se comporter comme un navigateur web vous faisant voyager à travers plusieurs pages.
 <hr />
 <a name="exemples"></a>
 <h1>4. Exemples</h1>
+Aucun exemple n'est actuellement disponible.
+(J'en mettrai dès que possible, mais le projet est encore à un stade de développement trop bas pour avoir quelque chose d'intéressant à montrer.)
 <hr />
 <a name="credits"></a>
 <h1>5. Remerciements</h1>
