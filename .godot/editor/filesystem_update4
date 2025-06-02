@@ -1,5 +1,2 @@
-res://scenes/creation_personnage/etape_1.tscn
-res://themes/theme_popup.tres
 res://scenes/creation_personnage/etape_2.tscn
-res://scenes/creation_personnage/etape_2.gd
-res://scenes/creation_personnage/etape_1.gd
+res://themes/theme_popup.tres

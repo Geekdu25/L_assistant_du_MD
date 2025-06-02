@@ -123,7 +123,7 @@ text = "Augmentation de caractéristiques : "
 [node name="RichTextLabel" type="RichTextLabel" parent="Infos/Conteneur"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
+anchor_left = 0.479
 anchor_top = 0.242
 anchor_right = 0.5
 anchor_bottom = 0.242
@@ -137,7 +137,7 @@ text = "Taille :"
 [node name="vitesse" type="RichTextLabel" parent="Infos/Conteneur"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.111
+anchor_left = 0.1
 anchor_top = 0.306
 anchor_right = 0.9
 anchor_bottom = 0.306
@@ -148,18 +148,45 @@ grow_horizontal = 2
 text = "Vitessse :"
 
 [node name="vision" type="RichTextLabel" parent="Infos/Conteneur"]
-layout_mode = 0
-offset_right = 40.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.358
+anchor_right = 0.9
+anchor_bottom = 0.358
+offset_left = -20.0
+offset_right = 20.0
 offset_bottom = 40.0
+grow_horizontal = 2
+text = "Vision :"
 
 [node name="langues" type="RichTextLabel" parent="Infos/Conteneur"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111
+anchor_top = 0.458
+anchor_right = 0.911
+anchor_bottom = 0.458
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Langues : "
 
 [node name="traits" type="RichTextLabel" parent="Infos/Conteneur"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.121
+anchor_top = 0.747
+anchor_right = 0.9
+anchor_bottom = 0.747
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Traits :"
 
 [connection signal="pressed" from="Retour" to="." method="_on_retour_pressed"]
