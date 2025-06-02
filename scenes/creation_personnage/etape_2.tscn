@@ -63,7 +63,7 @@ text = "Etapes :
 [node name="Races" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.237
+anchor_left = 0.131
 anchor_top = 0.205
 anchor_right = 0.784
 anchor_bottom = 0.763
@@ -73,6 +73,51 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Races"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 7
+
+[node name="haut-elfe" type="Button" parent="Races/GridContainer"]
+layout_mode = 2
+text = "Haut-elfe"
+
+[node name="elfe_sylvestre" type="Button" parent="Races/GridContainer"]
+layout_mode = 2
+text = "Elfe sylvestre"
+
+[node name="drow" type="Button" parent="Races/GridContainer"]
+layout_mode = 2
+text = "Elfe drow"
+
+[node name="halfelin_pied-léger" type="Button" parent="Races/GridContainer"]
+layout_mode = 2
+text = "Halfelin pied-léger"
+
+[node name="halfelin_robuste" type="Button" parent="Races/GridContainer"]
+layout_mode = 2
+text = "Halfelin robuste"
+
+[node name="humain" type="Button" parent="Races/GridContainer"]
+layout_mode = 2
+text = "Humain"
+
+[node name="humain_don" type="Button" parent="Races/GridContainer"]
+layout_mode = 2
+text = "Humain (don)"
+
+[node name="nain_collines" type="Button" parent="Races/GridContainer"]
+layout_mode = 2
+text = "Nain des collines"
+
+[node name="nain_montagnes" type="Button" parent="Races/GridContainer"]
+layout_mode = 2
+text = "Nain des montagnes"
 
 [node name="Infos" type="Panel" parent="."]
 layout_mode = 1

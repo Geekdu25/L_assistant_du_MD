@@ -1,9 +1,10 @@
+Button
+GridContainer
 RichTextLabel
 Control
 Container
 Label
 Panel
-Button
 ColorRect
 TextureRect
 AcceptDialog
