@@ -11,7 +11,7 @@ Voici un sommaire récapitulant les points clés de ce README :
 <br />
 - <a href="#exemples">Exemples d'utilisation du logiciel</a>
 <br />
-- <a href="#credits">Remerciments</a>
+- <a href="#credits">Remerciements</a>
 <br />
 <hr />
 <a name="description"></a>
@@ -20,7 +20,7 @@ Ce logiciel a été conçu pour permettre aux maîtres du donjon de gérer la t�
 <br />
 En tant que MD, je sais que nous avons tous besoin d'un outil "surpuissant" qui nous permettrait à nous les MD, de tout contrôler à un endroit.
 <br />
-Malheuresement, le peu de logiciels offrant ce genre de fonctionnalités possèdent souvent tous une partie sombre et payante.
+Malheureusement, le peu de logiciels offrant ce genre de fonctionnalités possèdent souvent tous une partie sombre et payante.
 <br />
 Avec L'assistant du MD, fini ces ennuis ! Vous possédez désormais un logiciel libre et gratuit qui vous prodiguera (je l'espère), un confort supplémentaire lors de vos sessions.
 <br />
