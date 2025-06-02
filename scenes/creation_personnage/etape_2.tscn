@@ -47,4 +47,119 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 35
 text = "Retour"
 
+[node name="Etapes" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.042
+anchor_top = 0.053
+anchor_right = 0.084
+anchor_bottom = 0.053
+offset_right = 93.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 25
+text = "Etapes :
+1/12"
+
+[node name="Races" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.237
+anchor_top = 0.205
+anchor_right = 0.784
+anchor_bottom = 0.763
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Infos" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.874
+anchor_top = 0.227
+anchor_right = 0.989
+anchor_bottom = 0.858
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Titre_infos" type="Label" parent="Infos"]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 185.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 25
+text = "Informations 
+sur la race :"
+
+[node name="Conteneur" type="Control" parent="Infos"]
+layout_mode = 1
+anchor_left = 0.121
+anchor_top = 0.205
+anchor_right = 0.879
+anchor_bottom = 0.953
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="aug_carac" type="RichTextLabel" parent="Infos/Conteneur"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -91.0
+offset_right = 91.0
+offset_bottom = 49.0
+grow_horizontal = 2
+text = "Augmentation de caractéristiques : "
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Infos/Conteneur"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.242
+anchor_right = 0.5
+anchor_bottom = 0.242
+offset_left = -89.9488
+offset_top = -0.159828
+offset_right = 91.0512
+offset_bottom = 39.8402
+grow_horizontal = 2
+text = "Taille :"
+
+[node name="vitesse" type="RichTextLabel" parent="Infos/Conteneur"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111
+anchor_top = 0.306
+anchor_right = 0.9
+anchor_bottom = 0.306
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+text = "Vitessse :"
+
+[node name="vision" type="RichTextLabel" parent="Infos/Conteneur"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="langues" type="RichTextLabel" parent="Infos/Conteneur"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="traits" type="RichTextLabel" parent="Infos/Conteneur"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="Retour" to="." method="_on_retour_pressed"]
