@@ -1,14 +1,20 @@
-# L'assistant du MD
+<h1>L'assistant du MD</h1>
 <hr />
-# Sommaire
+<h1>Sommaire</h1>
 Voici un sommaire récapitulant les points clés de ce README :
+<br />
 - <a href="#description">Description du logiciel</a>
+<br />
 - <a href="#installation">Installation du logiciel.</a>
+<br />
 - <a href="#fonctions">Fonctionnalités du logiciel</a>
+<br />
 - <a href="#exemples">Exemples d'utilisation du logiciel</a>
+<br />
 - <a href="#credits">Remerciments</a>
+<br />
 <hr />
-# 1. Description
+<h1>1. Description</h1>
 <a name="description"></a>
 Ce logiciel a été conçu pour permettre aux maîtres du donjon de gérer la tâche difficile qu'est la gestion d'une partie de Donjons &amp; Dragons.
 <br />
@@ -21,16 +27,16 @@ Avec L'assistant du MD, fini ces ennuis ! Vous possédez désormais un logiciel 
 <br />
 (Note : Le logiciel n'étant encore qu'au début de son développement, il est normal qu'il ne soit pas tout à fait au point, et même qu'il ne permette pas d'aider à faire la moindre partie).
 <hr />
-# 2. Installation
+<h1>2. Installation</h1>
 <a name="installation"></a>
 <hr />
-# 3. Fonctionnalités
+<h1>3. Fonctionnalités</h1>
 <a name="fonctions"></a>
 <hr />
-# 4. Exemples
+<h1>4. Exemples</h1>
 <a name="exemples"></a>
 <hr />
-# 5. Remerciments
+<h1>5. Remerciements</h1>
 <a name="credits"></a>
 <hr />
 <img src="docs/readme/logo_godot.png"/>
