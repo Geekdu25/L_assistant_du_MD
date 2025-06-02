@@ -70,7 +70,7 @@ Ce logiciel a été codé avec le moteur de jeu Godot Game Engine : <a href="htt
 Il s'agit d'un moteur de jeu entièrement libre de droit et gratuit sous licence MIT.
 <br />
 <br />
-Un grand merci à lui sans qui ce logiciel n'aurait pas pu exister.
+Un grand merci à lui sans qui ce logiciel n'aurait pas pu exister. (Je ne suis pas affilié à Godot Game Engine pour autant)
 <br />
 <br />
 (Note : Le logo de Godot Game Engine est sous licence : Creative Commons By 4.0. <a href="https://creativecommons.org/licenses/by/4.0">https://creativecommons.org/licenses/by/4.0</a>
