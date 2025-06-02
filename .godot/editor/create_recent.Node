@@ -1,5 +1,7 @@
-TextureRect
 Button
+Label
+ColorRect
+TextureRect
 AcceptDialog
 PopupMenu
 PopupPanel

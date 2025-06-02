@@ -106,4 +106,5 @@ ok_button_text = "J'ai compris"
 
 [connection signal="pressed" from="Retour" to="." method="_on_retour_pressed"]
 [connection signal="pressed" from="Fichier" to="." method="_on_fichier_pressed"]
+[connection signal="pressed" from="Nouveau" to="." method="_on_nouveau_pressed"]
 [connection signal="pressed" from="Personnages" to="." method="acces_aux_personnages"]

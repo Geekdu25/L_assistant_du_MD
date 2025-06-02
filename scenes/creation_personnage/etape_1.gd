@@ -23,3 +23,7 @@ func acces_aux_personnages() -> void:
 	else:
 		avertissement.dialog_text = "Attention ! Aucun personnage n'a encore été créé."
 		avertissement.popup_centered()
+
+
+func _on_nouveau_pressed() -> void:
+	get_node("/root/Ecran_principal").change_page("res://scenes/creation_personnage/etape_2.tscn")
