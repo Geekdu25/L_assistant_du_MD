@@ -16,7 +16,7 @@ Voici un sommaire récapitulant les points clés de ce README :
 <hr />
 <a name="description"></a>
 <h1>1. Description</h1>
-Ce logiciel a été conçu pour permettre aux maîtres du donjon de gérer la tâche difficile qu'est la gestion d'une partie de Donjons &amp; Dragons.
+Ce logiciel a été conçu pour permettre aux maîtres du donjon de gérer la tâche difficile qu'est la gestion d'une partie de Donjons &amp; Dragons 🐲.
 <br />
 En tant que MD, je sais que nous avons tous besoin d'un outil "surpuissant" qui nous permettrait à nous les MD, de tout contrôler à un endroit.
 <br />
