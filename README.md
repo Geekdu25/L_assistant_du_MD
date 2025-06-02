@@ -52,6 +52,7 @@ Néanmoins, j'ai déjà réussi à implémenter les fonctionnalités suivantes :
  - Un système très primaire de gestion des sauvegardes qui permet de créer automatiquement, dès le premier démarrage, les données de sauvegarde nécessaires au bon fonctionnement de l'application.
  De plus ce système permet de supprimer ces données de sauvegarde efficacement avec un bouton sur l'écran de démarrage de l'application.
 <br />
+<br />
  - Le logiciel comporte également un système de gestion de pages permettant à l'application de se comporter comme un navigateur web vous faisant voyager à travers plusieurs pages.
 <hr />
 <a name="exemples"></a>
