@@ -36,7 +36,9 @@ La première (qui sera accessible uniquement lorsque le développement sera asse
 <br />
 La seconde, consiste à cloner le repository avec cette commande sur votre ordinateur : 
 <br />
+<br />
 <code>git clone https://github.com/Geekdu25/ASSIST_MD</code>
+<br />
 <br />
 Ensuite, vous n'avez qu'à ouvrir le fichier project.godot avec le moteur de jeu Godot Game Engine, et à le lancer pour voir le résultat, et potentiellement le modifier comme vous le souhaitez !
 <hr />
