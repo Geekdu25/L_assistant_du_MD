@@ -29,6 +29,16 @@ Avec L'assistant du MD, fini ces ennuis ! Vous possédez désormais un logiciel 
 <hr />
 <a name="installation"></a>
 <h1>2. Installation</h1>
+Pour utiliser le logiciel vous avez deux options.
+La première (qui sera accessible uniquement lorsque le développement sera assez poussé) consistera à télécharger un logiciel exécutable directement dans la section Releases de github.
+<br />
+<hr />
+<br />
+La seconde, consiste à cloner le repository avec cette commande sur votre ordinateur : 
+<br />
+<code>git clone https://github.com/Geekdu25/ASSIST_MD</code>
+<br />
+Ensuite, vous n'avez qu'à ouvrir le fichier project.godot avec le moteur de jeu Godot Game Engine, et à le lancer pour voir le résultat, et potentiellement le modifier comme vous le souhaitez !
 <hr />
 <a name="fonctions"></a>
 <h1>3. Fonctionnalités</h1>
