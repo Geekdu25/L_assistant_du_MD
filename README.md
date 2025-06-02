@@ -29,3 +29,5 @@ Avec L'assistant du MD, fini ces ennuis !
 Ce logiciel a été codé avec le moteur de jeu Godot Game Engine : <a href="https://godotengine.org/">https://godotengine.org</a>.
 Il s'agit d'un moteur de jeu entièrement libre de droit et gratuit sous licence MIT.
 Un grand merci à lui sans qui ce logiciel n'aurait pas pu exister.
+(Note : Le logo de Godot Game Engine est sous licence : Creative Commons By 4.0. <a href="https://creativecommons.org/licenses/by/4.0">https://creativecommons.org/licenses/by/4.0</a>
+Il est accessible à l'adresse : <a href="https://godotengine.org/press/">https://godotengine.org/press</a>)
