@@ -1,16 +1,22 @@
 [
-  {
-    "nom": "Elfe",
-    "description": "Les elfes sont gracieux, vifs et magiques...",
-    "bonus_caracs": {"dextérité": 2},
-    "vitesse": 9,
-    "autres_traits": ["Vision dans le noir", "Transe"]
-  },
-  {
-    "nom": "Nain",
-    "description": "Les nains sont robustes et travailleurs...",
-    "bonus_caracs": {"constitution": 2},
-    "vitesse": 7,
-    "autres_traits": ["Vision dans le noir", "Résilience naine"]
-  }
+  {"nom": "Elfe", "description": "Gracieux et agile.", "bonus_caracs": {"dextérité": 2}, "vitesse": 9, "autres_traits": ["Vision nocturne"]},
+  {"nom": "Nain", "description": "Solide et têtu.", "bonus_caracs": {"constitution": 2}, "vitesse": 7, "autres_traits": ["Résistance"]},
+  {"nom": "Gnome", "description": "Petit et malin.", "bonus_caracs": {"intelligence": 2}, "vitesse": 7, "autres_traits": ["Illusion"]},
+  {"nom": "Orc", "description": "Fort et féroce.", "bonus_caracs": {"force": 2}, "vitesse": 9, "autres_traits": ["Rage"]},
+  {"nom": "Fée", "description": "Magique et légère.", "bonus_caracs": {"charisme": 2}, "vitesse": 10, "autres_traits": ["Vol"]},
+  {"nom": "Troll", "description": "Grand et résistant.", "bonus_caracs": {"constitution": 2}, "vitesse": 8, "autres_traits": ["Régénération"]},
+  {"nom": "Lutin", "description": "Rusé et rapide.", "bonus_caracs": {"dextérité": 2}, "vitesse": 9, "autres_traits": ["Invisibilité"]},
+  {"nom": "Minotaure", "description": "Puissant et imposant.", "bonus_caracs": {"force": 2}, "vitesse": 9, "autres_traits": ["Charge"]},
+  {"nom": "Vampire", "description": "Mystérieux et charmeur.", "bonus_caracs": {"charisme": 2}, "vitesse": 9, "autres_traits": ["Drainer la vie"]},
+  {"nom": "Sirène", "description": "Aisance dans l'eau.", "bonus_caracs": {"charisme": 2}, "vitesse": 8, "autres_traits": ["Chant hypnotique"]},
+  {"nom": "Centaur", "description": "Rapide et fort.", "bonus_caracs": {"force": 1, "dextérité": 1}, "vitesse": 12, "autres_traits": ["Course"]},
+  {"nom": "Gobelin", "description": "Petit et sournois.", "bonus_caracs": {"dextérité": 2}, "vitesse": 8, "autres_traits": ["Furtivité"]},
+  {"nom": "Géant", "description": "Immense et fort.", "bonus_caracs": {"force": 3}, "vitesse": 10, "autres_traits": ["Lancer de rochers"]},
+  {"nom": "Démon", "description": "Intimidant et magique.", "bonus_caracs": {"intelligence": 1, "charisme": 1}, "vitesse": 8, "autres_traits": ["Feu infernal"]},
+  {"nom": "Ange", "description": "Bienveillant et ailé.", "bonus_caracs": {"sagesse": 2}, "vitesse": 10, "autres_traits": ["Vol"]},
+  {"nom": "Lycanthrope", "description": "Changeforme.", "bonus_caracs": {"force": 2}, "vitesse": 10, "autres_traits": ["Transformation"]},
+  {"nom": "Satyre", "description": "Joueur et rapide.", "bonus_caracs": {"dextérité": 1, "charisme": 1}, "vitesse": 9, "autres_traits": ["Musique magique"]},
+  {"nom": "Djinn", "description": "Éthéré et puissant.", "bonus_caracs": {"intelligence": 2}, "vitesse": 9, "autres_traits": ["Vœu"]},
+  {"nom": "Kobold", "description": "Petit et ingénieux.", "bonus_caracs": {"dextérité": 2}, "vitesse": 7, "autres_traits": ["Pièges"]},
+  {"nom": "Golem", "description": "Inébranlable.", "bonus_caracs": {"constitution": 3}, "vitesse": 6, "autres_traits": ["Immunité"] }
 ]

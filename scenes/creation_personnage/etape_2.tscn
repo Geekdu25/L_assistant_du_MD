@@ -61,6 +61,7 @@ text = "Etapes :
 1/12"
 
 [node name="Conteneur_de_races" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(800, 400)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.194
@@ -75,19 +76,22 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Scrolleur" type="ScrollContainer" parent="Conteneur_de_races"]
+custom_minimum_size = Vector2(250, 400)
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 3
 
 [node name="Conteneur" type="VBoxContainer" parent="Conteneur_de_races/Scrolleur"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 6
+size_flags_vertical = 6
 
 [node name="ColorRect" type="ColorRect" parent="Conteneur_de_races/Scrolleur/Conteneur"]
 layout_mode = 2
 
 [node name="Panneau" type="Panel" parent="Conteneur_de_races"]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Conteneur_de_races/Panneau"]
 layout_mode = 0
