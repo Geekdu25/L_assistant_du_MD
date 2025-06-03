@@ -1,0 +1,16 @@
+[
+  {
+    "nom": "Elfe",
+    "description": "Les elfes sont gracieux, vifs et magiques...",
+    "bonus_caracs": {"dextérité": 2},
+    "vitesse": 9,
+    "autres_traits": ["Vision dans le noir", "Transe"]
+  },
+  {
+    "nom": "Nain",
+    "description": "Les nains sont robustes et travailleurs...",
+    "bonus_caracs": {"constitution": 2},
+    "vitesse": 7,
+    "autres_traits": ["Vision dans le noir", "Résilience naine"]
+  }
+]
