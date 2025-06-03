@@ -1,12 +1,3 @@
-res://scenes/creation_personnage/etape_2.tscn
+res://scenes/creation_personnage/etape_1.tscn
 res://themes/theme_popup.tres
-res://scenes/juridique.tscn
-res://scenes/informations.tscn
-res://scenes/a_propos.gd
-res://scenes/a_propos.tscn
-res://scenes/juridique.gd
-res://scenes/informations.gd
-res://scenes/ecran_titre.tscn
-res://scenes/ecran_titre.gd
-res://scenes/start.tscn
-res://scenes/start.gd
+res://scenes/creation_personnage/etape_1.gd

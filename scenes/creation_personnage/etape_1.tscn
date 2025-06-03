@@ -92,10 +92,11 @@ theme_override_font_sizes/font_size = 30
 text = "Accéder aux personnages"
 
 [node name="Ouverture" type="FileDialog" parent="."]
-title = "Open File(s)"
+title = "Sélectionnez un fichier..."
 ok_button_text = "Open"
 cancel_button_text = "Annuler"
 file_mode = 1
+access = 2
 filters = PackedStringArray("*.xml")
 
 [node name="Avertissement" type="AcceptDialog" parent="."]
@@ -108,3 +109,5 @@ ok_button_text = "J'ai compris"
 [connection signal="pressed" from="Fichier" to="." method="_on_fichier_pressed"]
 [connection signal="pressed" from="Nouveau" to="." method="_on_nouveau_pressed"]
 [connection signal="pressed" from="Personnages" to="." method="acces_aux_personnages"]
+[connection signal="confirmed" from="Ouverture" to="." method="_on_ouverture_confirmed"]
+[connection signal="files_selected" from="Ouverture" to="." method="_on_files_selected"]
