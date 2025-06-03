@@ -1,11 +1,11 @@
 Button
+Label
+ColorRect
 GridContainer
 RichTextLabel
 Control
 Container
-Label
 Panel
-ColorRect
 TextureRect
 AcceptDialog
 PopupMenu

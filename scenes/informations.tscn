@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1ywj8ab15ivl"]
+
+[ext_resource type="Script" uid="uid://bwniaoer2aboh" path="res://scenes/informations.gd" id="1_vess1"]
+
+[node name="Frame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vess1")
+
+[node name="Arrière-plan" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.164706, 0.368627, 0.352941, 1)
+
+[node name="Titre" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_right = 55.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Informations :"
+
+[node name="Retour" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.9
+anchor_right = 0.5
+anchor_bottom = 0.9
+offset_left = -30.5
+offset_top = -31.0
+offset_right = 30.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 35
+text = "Retour"
+
+[node name="A propos" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.105
+anchor_top = 0.426
+anchor_right = 0.105
+anchor_bottom = 0.426
+offset_right = 159.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 35
+text = "A propos"
+
+[node name="Juridique" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.937
+anchor_top = 0.5
+anchor_right = 0.937
+anchor_bottom = 0.5
+offset_left = -191.0
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+text = "Informations juridiques"
+
+[connection signal="pressed" from="Retour" to="." method="_on_retour_pressed"]
+[connection signal="pressed" from="A propos" to="." method="_on_a_propos_pressed"]
+[connection signal="pressed" from="Juridique" to="." method="_on_juridique_pressed"]

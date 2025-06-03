@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://3d7welp1vimx"]
+
+[ext_resource type="Script" uid="uid://ddlpmp0kgv7gp" path="res://scenes/a_propos.gd" id="1_nbbjv"]
+
+[node name="Frame" type="Control"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nbbjv")
+
+[node name="arrière-plan" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.78415, 0.539266, 0, 1)
+
+[node name="retour" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.437
+anchor_top = 0.947
+anchor_right = 0.447
+anchor_bottom = 0.947
+offset_top = 374.0
+offset_right = 123.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 35
+text = "Retour"
+
+[node name="Titre" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -245.0
+offset_right = 245.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "Informations juridiques"
+horizontal_alignment = 1
+
+[node name="texte" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -610.0
+offset_top = -211.0
+offset_right = 600.0
+offset_bottom = 227.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[color=black]Ce travail comprend la documentation tirée du Document de Référence du Système 5.1 (« SRD 5.1 ») par
+Wizards of the Coast LLC et disponible à l'adresse 
+
+[color=blue]https://dnd.wizards.com/fr/resources/systems-reference-
+document.[/color]
+
+Le SRD 5.1 est distribué en vertu de la licence Creative Commons Attribution 4.0 International
+disponible à l'adresse
+
+[color=blue]https://creativecommons.org/licenses/by/4.0/legalcode.fr.[/color][/color]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="retour" to="." method="retour_presse"]
