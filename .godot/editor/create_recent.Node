@@ -1,11 +1,11 @@
+ColorRect
+VBoxContainer
 Label
 Panel
-VBoxContainer
 ScrollContainer
 VScrollBar
 HBoxContainer
 Button
-ColorRect
 GridContainer
 RichTextLabel
 Control

@@ -2,18 +2,19 @@ extends Control
 
 @onready var races_list_vbox = $Conteneur_de_races/Scrolleur/Conteneur
 @onready var details_panel = $Conteneur_de_races/Panneau
-@onready var name_label = details_panel.get_node("RaceName")
-@onready var desc_label = details_panel.get_node("RaceDesc")
-@onready var bonus_label = details_panel.get_node("RaceBonus")
-@onready var vitesse_label = details_panel.get_node("RaceVitesse")
-@onready var traits_label = details_panel.get_node("RaceTraits")
+@onready var name_label = $Conteneur_de_races/Panneau/VBoxContainer/RaceName
+@onready var desc_label = $Conteneur_de_races/Panneau/VBoxContainer/RaceDesc
+@onready var bonus_label = $Conteneur_de_races/Panneau/VBoxContainer/RaceBonus
+@onready var vitesse_label = $Conteneur_de_races/Panneau/VBoxContainer/RaceVitesse
+@onready var traits_label = $Conteneur_de_races/Panneau/VBoxContainer/RaceTraits
 
 var races = []
 
 func _ready():
 	races = load_all_races()
-	print("Races chargées : ", races)
 	populate_races_list()
+	if races.size() > 0:
+		_on_race_selected(races[0])
 
 func load_all_races() -> Array:
 	var result = []

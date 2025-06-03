@@ -62,11 +62,11 @@ text = "Etapes :
 
 [node name="Conteneur_de_races" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = -1
+anchor_left = 0.194
+anchor_top = 0.184
+anchor_right = 0.816
+anchor_bottom = 0.784
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -76,36 +76,37 @@ grow_vertical = 2
 
 [node name="Scrolleur" type="ScrollContainer" parent="Conteneur_de_races"]
 layout_mode = 2
+size_flags_horizontal = 0
 
 [node name="Conteneur" type="VBoxContainer" parent="Conteneur_de_races/Scrolleur"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect" type="ColorRect" parent="Conteneur_de_races/Scrolleur/Conteneur"]
 layout_mode = 2
 
 [node name="Panneau" type="Panel" parent="Conteneur_de_races"]
 layout_mode = 2
+size_flags_horizontal = 8
 
-[node name="RaceName" type="Label" parent="Conteneur_de_races/Panneau"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Conteneur_de_races/Panneau"]
 layout_mode = 0
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 40.0
 
-[node name="RaceDesc" type="Label" parent="Conteneur_de_races/Panneau"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="RaceName" type="Label" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+layout_mode = 2
 
-[node name="RaceBonus" type="Label" parent="Conteneur_de_races/Panneau"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="RaceDesc" type="Label" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+layout_mode = 2
 
-[node name="RaceVitesse" type="Label" parent="Conteneur_de_races/Panneau"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="RaceBonus" type="Label" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+layout_mode = 2
 
-[node name="RaceTraits" type="Label" parent="Conteneur_de_races/Panneau"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="RaceVitesse" type="Label" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+layout_mode = 2
+
+[node name="RaceTraits" type="Label" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+layout_mode = 2
 
 [connection signal="pressed" from="Retour" to="." method="_on_retour_pressed"]
