@@ -63,10 +63,10 @@ text = "Etapes :
 [node name="Races" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.036
-anchor_top = 0.205
+anchor_left = 0.215
+anchor_top = 0.195
 anchor_right = 0.784
-anchor_bottom = 0.763
+anchor_bottom = 0.553
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -76,48 +76,34 @@ grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="Races"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.5
+offset_top = -85.5
+offset_right = 238.5
+offset_bottom = 85.5
 grow_horizontal = 2
 grow_vertical = 2
-columns = 7
+columns = 3
 
 [node name="haut-elfe" type="Button" parent="Races/GridContainer"]
 layout_mode = 2
 text = "Haut-elfe"
 
-[node name="elfe_sylvestre" type="Button" parent="Races/GridContainer"]
-layout_mode = 2
-text = "Elfe sylvestre"
-
-[node name="drow" type="Button" parent="Races/GridContainer"]
-layout_mode = 2
-text = "Elfe drow"
-
 [node name="halfelin_pied-léger" type="Button" parent="Races/GridContainer"]
 layout_mode = 2
 text = "Halfelin pied-léger"
-
-[node name="halfelin_robuste" type="Button" parent="Races/GridContainer"]
-layout_mode = 2
-text = "Halfelin robuste"
 
 [node name="humain" type="Button" parent="Races/GridContainer"]
 layout_mode = 2
 text = "Humain"
 
-[node name="humain_don" type="Button" parent="Races/GridContainer"]
-layout_mode = 2
-text = "Humain (don)"
-
 [node name="nain_collines" type="Button" parent="Races/GridContainer"]
 layout_mode = 2
 text = "Nain des collines"
-
-[node name="nain_montagnes" type="Button" parent="Races/GridContainer"]
-layout_mode = 2
-text = "Nain des montagnes"
 
 [node name="demi-elfe" type="Button" parent="Races/GridContainer"]
 layout_mode = 2
@@ -131,10 +117,6 @@ text = "Demi-orc"
 layout_mode = 2
 text = "Drakéide"
 
-[node name="gnome_des_forêts" type="Button" parent="Races/GridContainer"]
-layout_mode = 2
-text = "Gnome des forêts"
-
 [node name="gnome_des_roches" type="Button" parent="Races/GridContainer"]
 layout_mode = 2
 text = "Gnome des roches"
@@ -142,18 +124,6 @@ text = "Gnome des roches"
 [node name="tieffelin" type="Button" parent="Races/GridContainer"]
 layout_mode = 2
 text = "Tieffelin"
-
-[node name="aarakocre" type="Button" parent="Races/GridContainer"]
-layout_mode = 2
-text = "Aarakocre"
-
-[node name="aasimar" type="Button" parent="Races/GridContainer"]
-layout_mode = 2
-text = "Aasimar"
-
-[node name="centaure" type="Button" parent="Races/GridContainer"]
-layout_mode = 2
-text = "Centaure"
 
 [node name="Infos" type="Panel" parent="."]
 layout_mode = 1
