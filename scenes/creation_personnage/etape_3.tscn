@@ -131,7 +131,7 @@ custom_minimum_size = Vector2(400, 5)
 layout_mode = 2
 color = Color(1, 0, 0, 0.87451)
 
-[node name="RaceVitesse" type="RichTextLabel" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
+[node name="ClasseJds" type="RichTextLabel" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
 custom_minimum_size = Vector2(350, 30)
 layout_mode = 2
 
@@ -140,7 +140,7 @@ custom_minimum_size = Vector2(400, 5)
 layout_mode = 2
 color = Color(1, 0, 0, 0.87451)
 
-[node name="RaceTraits" type="RichTextLabel" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
+[node name="ClasseCompetences" type="RichTextLabel" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
 custom_minimum_size = Vector2(350, 70)
 layout_mode = 2
 
@@ -149,17 +149,8 @@ custom_minimum_size = Vector2(400, 5)
 layout_mode = 2
 color = Color(1, 0, 0, 0.87451)
 
-[node name="RaceLangues" type="RichTextLabel" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
+[node name="ClasseMaitrise" type="RichTextLabel" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
 custom_minimum_size = Vector2(350, 50)
-layout_mode = 2
-
-[node name="sep6" type="ColorRect" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
-custom_minimum_size = Vector2(400, 5)
-layout_mode = 2
-color = Color(1, 0, 0, 0.87451)
-
-[node name="RaceTaille" type="RichTextLabel" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
-custom_minimum_size = Vector2(350, 40)
 layout_mode = 2
 
 [node name="continue" type="Button" parent="."]

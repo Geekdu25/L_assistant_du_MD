@@ -13,39 +13,13 @@ extends Control
 var races = []
 
 func _ready():
-	races = load_all_races()
+	races = Utils.charger_tout("races")
 	populate_races_list()
 	if races.size() > 0:
 		_on_race_selected(races[0])
 
-func load_all_races() -> Array:
-	var result = []
-	# Charger races SRD
-	if FileAccess.file_exists("res://assets/json/races_srd.json"):
-		var data = FileAccess.get_file_as_string("res://assets/json/races_srd.json")
-		result += JSON.parse_string(data)
-	# Charger races personnalisées
-	var dir = DirAccess.open("user://races")
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if file_name.ends_with(".json"):
-				var path = "user://races/" + file_name
-				if FileAccess.file_exists(path):
-					var data2 = FileAccess.get_file_as_string(path)
-					result += JSON.parse_string(data2)
-			file_name = dir.get_next()
-		dir.list_dir_end()
-	return result
-
-func clear_vbox(vbox: VBoxContainer) -> void:
-	for child in vbox.get_children():
-		vbox.remove_child(child)
-		child.queue_free()
-
 func populate_races_list():
-	clear_vbox(races_list_vbox)
+	Utils.clear_vbox(races_list_vbox)
 	for race in races:
 		var btn = Button.new()
 		btn.text = race["nom"]

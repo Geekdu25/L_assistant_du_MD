@@ -1,78 +1,65 @@
 extends Control
 
-@onready var races_list_vbox = $Conteneur_de_races/Scrolleur/Conteneur
-@onready var details_panel = $Conteneur_de_races/Panneau
-@onready var name_label = $Conteneur_de_races/Panneau/VBoxContainer/RaceName
-@onready var desc_label = $Conteneur_de_races/Panneau/VBoxContainer/RaceDesc
-@onready var bonus_label = $Conteneur_de_races/Panneau/VBoxContainer/RaceBonus
-@onready var vitesse_label = $Conteneur_de_races/Panneau/VBoxContainer/RaceVitesse
-@onready var traits_label = $Conteneur_de_races/Panneau/VBoxContainer/RaceTraits
-@onready var langues_label = $Conteneur_de_races/Panneau/VBoxContainer/RaceLangues
-@onready var taille_label = $Conteneur_de_races/Panneau/VBoxContainer/RaceTaille
+@onready var classes_list_vbox = $Conteneur_de_classes/Scrolleur/Conteneur
+@onready var details_panel = $Conteneur_de_classes/Panneau
+@onready var name_label = $Conteneur_de_classes/Panneau/VBoxContainer/ClasseName
+@onready var desc_label = $Conteneur_de_classes/Panneau/VBoxContainer/ClasseDesc
+@onready var de_label = $Conteneur_de_classes/Panneau/VBoxContainer/ClasseDe
+@onready var jds_label = $Conteneur_de_classes/Panneau/VBoxContainer/ClasseJds
+@onready var competences_label = $Conteneur_de_classes/Panneau/VBoxContainer/ClasseCompetences
+@onready var maitrises_label = $Conteneur_de_classes/Panneau/VBoxContainer/ClasseMaitrise
 
-var races = []
+var classes = []
 
 func _ready():
-	races = load_all_races()
-	populate_races_list()
-	if races.size() > 0:
-		_on_race_selected(races[0])
+	classes = Utils.charger_tout("classes")
+	populate_classes_list()
+	if classes.size() > 0:
+		_on_classe_selected(classes[0])
 
-func load_all_races() -> Array:
-	var result = []
-	# Charger races SRD
-	if FileAccess.file_exists("res://assets/json/races_srd.json"):
-		var data = FileAccess.get_file_as_string("res://assets/json/races_srd.json")
-		result += JSON.parse_string(data)
-	# Charger races personnalisées
-	var dir = DirAccess.open("user://races")
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if file_name.ends_with(".json"):
-				var path = "user://races/" + file_name
-				if FileAccess.file_exists(path):
-					var data2 = FileAccess.get_file_as_string(path)
-					result += JSON.parse_string(data2)
-			file_name = dir.get_next()
-		dir.list_dir_end()
-	return result
-
-func clear_vbox(vbox: VBoxContainer) -> void:
-	for child in vbox.get_children():
-		vbox.remove_child(child)
-		child.queue_free()
-
-func populate_races_list():
-	clear_vbox(races_list_vbox)
-	for race in races:
+func populate_classes_list():
+	Utils.clear_vbox(classes_list_vbox)
+	for classe in classes:
 		var btn = Button.new()
-		btn.text = race["nom"]
+		btn.text = classe["nom"]
 		btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		btn.connect("pressed", Callable(self, "_on_race_selected").bind(race))
-		races_list_vbox.add_child(btn)
+		btn.connect("pressed", Callable(self, "_on_classe_selected").bind(classe))
+		classes_list_vbox.add_child(btn)
 
-func _on_race_selected(race):
-	name_label.text = race["nom"]
-	if len(race["description"]) == 0:
-		desc_label.text = "Aucune description n'a été ajoutée à cette race."
-	else:
-		desc_label.text = race["description"]
+func _on_classe_selected(classe):
 	var string_bonus = ""
-	for key in race.get("bonus_caracs"):
-		string_bonus += key.capitalize() + " : +" + str(int(race.get("bonus_caracs")[key])) + "\n"
-	bonus_label.text = "Bonus : \n" + string_bonus
-	vitesse_label.text = "Vitesse : " + str(int(race.get("vitesse", ""))) + "m\n"
+	name_label.text = classe["nom"]
+	if len(classe["description"]) == 0:
+		desc_label.text = "Aucune description n'a été ajoutée à cette classe."
+	else:
+		desc_label.text = classe["description"]
+	de_label.text = "Dé de vie : 1d" + classe.get("de_vie")
+	for j in classe.get("sauvegardes"):
+		string_bonus += j+"\n"
+	jds_label.text = "Jets de sauvegarde : \n" + string_bonus
 	string_bonus = ""
-	for info in race.get("autres_traits"):
-		string_bonus += info + "\n"
-	traits_label.text = "Traits : \n" + string_bonus
+	for j in classe.get("competences"):
+		if j is String:
+			string_bonus += j + "\n"
+	competences_label.text = "Compétences : \n" + string_bonus
 	string_bonus = ""
-	for langue in race.get("langues"):
-		string_bonus += langue + "\n"
-	langues_label.text = "Langues : \n" + string_bonus
-	taille_label.text = "Catégorie de taille : " + race.get("taille")
+	var k = ""
+	for j in classe.get("maitrises"):
+		string_bonus += j + " : \n"
+		for i in classe.get("maitrises")[j]:
+			if i.begins_with("#"):
+				if "legere" in i:
+					k = "Armures légères"
+				elif "intermediaire" in i:
+					k = "Armures intermédiaires"
+				elif "courante" in i:
+					k = "Armes courantes"
+				elif "guerre" in i:
+					k = "Armes de guerre"
+				string_bonus += "- " + k + "\n"
+			else:
+				string_bonus += "- " + i + "\n"
+	maitrises_label.text = "Maîtrises : \n" + string_bonus
 
 
 func _on_retour_pressed() -> void:

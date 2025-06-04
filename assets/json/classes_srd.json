@@ -4,18 +4,22 @@
     "description": "",
     "de_vie": 12,
     "competences": [
+      2,
       "Athlétisme",
-      "Intimidation"
+      "Dressage"
+      "Intimidation",
+      "Nature",
+      "Perception",
+      "Survie",    
     ],
     "sauvegardes": [
       "Force",
       "Constitution"
     ],
     "equipement_initial": [
-      "Armure de cuir",
-      "Épée longue",
-      "Bouclier"
+      {"Hache à deux mains":1, "#guerre_corps":1},  {"Hachette":2, "#courante":1}, {"Paquetage d'explorateur":1}, {"Javeline":4}
     ],
+    "maitrises":{"Armures":["#legere", "#intermediaire", "Bouclier"], "Armes":["#courante", "#guerre"], "Outils":[]}
     "sorts_disponibles": [],
     "capacites_classe": [
       {
@@ -27,31 +31,6 @@
         "niveau": 2,
         "nom": "Action Surprenante",
         "description": "Vous pouvez jouer une action supplémentaire lors de votre tour."
-      }
-    ]
-  },
-  {
-    "nom": "Magicien",
-    "description": "Le magicien est un lanceur de sorts spécialisé dans l’étude de la magie.",
-    "de_vie": 6,
-    "competences": [
-      "Arcanes",
-      "Histoire"
-    ],
-    "sauvegardes": [
-      "Intelligence",
-      "Sagesse"
-    ],
-    "equipement_initial": [
-      "Bâton",
-      "Livre de sorts"
-    ],
-    "sorts_disponibles": ["Projectile magique", "Main du mage"],
-    "capacites_classe": [
-      {
-        "niveau": 1,
-        "nom": "Récupération arcanique",
-        "description": "Permet de regagner des emplacements de sorts lors d’un court repos."
       }
     ]
   }
