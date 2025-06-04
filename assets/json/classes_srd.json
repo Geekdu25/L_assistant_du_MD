@@ -1,8 +1,8 @@
 [
   {
-    "nom": "Guerrier",
-    "description": "Le guerrier est un maître du combat, capable d'utiliser une grande variété d'armes et d'armures.",
-    "de_vie": 10,
+    "nom": "Barbare",
+    "description": "",
+    "de_vie": 12,
     "competences": [
       "Athlétisme",
       "Intimidation"

@@ -67,7 +67,7 @@ theme_override_font_sizes/font_size = 25
 text = "Etapes :
 2/12"
 
-[node name="Conteneur_de_races" type="HBoxContainer" parent="."]
+[node name="Conteneur_de_classes" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(800, 400)
 layout_mode = 1
 anchors_preset = -1
@@ -82,86 +82,83 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Scrolleur" type="ScrollContainer" parent="Conteneur_de_races"]
+[node name="Scrolleur" type="ScrollContainer" parent="Conteneur_de_classes"]
 custom_minimum_size = Vector2(250, 400)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Conteneur" type="VBoxContainer" parent="Conteneur_de_races/Scrolleur"]
+[node name="Conteneur" type="VBoxContainer" parent="Conteneur_de_classes/Scrolleur"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="ColorRect" type="ColorRect" parent="Conteneur_de_races/Scrolleur/Conteneur"]
-layout_mode = 2
-
-[node name="Panneau" type="Panel" parent="Conteneur_de_races"]
+[node name="Panneau" type="Panel" parent="Conteneur_de_classes"]
 custom_minimum_size = Vector2(400, 500)
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_styles/panel = SubResource("StyleBoxFlat_5lfou")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Conteneur_de_races/Panneau"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Conteneur_de_classes/Panneau"]
 custom_minimum_size = Vector2(400, 500)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="RaceName" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+[node name="ClasseName" type="RichTextLabel" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
 custom_minimum_size = Vector2(350, 50)
 layout_mode = 2
 
-[node name="sep1" type="ColorRect" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+[node name="sep1" type="ColorRect" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
 custom_minimum_size = Vector2(400, 5)
 layout_mode = 2
 color = Color(1, 0, 0, 0.87451)
 
-[node name="RaceDesc" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+[node name="ClasseDesc" type="RichTextLabel" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
 custom_minimum_size = Vector2(350, 150)
 layout_mode = 2
 
-[node name="sep2" type="ColorRect" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+[node name="sep2" type="ColorRect" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
 custom_minimum_size = Vector2(400, 5)
 layout_mode = 2
 color = Color(1, 0, 0, 0.87451)
 
-[node name="RaceBonus" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+[node name="ClasseDe" type="RichTextLabel" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
 custom_minimum_size = Vector2(350, 50)
 layout_mode = 2
 
-[node name="sep3" type="ColorRect" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+[node name="sep3" type="ColorRect" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
 custom_minimum_size = Vector2(400, 5)
 layout_mode = 2
 color = Color(1, 0, 0, 0.87451)
 
-[node name="RaceVitesse" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+[node name="RaceVitesse" type="RichTextLabel" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
 custom_minimum_size = Vector2(350, 30)
 layout_mode = 2
 
-[node name="sep4" type="ColorRect" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+[node name="sep4" type="ColorRect" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
 custom_minimum_size = Vector2(400, 5)
 layout_mode = 2
 color = Color(1, 0, 0, 0.87451)
 
-[node name="RaceTraits" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+[node name="RaceTraits" type="RichTextLabel" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
 custom_minimum_size = Vector2(350, 70)
 layout_mode = 2
 
-[node name="sep5" type="ColorRect" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+[node name="sep5" type="ColorRect" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
 custom_minimum_size = Vector2(400, 5)
 layout_mode = 2
 color = Color(1, 0, 0, 0.87451)
 
-[node name="RaceLangues" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+[node name="RaceLangues" type="RichTextLabel" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
 custom_minimum_size = Vector2(350, 50)
 layout_mode = 2
 
-[node name="sep6" type="ColorRect" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+[node name="sep6" type="ColorRect" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
 custom_minimum_size = Vector2(400, 5)
 layout_mode = 2
 color = Color(1, 0, 0, 0.87451)
 
-[node name="RaceTaille" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+[node name="RaceTaille" type="RichTextLabel" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
 custom_minimum_size = Vector2(350, 40)
 layout_mode = 2
 

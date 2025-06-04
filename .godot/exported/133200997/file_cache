@@ -1,0 +1,14 @@
+res://autoloads/gestion_des_dossiers.tscn::524257921c86c4e2cd71887c18304ab4::1748793839::res://.godot/exported/133200997/export-7852ac0a02a62a2ac0b52caa56046da9-gestion_des_dossiers.scn
+res://autoloads/music_controller.tscn::a95596521877164a52bb2517a7f11f15::1748795992::res://.godot/exported/133200997/export-93caf029390eeababbb593bf94341840-music_controller.scn
+res://scenes/creation_personnage/etape_1.tscn::551d9f88593f41f24879a8f6ee8ee9ee::1749029749::res://.godot/exported/133200997/export-e485b9aa10dde8318edb311a87907d37-etape_1.scn
+res://scenes/creation_personnage/etape_2.tscn::157a6c269599e448e2cfa34d1cafadfa::1749044572::res://.godot/exported/133200997/export-7eb279f8654b1d14f6553471574314fa-etape_2.scn
+res://scenes/creation_personnage/etape_3.tscn::aa4e4f7663bda7d40c78bce615d290d1::1749044612::res://.godot/exported/133200997/export-f77627ffe41f51ab30422e0cf9521a43-etape_3.scn
+res://scenes/creation_personnage/personnalisation.tscn::e3e09960332760f554b1ad4b110cf77b::1749033521::res://.godot/exported/133200997/export-4da9469acdd3099736600fa123e2ed17-personnalisation.scn
+res://scenes/interface_utilisateur/popup.tscn::6aa48a45fd5cdab3b045489816da7b56::1748793839::res://.godot/exported/133200997/export-b8b025802364d5359ca3a8a2996a565e-popup.scn
+res://scenes/a_propos.tscn::fc1786810b0f56a0f1d248cb4a2049f8::1748968775::res://.godot/exported/133200997/export-02cb3b7059e2508faaa3498ee16a7121-a_propos.scn
+res://scenes/ecran_principal.tscn::60b33d4033100571f42d6722dc78d58c::1748800721::res://.godot/exported/133200997/export-35f06c677e9cdea8187954f13e808eb5-ecran_principal.scn
+res://scenes/ecran_titre.tscn::48818a925166246da89f21ab41cdacc4::1748969726::res://.godot/exported/133200997/export-06d5b7b55dbe486573316b4b4460e1d5-ecran_titre.scn
+res://scenes/informations.tscn::50c1849d859976335e902b7a99831ed9::1748969151::res://.godot/exported/133200997/export-5a82c9507754389e4cb17633d8a9fc60-informations.scn
+res://scenes/juridique.tscn::b6ab90ccb25d979804a32bba4ee81bd1::1748968747::res://.godot/exported/133200997/export-062a64e53a46c8baa625794bc853cd0e-juridique.scn
+res://scenes/start.tscn::c173697e382ba18ccdf26bef2cb095b0::1748969726::res://.godot/exported/133200997/export-e2cd3ad146e88a9ce40b77a5da0ea9b1-start.scn
+res://themes/theme_popup.tres::6839179f0d81fd7f3fbc423ad71289b7::1749044572::res://.godot/exported/133200997/export-0e4675b500a4e34afbb267357547de65-theme_popup.res
