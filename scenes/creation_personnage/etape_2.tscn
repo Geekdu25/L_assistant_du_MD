@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://1hbp4ynhvuyg"]
 
-[ext_resource type="Script" uid="uid://bi2jj6p1det7s" path="res://scenes/creation_personnage/etape_3.gd" id="1_5lfou"]
+[ext_resource type="Script" uid="uid://bi2jj6p1det7s" path="res://scenes/creation_personnage/etape_2.gd" id="1_5lfou"]
 
 [node name="Frame" type="Control"]
 layout_mode = 3
@@ -89,28 +89,42 @@ size_flags_vertical = 6
 layout_mode = 2
 
 [node name="Panneau" type="Panel" parent="Conteneur_de_races"]
-custom_minimum_size = Vector2(400, 0)
+custom_minimum_size = Vector2(400, 500)
 layout_mode = 2
 size_flags_horizontal = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Conteneur_de_races/Panneau"]
+custom_minimum_size = Vector2(400, 500)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="RaceName" type="Label" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+[node name="RaceName" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 20)
 layout_mode = 2
 
-[node name="RaceDesc" type="Label" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+[node name="RaceDesc" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 20)
 layout_mode = 2
 
-[node name="RaceBonus" type="Label" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+[node name="RaceBonus" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 20)
 layout_mode = 2
 
-[node name="RaceVitesse" type="Label" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+[node name="RaceVitesse" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 20)
 layout_mode = 2
 
-[node name="RaceTraits" type="Label" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+[node name="RaceTraits" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 20)
+layout_mode = 2
+
+[node name="RaceLangues" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 20)
+layout_mode = 2
+
+[node name="RaceTaille" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 20)
 layout_mode = 2
 
 [node name="continue" type="Button" parent="."]

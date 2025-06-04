@@ -53,7 +53,10 @@ func populate_races_list():
 
 func _on_race_selected(race):
 	name_label.text = race["nom"]
-	desc_label.text = race["description"]
+	if len(race["description"]) == 0:
+		desc_label.text = "Aucune description n'a été ajoutée à cette race."
+	else:
+		desc_label.text = race["description"]
 	var string_bonus = ""
 	for key in race.get("bonus_caracs"):
 		string_bonus += key.capitalize() + " : +" + str(int(race.get("bonus_caracs")[key])) + "\n"

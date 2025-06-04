@@ -53,7 +53,6 @@ func populate_races_list():
 
 func _on_race_selected(race):
 	name_label.text = race["nom"]
-	desc_label.text = race["description"]
 	bonus_label.text = "Bonus : " + str(race.get("bonus_caracs", {}))
 	vitesse_label.text = "Vitesse : " + str(race.get("vitesse", ""))
 	traits_label.text = "Traits : " + ", ".join(race.get("autres_traits", []))
