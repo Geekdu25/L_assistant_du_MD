@@ -1,3 +1,5 @@
+AcceptDialog
+ConfirmationDialog
 Button
 FileDialog
 Label
@@ -11,4 +13,3 @@ GridContainer
 RichTextLabel
 Control
 Container
-TextureRect

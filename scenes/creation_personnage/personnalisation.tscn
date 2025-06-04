@@ -92,14 +92,23 @@ theme_override_font_sizes/font_size = 35
 text = "Ajouter des historiques"
 
 [node name="FileDialog" type="FileDialog" parent="."]
-title = "Ouvrez des fichiers..."
-ok_button_text = "Ouvrir"
+title = "Open File(s)"
+ok_button_text = "Open"
 cancel_button_text = "Annuler"
 file_mode = 1
 access = 2
+
+[node name="ecrase" type="ConfirmationDialog" parent="."]
+title = "Fichier déjà existant..."
+ok_button_text = "Ecraser"
+cancel_button_text = "Annuler"
+
+[node name="info" type="AcceptDialog" parent="."]
+title = "Fichier enregistré."
 
 [connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]
 [connection signal="pressed" from="races" to="." method="_on_races_pressed"]
 [connection signal="pressed" from="classes" to="." method="_on_classes_pressed"]
 [connection signal="pressed" from="historiques" to="." method="_on_historiques_pressed"]
 [connection signal="files_selected" from="FileDialog" to="." method="_on_files_selected"]
+[connection signal="confirmed" from="ecrase" to="." method="_on_ecrase_confirmed"]
