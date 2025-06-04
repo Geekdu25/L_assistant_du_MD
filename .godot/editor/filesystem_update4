@@ -4,3 +4,4 @@ res://scenes/creation_personnage/etape_2.tscn
 res://autoloads/utils.gd
 res://scenes/creation_personnage/etape_3.gd
 res://scenes/creation_personnage/etape_2.gd
+res://scenes/creation_personnage/etape_1.gd

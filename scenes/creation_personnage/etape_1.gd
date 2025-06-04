@@ -3,11 +3,6 @@ extends Control
 @onready var fichier_a_ouvrir = $Ouverture
 @onready var avertissement = $Avertissement
 
-func _ready():
-	fichier_a_ouvrir.file_mode = FileDialog.FILE_MODE_OPEN_FILES
-	# Connecte le signal files_selected si ce n'est pas déjà fait dans l'éditeur
-	fichier_a_ouvrir.connect("files_selected", Callable(self, "_on_files_selected"))
-
 func _on_files_selected(paths: PackedStringArray) -> void:
 	for file in paths:
 		var special_path = file.get_file() # Récupère juste le nom du fichier
