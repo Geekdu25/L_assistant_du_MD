@@ -33,7 +33,7 @@ func _on_classe_selected(classe):
 		desc_label.text = "Aucune description n'a été ajoutée à cette classe."
 	else:
 		desc_label.text = classe["description"]
-	de_label.text = "Dé de vie : 1d" + classe.get("de_vie")
+	de_label.text = "Dé de vie : 1d" + str(int(classe.get("de_vie")))
 	for j in classe.get("sauvegardes"):
 		string_bonus += j+"\n"
 	jds_label.text = "Jets de sauvegarde : \n" + string_bonus

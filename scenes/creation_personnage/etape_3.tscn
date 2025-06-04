@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://1hbp4ynhvuyg"]
 
-[ext_resource type="Script" uid="uid://bi2jj6p1det7s" path="res://scenes/creation_personnage/etape_3.gd" id="1_5lfou"]
+[ext_resource type="Script" uid="uid://ct6lv1s8safew" path="res://scenes/creation_personnage/etape_3.gd" id="1_5lfou"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5lfou"]
 bg_color = Color(0.403926, 0.167833, 0.037579, 1)
@@ -107,6 +107,7 @@ offset_bottom = 40.0
 [node name="ClasseName" type="RichTextLabel" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
 custom_minimum_size = Vector2(350, 50)
 layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
 
 [node name="sep1" type="ColorRect" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
 custom_minimum_size = Vector2(400, 5)
@@ -123,7 +124,7 @@ layout_mode = 2
 color = Color(1, 0, 0, 0.87451)
 
 [node name="ClasseDe" type="RichTextLabel" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
-custom_minimum_size = Vector2(350, 50)
+custom_minimum_size = Vector2(350, 30)
 layout_mode = 2
 
 [node name="sep3" type="ColorRect" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
@@ -132,7 +133,7 @@ layout_mode = 2
 color = Color(1, 0, 0, 0.87451)
 
 [node name="ClasseJds" type="RichTextLabel" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
-custom_minimum_size = Vector2(350, 30)
+custom_minimum_size = Vector2(350, 60)
 layout_mode = 2
 
 [node name="sep4" type="ColorRect" parent="Conteneur_de_classes/Panneau/VBoxContainer"]
