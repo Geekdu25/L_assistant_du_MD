@@ -1,0 +1,58 @@
+[gd_resource type="Theme" load_steps=8 format=3]
+
+[resource]
+resource_name = "ThemeMD"
+# Palette inspirée "parchemin, or, bois"
+default_font_color = Color(0.96, 0.91, 0.70) # Jaune pâle (parchemin)
+default_bg_color = Color(0.15, 0.13, 0.10)   # Brun/noir ardoise
+accent_color = Color(0.74, 0.66, 0.36)       # Or mat
+
+# Style Panel (panneaux et fenêtres)
+stylebox_panel = StyleBoxFlat.new()
+stylebox_panel.bg_color = Color(0.15, 0.13, 0.10)
+stylebox_panel.border_color = Color(0.39, 0.28, 0.11)
+stylebox_panel.border_width_all = 2
+stylebox_panel.corner_radius_all = 8
+
+# Style pour les boutons
+stylebox_button = StyleBoxFlat.new()
+stylebox_button.bg_color = Color(0.25, 0.21, 0.13)
+stylebox_button.border_color = Color(0.74, 0.66, 0.36)
+stylebox_button.border_width_all = 2
+stylebox_button.corner_radius_all = 6
+
+stylebox_button_hover = StyleBoxFlat.new()
+stylebox_button_hover.bg_color = Color(0.36, 0.33, 0.20)
+stylebox_button_hover.border_color = Color(0.96, 0.91, 0.70)
+stylebox_button_hover.border_width_all = 2
+stylebox_button_hover.corner_radius_all = 6
+
+stylebox_button_pressed = StyleBoxFlat.new()
+stylebox_button_pressed.bg_color = Color(0.74, 0.66, 0.36)
+stylebox_button_pressed.border_color = Color(0.25, 0.21, 0.13)
+stylebox_button_pressed.border_width_all = 2
+stylebox_button_pressed.corner_radius_all = 6
+
+# Attributions aux classes
+[resource/resource]
+# Panel
+styles/panel = Resource( "stylebox_panel" )
+# Button
+styles/normal = Resource( "stylebox_button" )
+styles/hover = Resource( "stylebox_button_hover" )
+styles/pressed = Resource( "stylebox_button_pressed" )
+colors/font_color = Color(0.96, 0.91, 0.70)
+colors/font_color_hover = Color(1, 0.93, 0.62)
+colors/font_color_pressed = Color(0.15, 0.13, 0.10)
+# Label
+colors/font_color = Color(0.96, 0.91, 0.70)
+# ScrollBar
+colors/fg_color = Color(0.74, 0.66, 0.36)
+colors/bg_color = Color(0.25, 0.21, 0.13)
+# OptionButton/Popup
+colors/font_color = Color(0.96, 0.91, 0.70)
+# LineEdit/TextEdit
+colors/font_color = Color(0.96, 0.91, 0.70)
+colors/bg_color = Color(0.18, 0.16, 0.12)
+
+# Vous pouvez ajuster les couleurs ou ajouter des polices personnalisées selon vos préférences.
