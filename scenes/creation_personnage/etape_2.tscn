@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://1hbp4ynhvuyg"]
 
-[ext_resource type="Script" uid="uid://bi2jj6p1det7s" path="res://scenes/creation_personnage/etape_2.gd" id="1_5lfou"]
+[ext_resource type="Script" uid="uid://bi2jj6p1det7s" path="res://scenes/creation_personnage/etape_3.gd" id="1_5lfou"]
 
 [node name="Frame" type="Control"]
 layout_mode = 3

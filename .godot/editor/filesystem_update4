@@ -2,3 +2,5 @@ res://scenes/creation_personnage/personnalisation.tscn
 res://themes/theme_popup.tres
 res://scenes/creation_personnage/personnalisation.gd
 res://autoloads/utils.gd
+res://scenes/creation_personnage/etape_2.tscn
+res://scenes/creation_personnage/etape_3.tscn
