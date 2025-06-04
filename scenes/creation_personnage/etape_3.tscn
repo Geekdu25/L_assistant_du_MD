@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://1hbp4ynhvuyg"]
+[gd_scene load_steps=2 format=3 uid="uid://dseh3ajclpev4"]
 
 [ext_resource type="Script" uid="uid://bi2jj6p1det7s" path="res://scenes/creation_personnage/etape_2.gd" id="1_5lfou"]
 
@@ -32,7 +32,7 @@ offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 50
-text = "Choisissez la race du personnage"
+text = "Choisissez la classe du personnage"
 
 [node name="Retour" type="Button" parent="."]
 layout_mode = 1
@@ -58,7 +58,7 @@ offset_right = 93.0
 offset_bottom = 73.0
 theme_override_font_sizes/font_size = 25
 text = "Etapes :
-1/12"
+2/12"
 
 [node name="Conteneur_de_races" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(800, 400)
@@ -116,10 +116,10 @@ layout_mode = 2
 [node name="continue" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.958
-anchor_top = 0.895
-anchor_right = 0.958
-anchor_bottom = 0.895
+anchor_left = 0.969
+anchor_top = 0.916
+anchor_right = 0.969
+anchor_bottom = 0.916
 offset_left = -177.0
 offset_top = -57.0
 grow_horizontal = 0
@@ -128,4 +128,3 @@ theme_override_font_sizes/font_size = 35
 text = "Continuer"
 
 [connection signal="pressed" from="Retour" to="." method="_on_retour_pressed"]
-[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]

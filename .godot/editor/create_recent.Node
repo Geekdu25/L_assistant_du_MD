@@ -1,5 +1,5 @@
-FileDialog
 Button
+FileDialog
 Label
 ColorRect
 VBoxContainer
@@ -12,4 +12,3 @@ RichTextLabel
 Control
 Container
 TextureRect
-AcceptDialog

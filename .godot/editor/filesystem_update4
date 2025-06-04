@@ -6,3 +6,5 @@ res://scenes/creation_personnage/personnalisation.gd
 res://scenes/creation_personnage/personnalisation.tscn
 res://scenes/creation_personnage/etape_1.gd
 res://autoloads/utils.gd
+res://scenes/creation_personnage/etape_3.tscn
+res://scenes/creation_personnage/etape_2.gd
