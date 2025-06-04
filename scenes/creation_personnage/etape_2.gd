@@ -7,6 +7,8 @@ extends Control
 @onready var bonus_label = $Conteneur_de_races/Panneau/VBoxContainer/RaceBonus
 @onready var vitesse_label = $Conteneur_de_races/Panneau/VBoxContainer/RaceVitesse
 @onready var traits_label = $Conteneur_de_races/Panneau/VBoxContainer/RaceTraits
+@onready var langues_label = $Conteneur_de_races/Panneau/VBoxContainer/RaceLangues
+@onready var taille_label = $Conteneur_de_races/Panneau/VBoxContainer/RaceTaille
 
 var races = []
 
@@ -66,6 +68,11 @@ func _on_race_selected(race):
 	for info in race.get("autres_traits"):
 		string_bonus += info + "\n"
 	traits_label.text = "Traits : \n" + string_bonus
+	string_bonus = ""
+	for langue in race.get("langues"):
+		string_bonus += langue + "\n"
+	langues_label.text = "Langues : \n" + string_bonus
+	taille_label.text = "Catégorie de taille : " + race.get("taille")
 
 
 func _on_retour_pressed() -> void:

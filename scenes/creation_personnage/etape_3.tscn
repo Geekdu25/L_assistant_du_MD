@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dseh3ajclpev4"]
+[gd_scene load_steps=3 format=3 uid="uid://1hbp4ynhvuyg"]
 
 [ext_resource type="Script" uid="uid://bi2jj6p1det7s" path="res://scenes/creation_personnage/etape_3.gd" id="1_5lfou"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5lfou"]
+bg_color = Color(0.403926, 0.167833, 0.037579, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Frame" type="Control"]
 layout_mode = 3
@@ -92,41 +99,79 @@ layout_mode = 2
 custom_minimum_size = Vector2(400, 500)
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_5lfou")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Conteneur_de_races/Panneau"]
-custom_minimum_size = Vector2(400, 0)
+custom_minimum_size = Vector2(400, 500)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="RaceName" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 50)
 layout_mode = 2
+
+[node name="sep1" type="ColorRect" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(400, 5)
+layout_mode = 2
+color = Color(1, 0, 0, 0.87451)
 
 [node name="RaceDesc" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 150)
 layout_mode = 2
+
+[node name="sep2" type="ColorRect" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(400, 5)
+layout_mode = 2
+color = Color(1, 0, 0, 0.87451)
 
 [node name="RaceBonus" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 50)
 layout_mode = 2
+
+[node name="sep3" type="ColorRect" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(400, 5)
+layout_mode = 2
+color = Color(1, 0, 0, 0.87451)
 
 [node name="RaceVitesse" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 30)
 layout_mode = 2
+
+[node name="sep4" type="ColorRect" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(400, 5)
+layout_mode = 2
+color = Color(1, 0, 0, 0.87451)
 
 [node name="RaceTraits" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 70)
 layout_mode = 2
 
-[node name="RaceLangue" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+[node name="sep5" type="ColorRect" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(400, 5)
 layout_mode = 2
+color = Color(1, 0, 0, 0.87451)
+
+[node name="RaceLangues" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 50)
+layout_mode = 2
+
+[node name="sep6" type="ColorRect" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(400, 5)
+layout_mode = 2
+color = Color(1, 0, 0, 0.87451)
 
 [node name="RaceTaille" type="RichTextLabel" parent="Conteneur_de_races/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 40)
 layout_mode = 2
 
 [node name="continue" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.969
-anchor_top = 0.916
-anchor_right = 0.969
-anchor_bottom = 0.916
+anchor_left = 0.979
+anchor_top = 0.895
+anchor_right = 0.979
+anchor_bottom = 0.895
 offset_left = -177.0
 offset_top = -57.0
 grow_horizontal = 0
@@ -135,3 +180,4 @@ theme_override_font_sizes/font_size = 35
 text = "Continuer"
 
 [connection signal="pressed" from="Retour" to="." method="_on_retour_pressed"]
+[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]

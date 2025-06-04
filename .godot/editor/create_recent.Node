@@ -1,10 +1,10 @@
+ColorRect
 RichTextLabel
 AcceptDialog
 ConfirmationDialog
 Button
 FileDialog
 Label
-ColorRect
 VBoxContainer
 Panel
 ScrollContainer
