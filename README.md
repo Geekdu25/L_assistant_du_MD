@@ -54,6 +54,9 @@ Néanmoins, j'ai déjà réussi à implémenter les fonctionnalités suivantes :
 <br />
 <br />
  - Le logiciel comporte également un système de gestion de pages permettant à l'application de se comporter comme un navigateur web vous faisant voyager à travers plusieurs pages.
+<br />
+<br />
+ - La possibilité de choisir sa race et sa classe et de voir leurs informations. Il est également possible de charger ses propres races et classes personnalisés !
 <hr />
 <a name="exemples"></a>
 <h1>4. Exemples</h1>
