@@ -54,9 +54,15 @@ func populate_races_list():
 func _on_race_selected(race):
 	name_label.text = race["nom"]
 	desc_label.text = race["description"]
-	bonus_label.text = "Bonus : " + str(race.get("bonus_caracs", {}))
-	vitesse_label.text = "Vitesse : " + str(race.get("vitesse", ""))
-	traits_label.text = "Traits : " + ", ".join(race.get("autres_traits", []))
+	var string_bonus = ""
+	for key in race.get("bonus_caracs"):
+		string_bonus += key.capitalize() + " : +" + str(int(race.get("bonus_caracs")[key])) + "\n"
+	bonus_label.text = "Bonus : \n" + string_bonus
+	vitesse_label.text = "Vitesse : " + str(int(race.get("vitesse", ""))) + "m\n"
+	string_bonus = ""
+	for info in race.get("autres_traits"):
+		string_bonus += info + "\n"
+	traits_label.text = "Traits : \n" + string_bonus
 
 
 func _on_retour_pressed() -> void:
