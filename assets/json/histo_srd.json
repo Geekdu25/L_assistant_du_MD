@@ -1,0 +1,70 @@
+[
+  {
+    "nom": "Sage",
+    "description": "Vous avez passé des années à apprendre dans une bibliothèque, un monastère ou auprès d’un mentor. Vous êtes avide de connaissances et de découvertes.",
+    "competences": ["Arcanes", "Histoire"],
+    "langues_supplementaires": 2,
+    "equipement": [
+      "Bouteille d’encre",
+      "Plume",
+      "Parchemin",
+      "Livre de connaissances"
+    ],
+    "fonds": 10,
+    "specialite": [
+      "Alchimiste",
+      "Bibliothécaire",
+      "Chercheur"
+    ],
+    "trait": [
+      "J’utilise des mots longs et compliqués quand je parle.",
+      "J'ai soif de connaissances."
+    ],
+    "ideal": [
+      "La connaissance doit être partagée.",
+      "La logique guide toutes choses."
+    ],
+    "lien": [
+      "J’ai un vieil ami dans une grande ville.",
+      "Un livre volé doit être retrouvé."
+    ],
+    "defaut": [
+      "Je me perds dans mes pensées.",
+      "Je néglige mes obligations sociales."
+    ]
+  },
+  {
+    "nom": "Enfant des rues",
+    "description": "Vous avez grandi sans rien ni personne pour vous protéger. Livré à vous-même, vous avez appris à survivre dans la rue.",
+    "competences": ["Discrétion", "Escamotage"],
+    "langues_supplementaires": 0,
+    "equipement": [
+      "Petit couteau",
+      "Carte de la ville",
+      "Objet volé",
+      "Vêtements communs"
+    ],
+    "fonds": 10,
+    "specialite": [
+      "Voleur à la tire",
+      "Espion",
+      "Mendiant"
+    ],
+    "trait": [
+      "Je me faufile partout.",
+      "Je n'ai confiance en personne."
+    ],
+    "ideal": [
+      "La liberté avant tout.",
+      "L’amitié est une rareté précieuse."
+    ],
+    "lien": [
+      "Je dois de l’argent à un personnage louche.",
+      "J’ai protégé un autre enfant des rues."
+    ],
+    "defaut": [
+      "Je vole tout ce qui n’est pas surveillé.",
+      "Je ne sais pas garder un secret."
+    ]
+  }
+]

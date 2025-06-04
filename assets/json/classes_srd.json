@@ -1,5 +1,58 @@
 [
-  {"nom": "Elfe", "description": "Gracieux et agile.", "bonus_caracs": {"dextérité": 2}, "vitesse": 9, "autres_traits": ["Vision nocturne"]},
-  {"nom": "Nain", "description": "Solide et têtu.", "bonus_caracs": {"constitution": 2}, "vitesse": 7, "autres_traits": ["Résistance"]},
-  {"nom": "Gnome", "description": "Petit et malin.", "bonus_caracs": {"intelligence": 2}, "vitesse": 7, "autres_traits": ["Illusion"]}
+  {
+    "nom": "Guerrier",
+    "description": "Le guerrier est un maître du combat, capable d'utiliser une grande variété d'armes et d'armures.",
+    "de_vie": 10,
+    "competences": [
+      "Athlétisme",
+      "Intimidation"
+    ],
+    "sauvegardes": [
+      "Force",
+      "Constitution"
+    ],
+    "equipement_initial": [
+      "Armure de cuir",
+      "Épée longue",
+      "Bouclier"
+    ],
+    "sorts_disponibles": [],
+    "capacites_classe": [
+      {
+        "niveau": 1,
+        "nom": "Style de combat",
+        "description": "Vous adoptez un style de combat."
+      },
+      {
+        "niveau": 2,
+        "nom": "Action Surprenante",
+        "description": "Vous pouvez jouer une action supplémentaire lors de votre tour."
+      }
+    ]
+  },
+  {
+    "nom": "Magicien",
+    "description": "Le magicien est un lanceur de sorts spécialisé dans l’étude de la magie.",
+    "de_vie": 6,
+    "competences": [
+      "Arcanes",
+      "Histoire"
+    ],
+    "sauvegardes": [
+      "Intelligence",
+      "Sagesse"
+    ],
+    "equipement_initial": [
+      "Bâton",
+      "Livre de sorts"
+    ],
+    "sorts_disponibles": ["Projectile magique", "Main du mage"],
+    "capacites_classe": [
+      {
+        "niveau": 1,
+        "nom": "Récupération arcanique",
+        "description": "Permet de regagner des emplacements de sorts lors d’un court repos."
+      }
+    ]
+  }
 ]
