@@ -1,0 +1,140 @@
+[gd_scene load_steps=3 format=3 uid="uid://bai7cejr8nb86"]
+
+[ext_resource type="Script" uid="uid://dkj6e0iojvgik" path="res://scenes/creation_personnage/etape_4.gd" id="1_l1wpd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1wpd"]
+bg_color = Color(0.403926, 0.167833, 0.037579, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Frame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l1wpd")
+
+[node name="Arrière-plan" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.258824, 0.580392, 0.564706, 1)
+
+[node name="Titre" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.021
+anchor_right = 0.5
+anchor_bottom = 0.021
+offset_left = -145.5
+offset_right = 145.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Choisissez l'historique du personnage"
+
+[node name="continue" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.947
+anchor_top = 0.937
+anchor_right = 0.947
+anchor_bottom = 0.937
+offset_left = -86.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 35
+text = "Continuer"
+
+[node name="retour" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.032
+anchor_top = 0.937
+anchor_right = 0.032
+anchor_bottom = 0.937
+offset_top = -31.0
+offset_right = 61.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 35
+text = "Retour"
+
+[node name="etapes" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.045
+anchor_top = 0.053
+anchor_right = 0.084
+anchor_bottom = 0.053
+offset_right = 61.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 25
+text = "Etapes :
+3/12"
+
+[node name="Conteneur_d_historiques" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(800, 400)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.194
+anchor_top = 0.184
+anchor_right = 0.816
+anchor_bottom = 0.784
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Scrolleur" type="ScrollContainer" parent="Conteneur_d_historiques"]
+custom_minimum_size = Vector2(250, 400)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Conteneur" type="VBoxContainer" parent="Conteneur_d_historiques/Scrolleur"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panneau" type="Panel" parent="Conteneur_d_historiques"]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_l1wpd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Conteneur_d_historiques/Panneau"]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HistoName" type="RichTextLabel" parent="Conteneur_d_historiques/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 50)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+
+[node name="sep1" type="ColorRect" parent="Conteneur_d_historiques/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(400, 5)
+layout_mode = 2
+color = Color(1, 0, 0, 0.87451)
+
+[node name="HistoDesc" type="RichTextLabel" parent="Conteneur_d_historiques/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 150)
+layout_mode = 2
+
+[node name="sep2" type="ColorRect" parent="Conteneur_d_historiques/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(400, 5)
+layout_mode = 2
+color = Color(1, 0, 0, 0.87451)
+
+[connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]

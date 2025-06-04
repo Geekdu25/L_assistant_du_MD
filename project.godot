@@ -12,6 +12,7 @@ config_version=5
 
 config/name="L'assistant du MD"
 config/description="Cette application est conçue pour aider les maîtres du donjon dans la lourde tache qu'est la gestion de parties de Dungeons & Dragons."
+config/version="1.0.0"
 run/main_scene="uid://ccd5s7qai6j5i"
 config/quit_on_go_back=false
 config/features=PackedStringArray("4.4", "GL Compatibility")

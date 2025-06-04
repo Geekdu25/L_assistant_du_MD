@@ -63,4 +63,8 @@ func _on_classe_selected(classe):
 
 
 func _on_retour_pressed() -> void:
-	get_node("/root/Ecran_principal").change_page("res://scenes/creation_personnage/etape_3.tscn")
+	get_node("/root/Ecran_principal").change_page("res://scenes/creation_personnage/etape_2.tscn")
+
+
+func _on_continue_pressed() -> void:
+	get_node("/root/Ecran_principal").change_page("res://scenes/creation_personnage/etape_4.tscn")

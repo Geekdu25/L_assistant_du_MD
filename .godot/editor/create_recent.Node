@@ -1,0 +1,8 @@
+VBoxContainer
+RichTextLabel
+ScrollContainer
+Panel
+HBoxContainer
+Label
+Button
+ColorRect
