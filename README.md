@@ -57,13 +57,15 @@ Néanmoins, j'ai déjà réussi à implémenter les fonctionnalités suivantes :
 <hr />
 <a name="exemples"></a>
 <h1>4. Exemples</h1>
-Aucun exemple n'est actuellement disponible.
-(J'en mettrai dès que possible, mais le projet est encore à un stade de développement trop bas pour avoir quelque chose d'intéressant à montrer.)
+Découvrez ici quelques captures d'écran du logiciel en action : 
+<br />
+<br />
+<img src="docs/readme/capture_d_ecran_1.png" alt="Capture d'écran 1" title="Choix d'une race"/>
 <hr />
 <a name="credits"></a>
 <h1>5. Remerciements</h1>
 <hr />
-<img src="docs/readme/logo_godot.png"/>
+<img src="docs/readme/logo_godot.png" alt="Logo de Godot game engine" title="Logo de Godot game engine"/>
 <hr />
 Ce logiciel a été codé avec le moteur de jeu Godot Game Engine : <a href="https://godotengine.org/">https://godotengine.org</a>.
 <br />
