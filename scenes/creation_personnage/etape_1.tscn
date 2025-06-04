@@ -80,9 +80,9 @@ text = "Créer un tout nouveau
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.768
+anchor_top = 0.737
 anchor_right = 0.5
-anchor_bottom = 0.811
+anchor_bottom = 0.737
 offset_left = -4.0
 offset_top = -8.0
 offset_right = 4.0
@@ -92,7 +92,7 @@ theme_override_font_sizes/font_size = 30
 text = "Accéder aux personnages"
 
 [node name="Ouverture" type="FileDialog" parent="."]
-title = "Sélectionnez un fichier..."
+title = "Open File(s)"
 ok_button_text = "Open"
 cancel_button_text = "Annuler"
 file_mode = 1
@@ -105,9 +105,24 @@ initial_position = 2
 size = Vector2i(121, 100)
 ok_button_text = "J'ai compris"
 
+[node name="personnalisation" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.979
+anchor_top = 0.905
+anchor_right = 0.979
+anchor_bottom = 0.905
+offset_left = -496.0
+offset_top = -57.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 35
+text = "Personnalisation des options"
+
 [connection signal="pressed" from="Retour" to="." method="_on_retour_pressed"]
 [connection signal="pressed" from="Fichier" to="." method="_on_fichier_pressed"]
 [connection signal="pressed" from="Nouveau" to="." method="_on_nouveau_pressed"]
 [connection signal="pressed" from="Personnages" to="." method="acces_aux_personnages"]
 [connection signal="confirmed" from="Ouverture" to="." method="_on_ouverture_confirmed"]
 [connection signal="files_selected" from="Ouverture" to="." method="_on_files_selected"]
+[connection signal="pressed" from="personnalisation" to="." method="_on_personnalisation_pressed"]

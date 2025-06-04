@@ -1,5 +1,8 @@
 res://scenes/creation_personnage/etape_1.tscn
 res://themes/theme_popup.tres
-res://scenes/creation_personnage/etape_1.gd
 res://scenes/creation_personnage/etape_2.tscn
-res://scenes/creation_personnage/etape_2.gd
+res://autoloads/gestion_des_dossiers.gd
+res://scenes/creation_personnage/personnalisation.gd
+res://scenes/creation_personnage/personnalisation.tscn
+res://scenes/creation_personnage/etape_1.gd
+res://autoloads/utils.gd

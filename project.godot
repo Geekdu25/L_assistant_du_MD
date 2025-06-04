@@ -25,6 +25,7 @@ boot_splash/minimum_display_time=2000
 
 GestionDesDossiers="*res://autoloads/gestion_des_dossiers.tscn"
 MusicController="*res://autoloads/music_controller.tscn"
+Utils="*res://autoloads/utils.gd"
 
 [display]
 

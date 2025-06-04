@@ -1,11 +1,12 @@
+FileDialog
+Button
+Label
 ColorRect
 VBoxContainer
-Label
 Panel
 ScrollContainer
 VScrollBar
 HBoxContainer
-Button
 GridContainer
 RichTextLabel
 Control

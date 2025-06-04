@@ -5,7 +5,10 @@ const REQUIRED_FOLDERS := [
 	"user://saves",
 	"user://characters",
 	"user://musics",
-	"user://campaigns"
+	"user://campaigns",
+	"user://races",
+	"user://classes",
+	"user://historiques"
 ]
 
 # Supprime la variable globale de popup_instance
