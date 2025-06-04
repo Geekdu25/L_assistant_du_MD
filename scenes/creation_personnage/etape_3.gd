@@ -19,17 +19,17 @@ func _ready():
 func load_all_races() -> Array:
 	var result = []
 	# Charger races SRD
-	if FileAccess.file_exists("res://assets/json/races_srd.json"):
-		var data = FileAccess.get_file_as_string("res://assets/json/races_srd.json")
+	if FileAccess.file_exists("res://assets/json/classes_srd.json"):
+		var data = FileAccess.get_file_as_string("res://assets/json/classes_srd.json")
 		result += JSON.parse_string(data)
 	# Charger races personnalisées
-	var dir = DirAccess.open("user://races")
+	var dir = DirAccess.open("user://classes")
 	if dir:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
 			if file_name.ends_with(".json"):
-				var path = "user://races/" + file_name
+				var path = "user://classes/" + file_name
 				if FileAccess.file_exists(path):
 					var data2 = FileAccess.get_file_as_string(path)
 					result += JSON.parse_string(data2)
