@@ -1,70 +1,20 @@
 [
   {
-    "nom": "Sage",
-    "description": "Vous avez passé des années à apprendre dans une bibliothèque, un monastère ou auprès d’un mentor. Vous êtes avide de connaissances et de découvertes.",
-    "competences": ["Arcanes", "Histoire"],
+    "nom": "Acolyte",
+    "description": "Vous avez passé votre vie à servir au sein d'un temple dédié à un dieu ou à un panthéon. Vous oeuvrez comme intermédiaire entre le royaume saint et le monde des mortels., accomplissez des rites sacrés, et menez des offrandes pour guider les fidèles vers la puissance divine. Vous n'êtes pas forcément clerc : mener une cérémonie et canaliser la puissance divine sont deux choses bien différentes. Choisissez un dieu, un panthéon ou autre entité de caractère divin parmi ceux de la section 'Panthéons historiques et mythologiques' ou ceux que vous propose votre MJ, et discutez avec ce dernier des détails de votre service religieux. N'étiez vous qu'un subalterne au sein du temple, élevé depuis l'enfance pour assister les prêtres lors des rites sacrés ? Ou un grand prêtre qui a soudainement entendu l'appel divin lui enjoignant de suivre une voie différente ? A moins d'avoir dirigé une petite secte détachée de toute structure ecclésiastique, voire une cellule occulte au service d'un maître fiélon que vous avez depuis renié.",
+    "competences": ["Intuition", "Religion"],
     "langues_supplementaires": 2,
-    "equipement": [
-      "Bouteille d’encre",
-      "Plume",
-      "Parchemin",
-      "Livre de connaissances"
-    ],
+    "equipement": {
+      "Symbole sacré":1,
+      "Bourse":1,
+      "Bâton d'encens":5,
+      "Habits de cérémonie":1,
+      "Habits courants":1,
+      "Bourse":1  
+    },
     "fonds": 10,
-    "specialite": [
-      "Alchimiste",
-      "Bibliothécaire",
-      "Chercheur"
-    ],
-    "trait": [
-      "J’utilise des mots longs et compliqués quand je parle.",
-      "J'ai soif de connaissances."
-    ],
-    "ideal": [
-      "La connaissance doit être partagée.",
-      "La logique guide toutes choses."
-    ],
-    "lien": [
-      "J’ai un vieil ami dans une grande ville.",
-      "Un livre volé doit être retrouvé."
-    ],
-    "defaut": [
-      "Je me perds dans mes pensées.",
-      "Je néglige mes obligations sociales."
-    ]
-  },
-  {
-    "nom": "Enfant des rues",
-    "description": "Vous avez grandi sans rien ni personne pour vous protéger. Livré à vous-même, vous avez appris à survivre dans la rue.",
-    "competences": ["Discrétion", "Escamotage"],
-    "langues_supplementaires": 0,
-    "equipement": [
-      "Petit couteau",
-      "Carte de la ville",
-      "Objet volé",
-      "Vêtements communs"
-    ],
-    "fonds": 10,
-    "specialite": [
-      "Voleur à la tire",
-      "Espion",
-      "Mendiant"
-    ],
-    "trait": [
-      "Je me faufile partout.",
-      "Je n'ai confiance en personne."
-    ],
-    "ideal": [
-      "La liberté avant tout.",
-      "L’amitié est une rareté précieuse."
-    ],
-    "lien": [
-      "Je dois de l’argent à un personnage louche.",
-      "J’ai protégé un autre enfant des rues."
-    ],
-    "defaut": [
-      "Je vole tout ce qui n’est pas surveillé.",
-      "Je ne sais pas garder un secret."
-    ]
+    "aptitude": {
+      "Abri des croyants":"En tant qu'acolyte, vous méritez le respect de ceux qui partagent votre foi et vous pouvez accomplir les cérémonies religieuses correspondantes. Vous et vos compagnons d'aventures pouvez compter sur des soins gratuits et autres attentions lorsque vous vous présentez dans un temple, un sanctuaire ou autre site dédié à votre foi (vous devez toutefois fournir les composantes matérielles demandées par les sorts). Vos correligionnaires vous assureront un train de vie modeste si besoin (uniquement vous). Vous êtes peut-être lié à un temple spécifique de votre divinité ou panthéon, dans lequel vous avez vos quartiers. Ce pourrait être le temple où vous avez servi si vous êtes resté en bons termes avec son personnel, ou un établissement où vous avez trouvé votre nouvelle famille. Tant que vous restez à proximité de ce temple, vous pouvez demander l’assistance de ses prêtres, à condition de ne pas les mettre en danger et de ne pas enfreindre les règles du site."
+    }
   }
 ]
