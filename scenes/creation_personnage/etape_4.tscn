@@ -168,4 +168,5 @@ color = Color(1, 0, 0, 0.87451)
 custom_minimum_size = Vector2(350, 60)
 layout_mode = 2
 
+[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]

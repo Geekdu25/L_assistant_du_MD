@@ -1,0 +1,94 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfw5bhwiwi1se"]
+
+[ext_resource type="Script" uid="uid://cduuh75lkh14i" path="res://scenes/creation_personnage/etape_5.gd" id="1_c2bmx"]
+
+[node name="Frame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c2bmx")
+
+[node name="Arrière-plan" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.258824, 0.580392, 0.564706, 1)
+
+[node name="retour" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053
+anchor_top = 0.916
+anchor_right = 0.053
+anchor_bottom = 0.916
+offset_top = -31.0
+offset_right = 61.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 35
+text = "Retour"
+
+[node name="continuer" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.958
+anchor_top = 0.937
+anchor_right = 0.958
+anchor_bottom = 0.937
+offset_left = -86.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 35
+text = "Continuer"
+
+[node name="titre" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.021
+anchor_right = 0.5
+anchor_bottom = 0.021
+offset_left = -516.5
+offset_right = 516.5
+offset_bottom = 141.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Choisissez le niveau et les caractéristiques 
+de votre personnage :"
+horizontal_alignment = 1
+
+[node name="etapes" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.032
+anchor_right = 0.063
+anchor_bottom = 0.032
+offset_right = 65.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 25
+text = "Etapes : 
+4/12"
+
+[node name="Panneau" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Niveau" type="Panel" parent="Panneau"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Caractéristiques" type="Panel" parent="Panneau"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]

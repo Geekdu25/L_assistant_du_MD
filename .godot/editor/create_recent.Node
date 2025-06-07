@@ -1,8 +1,8 @@
-RichTextLabel
-VBoxContainer
-ScrollContainer
 Panel
-HBoxContainer
 Label
 Button
 ColorRect
+RichTextLabel
+VBoxContainer
+ScrollContainer
+HBoxContainer
