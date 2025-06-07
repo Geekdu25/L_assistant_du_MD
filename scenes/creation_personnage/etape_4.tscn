@@ -107,7 +107,7 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 
 [node name="Panneau" type="Panel" parent="Conteneur_d_historiques"]
-custom_minimum_size = Vector2(400, 500)
+custom_minimum_size = Vector2(400, 510)
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_styles/panel = SubResource("StyleBoxFlat_l1wpd")
@@ -136,5 +136,36 @@ layout_mode = 2
 custom_minimum_size = Vector2(400, 5)
 layout_mode = 2
 color = Color(1, 0, 0, 0.87451)
+
+[node name="HistoComp" type="RichTextLabel" parent="Conteneur_d_historiques/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 75)
+layout_mode = 2
+
+[node name="sep3" type="ColorRect" parent="Conteneur_d_historiques/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(400, 5)
+layout_mode = 2
+color = Color(1, 0, 0, 0.87451)
+
+[node name="HistoLangues" type="RichTextLabel" parent="Conteneur_d_historiques/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 50)
+layout_mode = 2
+
+[node name="sep4" type="ColorRect" parent="Conteneur_d_historiques/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(400, 5)
+layout_mode = 2
+color = Color(1, 0, 0, 0.87451)
+
+[node name="HistoAr" type="RichTextLabel" parent="Conteneur_d_historiques/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 60)
+layout_mode = 2
+
+[node name="sep5" type="ColorRect" parent="Conteneur_d_historiques/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(400, 5)
+layout_mode = 2
+color = Color(1, 0, 0, 0.87451)
+
+[node name="HistoAp" type="RichTextLabel" parent="Conteneur_d_historiques/Panneau/VBoxContainer"]
+custom_minimum_size = Vector2(350, 60)
+layout_mode = 2
 
 [connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]

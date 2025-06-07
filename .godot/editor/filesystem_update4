@@ -1,0 +1,4 @@
+res://scenes/creation_personnage/etape_4.tscn
+res://themes/theme_popup.tres
+res://scenes/creation_personnage/etape_4.gd
+res://assets/json/historiques_srd.json
