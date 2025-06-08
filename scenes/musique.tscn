@@ -87,6 +87,7 @@ layout_mode = 2
 text = "Supprimer la catégorie"
 
 [node name="Tree" type="Tree" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 
 [node name="options_lecture" type="HBoxContainer" parent="VBoxContainer"]

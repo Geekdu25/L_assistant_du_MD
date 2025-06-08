@@ -23,6 +23,7 @@ func _ready():
 	delete_category_button.connect("pressed", Callable(self, "_on_delete_category_pressed"))
 	import_button.connect("pressed", Callable(self, "_on_import_pressed"))
 	$Selection_de_musiques.connect("files_selected", Callable(self, "_on_files_selected"))
+	_refresh_tree()
 
 func _on_import_pressed():
 	$Selection_de_musiques.popup_centered()
@@ -160,7 +161,7 @@ func _on_music_selected():
 
 func _is_music_selected() -> bool:
 	var item = tree.get_selected()
-	return item != null and not item.is_root()  # selon ta logique d’arbre
+	return item != null and item.get_parent() == null # selon ta logique d’arbre
 
 func _on_new_category_pressed():
 	new_category_line_edit.text = ""
