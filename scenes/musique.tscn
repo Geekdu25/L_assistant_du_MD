@@ -71,7 +71,7 @@ grow_vertical = 2
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/options_fichiers"]
+[node name="import" type="Button" parent="VBoxContainer/options_fichiers"]
 layout_mode = 2
 text = "Importer musique(s)..."
 

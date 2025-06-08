@@ -2,10 +2,11 @@ extends Control
 
 @onready var import_button = $VBoxContainer/options_fichiers/import
 @onready var category_selector = $VBoxContainer/options_fichiers/categories
+@onready var delete_category_button = $VBoxContainer/options_fichiers/delete_category
 @onready var play_button = $VBoxContainer/options_lecture/lecture
 @onready var pause_button = $VBoxContainer/options_lecture/pause
 @onready var stop_button = $VBoxContainer/options_lecture/stop
-@onready var delete_song_button = $VBoxContainer/options_lecture/delete
+@onready var delete_song_button = $VBoxContainer/options_lecture/delete_song
 @onready var tree = $VBoxContainer/Tree
 
 func _ready():
