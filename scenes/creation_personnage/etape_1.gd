@@ -12,7 +12,7 @@ func _on_file_selected(path: String) -> void:
 	print("Fichier sélectionné :", path)
 
 func _on_retour_pressed() -> void:
-	get_node("/root/Ecran_principal").change_page("res://scenes/ecran_titre.tscn")
+	get_node("/root/Ecran_principal").change_page("res://scenes/start.tscn")
 
 func _on_fichier_pressed() -> void:
 	fichier_a_ouvrir.popup()

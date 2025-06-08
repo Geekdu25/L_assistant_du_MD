@@ -1,4 +1,6 @@
 Label
+Button
+ColorRect
 VBoxContainer
 RichTextLabel
 Panel

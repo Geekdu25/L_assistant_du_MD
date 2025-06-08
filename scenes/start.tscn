@@ -49,5 +49,19 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 35
 text = "Création de personnage"
 
+[node name="musique" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.042
+anchor_top = 0.811
+anchor_right = 0.042
+anchor_bottom = 0.811
+offset_top = -31.0
+offset_right = 210.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 35
+text = "Gestionnaire de musiques"
+
 [connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]
 [connection signal="pressed" from="personnage" to="." method="_on_personnage_pressed"]
+[connection signal="pressed" from="musique" to="." method="_on_musique_pressed"]
