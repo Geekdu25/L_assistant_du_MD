@@ -114,7 +114,7 @@ text = "Supprimer la chanson"
 icon = ExtResource("5_h5wnp")
 
 [node name="Selection_de_musiques" type="FileDialog" parent="."]
-title = "Sélectionner des musiques..."
+title = "Open File(s)"
 ok_button_text = "Open"
 cancel_button_text = "Annuler"
 file_mode = 1

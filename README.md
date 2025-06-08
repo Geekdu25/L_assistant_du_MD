@@ -67,6 +67,9 @@ Découvrez ici quelques captures d'écran du logiciel en action :
 <br />
 <br />
 <img src="docs/readme/capture_d_ecran_2.png" alt="Capture d'écran 2" title="Choix du niveau et des caractéristiques"/>
+<br />
+<br />
+<img src="docs/readme/capture_d_ecran_3.png" alt="Capture d'écran 3" title="Gestion des musiques"/>
 <hr />
 <a name="credits"></a>
 <h1>5. Remerciements</h1>
