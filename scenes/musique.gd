@@ -63,9 +63,15 @@ func _on_confirm_delete_category():
 		_delete_directory_recursive(category_path)
 	# Retire de l'UI
 	category_selector.remove_item(idx)
+	# Sélectionne le premier item restant, ou rien si plus rien
+	if category_selector.item_count > 0:
+		category_selector.select(0)
 	_update_buttons()
 
 func _delete_directory_recursive(path: String):
+	# Ne supprime jamais le dossier racine des musiques
+	if path == "user://musics":
+		return
 	var dir = DirAccess.open(path)
 	if dir:
 		dir.list_dir_begin()
