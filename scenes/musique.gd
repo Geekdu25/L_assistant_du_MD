@@ -13,6 +13,7 @@ extends Control
 @onready var new_category_line_edit = $notifications/LineEdit
 
 func _ready():
+	_populate_categories()
 	# Toujours désactiver les boutons au démarrage
 	_update_buttons()
 	# Connexions pour réagir aux changements
@@ -33,6 +34,18 @@ func _update_buttons():
 func _on_category_changed(index):
 	_update_buttons()
 	# Tu pourras ajouter ici le rafraîchissement de la liste des musiques pour la catégorie
+
+func _populate_categories():
+	var base_path = "user://musics"
+	var dir = DirAccess.open(base_path)
+	if dir:
+		dir.list_dir_begin()
+		var name = dir.get_next()
+		while name != "":
+			if dir.current_is_dir() and name != "." and name != "..":
+				category_selector.add_item(name)
+			name = dir.get_next()
+		dir.list_dir_end()
 
 func _on_music_selected():
 	_update_buttons()
