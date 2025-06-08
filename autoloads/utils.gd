@@ -53,34 +53,26 @@ func charger_tout(quoi:String) -> Array:
 		dir.list_dir_end()
 	return result
 
-func genere_nombre_aleatoire(nombre):
-	pass
+func additionne_liste(liste):
+	var resultat = 0
+	for value in liste:
+		resultat += value
+	return resultat
 
-func delete_maximum(liste):
-	if len(liste) < 1:
-		return null
-	var max = liste[0]
-	var i = 0
-	var indice = 0
-	for nombre in liste:
-		if nombre > max:
-			max = nombre
-			indice = i
-		i += 1
-	return [liste, max, indice]
+func roll_stat() -> Dictionary:
+	var rolls = []
+	for i in range(4):
+		rolls.append(randi_range(1, 6))
+	rolls.sort()
+	var best_three = rolls.slice(1, 4)
+	return {
+		"value": additionne_liste(best_three),
+		"rolls": rolls.duplicate() # On retourne la liste triée pour affichage
+	}
 
-func genere_caracteristiques():
-	var nombres_generes = []
-	var current_de = []
-	var save = []
-	var nombre_final = 0
-	for loop in range(6):
-		current_de = []
-		nombre_final = 0
-		for loop2 in range(4):
-			current_de.append(genere_nombre_aleatoire(6))
-		save = current_de
-		var n = 0
-		for loop2 in range(3):
-			delete_maximum(current_de)
-	return nombres_generes
+# Génère une liste de 6 scores de caractéristiques (avec détails des lancers)
+func roll_stats_array() -> Array:
+	var results = []
+	for i in range(6):
+		results.append(roll_stat())
+	return results
