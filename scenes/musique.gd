@@ -21,6 +21,52 @@ func _ready():
 	tree.connect("item_selected", Callable(self, "_on_music_selected"))
 	new_category_button.connect("pressed", Callable(self, "_on_new_category_pressed"))
 	delete_category_button.connect("pressed", Callable(self, "_on_delete_category_pressed"))
+	import_button.connect("pressed", Callable(self, "_on_import_pressed"))
+	$Selection_de_musiques.connect("files_selected", Callable(self, "_on_files_selected"))
+
+func _on_import_pressed():
+	$Selection_de_musiques.popup_centered()
+
+func _refresh_tree():
+	tree.clear()
+	var idx = category_selector.get_selected_id()
+	if idx == -1 or category_selector.item_count == 0:
+		return
+	var category_name = category_selector.get_item_text(idx)
+	var base_path = "user://musics"
+	var category_path = base_path + "/" + category_name
+	var dir = DirAccess.open(category_path)
+	if not dir:
+		return
+	dir.list_dir_begin()
+	var file_name = dir.get_next()
+	var root = tree.create_item()
+	while file_name != "":
+		if not dir.current_is_dir() and not file_name.begins_with("."):
+			var item = tree.create_item(root)
+			item.set_text(0, file_name)
+		file_name = dir.get_next()
+	dir.list_dir_end()
+
+func _on_files_selected(paths):
+	var idx = category_selector.get_selected_id()
+	if idx == -1 or category_selector.item_count == 0:
+		show_error_dialog("Veuillez d'abord sélectionner une catégorie avant d'importer.")
+		return
+	var category_name = category_selector.get_item_text(idx)
+	var base_path = "user://musics"
+	var target_dir = base_path + "/" + category_name
+	for file_path in paths:
+		var file_name = file_path.get_file()
+		var destination = target_dir + "/" + file_name
+		if FileAccess.file_exists(destination):
+			show_error_dialog("Le fichier '%s' existe déjà dans cette catégorie." % file_name)
+			continue
+		var success = Utils.copy_file(file_path, destination)
+		if not success:
+			show_error_dialog("Erreur lors de la copie de '%s'.".format([file_name]))
+	_refresh_tree()
+
 
 func _update_buttons():
 	# Désactive l’import si aucune catégorie
@@ -94,7 +140,7 @@ func _delete_directory_recursive(path: String):
 
 func _on_category_changed(index):
 	_update_buttons()
-	# Tu pourras ajouter ici le rafraîchissement de la liste des musiques pour la catégorie
+	_refresh_tree()
 
 func _populate_categories():
 	category_selector.clear()

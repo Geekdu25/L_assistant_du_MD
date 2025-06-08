@@ -114,10 +114,11 @@ icon = ExtResource("5_h5wnp")
 
 [node name="Selection_de_musiques" type="FileDialog" parent="."]
 title = "Sélectionner des musiques..."
-ok_button_text = "Ouvrir"
+ok_button_text = "Open"
 cancel_button_text = "Annuler"
 file_mode = 1
-filters = PackedStringArray(".mp3, .wav, .ogg")
+access = 2
+filters = PackedStringArray("*.mp3, *.wav, *.ogg")
 
 [node name="notifications" type="AcceptDialog" parent="."]
 title = "Nommez votre catégorie."
