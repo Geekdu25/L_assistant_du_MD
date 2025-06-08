@@ -43,17 +43,25 @@ func _is_music_selected() -> bool:
 
 func _on_new_category_pressed():
 	new_category_line_edit.text = ""
-	notifications.popup_centered()
+	new_category_line_edit.show()
+	notifications.dialog_text = ""
 	notifications.get_ok_button().text = "Créer"
-	notifications.connect("confirmed", Callable(self, "_on_new_category_confirmed"))
+	# Déconnecte d'abord tout
+	notifications.disconnect("confirmed", Callable(self, "_on_new_category_confirmed")) if notifications.is_connected("confirmed", Callable(self, "_on_new_category_confirmed")) else null
+	notifications.disconnect("confirmed", Callable(self, "_on_error_acknowledged")) if notifications.is_connected("confirmed", Callable(self, "_on_error_acknowledged")) else null
+	notifications.connect("confirmed", Callable(self, "_on_new_category_confirmed"), CONNECT_ONE_SHOT)
+	notifications.popup_centered()
 	new_category_line_edit.grab_focus()
 
 func show_error_dialog(message: String):
 	new_category_line_edit.hide()
 	notifications.dialog_text = message
-	notifications.popup_centered()
 	notifications.get_ok_button().text = "OK"
+	# Déconnecte tout avant de connecter
+	notifications.disconnect("confirmed", Callable(self, "_on_new_category_confirmed")) if notifications.is_connected("confirmed", Callable(self, "_on_new_category_confirmed")) else null
+	notifications.disconnect("confirmed", Callable(self, "_on_error_acknowledged")) if notifications.is_connected("confirmed", Callable(self, "_on_error_acknowledged")) else null
 	notifications.connect("confirmed", Callable(self, "_on_error_acknowledged"), CONNECT_ONE_SHOT)
+	notifications.popup_centered()
 
 func _on_error_acknowledged():
 	# Réaffiche le champ de saisie si besoin, ou rien si le dialogue se ferme
