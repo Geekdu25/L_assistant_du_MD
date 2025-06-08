@@ -69,6 +69,7 @@ grow_vertical = 2
 
 [node name="options_fichiers" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer/options_fichiers"]
 layout_mode = 2
@@ -81,7 +82,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Nouvelle catégorie"
 
-[node name="delete" type="Button" parent="VBoxContainer/options_fichiers"]
+[node name="delete_category" type="Button" parent="VBoxContainer/options_fichiers"]
 layout_mode = 2
 text = "Supprimer la catégorie"
 
@@ -93,22 +94,30 @@ layout_mode = 2
 
 [node name="lecture" type="Button" parent="VBoxContainer/options_lecture"]
 layout_mode = 2
+text = "Play"
 icon = ExtResource("2_14u2o")
 
 [node name="pause" type="Button" parent="VBoxContainer/options_lecture"]
 layout_mode = 2
+text = "Pause"
 icon = ExtResource("3_eeucp")
 
 [node name="stop" type="Button" parent="VBoxContainer/options_lecture"]
 layout_mode = 2
+text = "Stop"
 icon = ExtResource("4_oogtd")
 
-[node name="delete" type="Button" parent="VBoxContainer/options_lecture"]
+[node name="delete_song" type="Button" parent="VBoxContainer/options_lecture"]
 layout_mode = 2
 text = "Supprimer la chanson"
 icon = ExtResource("5_h5wnp")
 
 [node name="Selection_de_musiques" type="FileDialog" parent="."]
+title = "Sélectionner des musiques..."
+ok_button_text = "Ouvrir"
+cancel_button_text = "Annuler"
+file_mode = 1
+filters = PackedStringArray(".mp3, .wav, .ogg")
 
 [node name="notifications" type="AcceptDialog" parent="."]
 
