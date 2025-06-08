@@ -23,7 +23,27 @@ func _ready():
 	delete_category_button.connect("pressed", Callable(self, "_on_delete_category_pressed"))
 	import_button.connect("pressed", Callable(self, "_on_import_pressed"))
 	$Selection_de_musiques.connect("files_selected", Callable(self, "_on_files_selected"))
+	play_button.connect("pressed", Callable(self, "_on_play_pressed"))
+	pause_button.connect("pressed", Callable(self, "_on_pause_pressed"))
+	stop_button.connect("pressed", Callable(self, "_on_stop_pressed"))
 	_refresh_tree()
+
+func _on_play_pressed():
+	var idx_cat = category_selector.get_selected_id()
+	var item = tree.get_selected()
+	if idx_cat == -1 or item == null or item.get_parent() == null:
+		show_error_dialog("Veuillez sélectionner une catégorie et une musique à jouer.")
+		return
+	var category_name = category_selector.get_item_text(idx_cat)
+	var file_name = item.get_text(0)
+	var full_path = "user://musics/" + category_name + "/" + file_name
+	MusicController.play_music(full_path, false) # à adapter si tu veux la boucle
+
+func _on_pause_pressed():
+	MusicController.musique_1.stream_paused = true
+
+func _on_stop_pressed():
+	MusicController.musique_1.stop()
 
 func _on_import_pressed():
 	$Selection_de_musiques.popup_centered()
@@ -117,6 +137,7 @@ func _on_confirm_delete_category():
 	if category_selector.item_count > 0:
 		category_selector.select(0)
 	_update_buttons()
+	_refresh_tree()
 
 func _delete_directory_recursive(path: String):
 	# Ne supprime jamais le dossier racine des musiques
@@ -161,7 +182,7 @@ func _on_music_selected():
 
 func _is_music_selected() -> bool:
 	var item = tree.get_selected()
-	return item != null and item.get_parent() == null # selon ta logique d’arbre
+	return item != null and item.get_parent() != null # selon ta logique d’arbre
 
 func _on_new_category_pressed():
 	new_category_line_edit.text = ""

@@ -38,17 +38,6 @@ func _process(delta: float):
 func _ready():
 	register_audio_player("music_1", musique_1)
 	register_audio_player("sound_1", son_1)
-	var loop_points_file = FileAccess.open("res://assets/sounds/music/loop_points.json", FileAccess.READ)
-	if loop_points_file:
-		var json = JSON.new()
-		var parse_result = json.parse(loop_points_file.get_as_text())
-		if parse_result == OK:
-			loop_points = json.data
-		else:
-			print("Erreur lors du parsing du fichier JSON : ", parse_result)
-		loop_points_file.close()
-	else:
-		print("Erreur : Impossible de charger le fichier loop_points.json")
 
 # Ajoute un AudioStreamPlayer à la gestion
 func register_audio_player(name: String, player: AudioStreamPlayer):
@@ -60,7 +49,7 @@ func fade_audio(name: String, duration: float, fade_in: bool, stop_after_fade_ou
 		return
 	if not audio_players.has(name):
 		return
-	
+
 	var player = audio_players[name]
 	var starting_volume: float = player.volume_db if not fade_in else -80.0
 	var target_volume: float = 0.0 if fade_in else -80.0
@@ -113,34 +102,23 @@ func _on_fade_step(timer: Timer):
 		# Gère l'arrêt de la musique si nécessaire
 		if not fade_in and stop_after_fade_out:
 			player.stop()
-		
+
 		# Réinitialise l'état de fondu
 		is_fading = false
 
 		# Pour un fondu entrant, réinitialise `is_fading`
 		if fade_in:
 			is_fading = false
-		
+
 		# Exécute le callback si défini
 		if callback != null:
 			callback.call_deferred([])
 # Joue une musique avec gestion du fondu si nécessaire
 func play_music(path: String, loop: bool = false):
-	print(path)
-	if not path.begins_with("res://"):
-		path = "res://assets/sounds/music/" + path
-	if not path.ends_with(".ogg"):
-		path += ".ogg"
-	#r les points de boucle pour ce fichier
-	if loop and loop_points.has(path):
-		custom_loop_start = loop_points[path]["loop_start"]
-		custom_loop_end = loop_points[path]["loop_end"]
-		use_custom_loop = true
-	else:
-		custom_loop_start = 0.0
-		custom_loop_end = 0.0
-		use_custom_loop = false
-
+	custom_loop_start = 0.0
+	custom_loop_end = 0.0
+	use_custom_loop = false
+	print("C'est ce fichier : ", path)
 	var audio_stream: AudioStream = load(path)
 	musique_1.stop()
 	musique_1.stream = audio_stream
@@ -148,10 +126,6 @@ func play_music(path: String, loop: bool = false):
 	musique_1.play()
 
 func _internal_play_music(path: String, loop: bool):
-	if not path.begins_with("res://"):
-		path = "res://assets/sounds/music/" + path
-	if not path.ends_with(".ogg"):
-		path += ".ogg"
 	if path != music_path:
 		var audio_stream: AudioStream = load(path)
 		musique_1.stop()
@@ -180,10 +154,6 @@ func _on_fade_out_complete():
 		print("No queued music to play.")
 
 func play_sound(path: String, loop: bool = false):
-	if not path.begins_with("res://"):
-		path = "res://assets/sounds/effects/" + path
-	if not path.ends_with(".ogg"):
-		path += ".ogg"
 	if path != sound_path:
 		var audio_stream: AudioStream = load(path)
 		son_1.stream = audio_stream
