@@ -28,6 +28,7 @@ func populate_races_list():
 		races_list_vbox.add_child(btn)
 
 func _on_race_selected(race):
+	CurrentPersonnage.race = race["nom"]
 	name_label.text = race["nom"]
 	if len(race["description"]) == 0:
 		desc_label.text = "Aucune description n'a été ajoutée à cette race."

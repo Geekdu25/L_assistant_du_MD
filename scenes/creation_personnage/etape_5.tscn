@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfw5bhwiwi1se"]
+[gd_scene load_steps=6 format=3 uid="uid://bfw5bhwiwi1se"]
 
 [ext_resource type="Script" uid="uid://cduuh75lkh14i" path="res://scenes/creation_personnage/etape_5.gd" id="1_c2bmx"]
+[ext_resource type="StyleBox" uid="uid://cj72xp14mtrix" path="res://themes/panel_1.tres" id="2_wfdud"]
+
+[sub_resource type="Theme" id="Theme_g1eyh"]
+default_font_size = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4a0po"]
+bg_color = Color(7.21961e-06, 0.780144, 0.433201, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hnkix"]
+bg_color = Color(0, 1, 0, 1)
+corner_detail = 12
 
 [node name="Frame" type="Control"]
 layout_mode = 3
@@ -77,18 +88,189 @@ text = "Etapes :
 4/12"
 
 [node name="Panneau" type="Panel" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.041
+anchor_top = 0.258
+anchor_right = 0.673
+anchor_bottom = 0.774
+offset_top = -20.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
 
 [node name="Niveau" type="Panel" parent="Panneau"]
-layout_mode = 0
-offset_right = 40.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.226
+anchor_right = 0.763
+anchor_bottom = 0.074
+offset_left = -20.0
+offset_right = 20.0
 offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("2_wfdud")
+
+[node name="Label" type="Label" parent="Panneau/Niveau"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.042
+anchor_top = 0.137
+anchor_right = 0.042
+anchor_bottom = 0.137
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 30
+text = "Niveau : "
+
+[node name="SpinBox" type="SpinBox" parent="Panneau/Niveau"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.652
+anchor_top = 0.116
+anchor_right = 0.652
+anchor_bottom = 0.463
+offset_right = 86.5625
+offset_bottom = 31.0
+theme = SubResource("Theme_g1eyh")
+theme_override_colors/up_hover_icon_modulate = Color(1.92523e-06, 0.554563, 0.294408, 1)
+theme_override_colors/up_icon_modulate = Color(0.236577, 0.42129, 3.85046e-07, 1)
+theme_override_colors/up_pressed_icon_modulate = Color(7.70092e-07, 0.764169, 0.367337, 1)
+theme_override_colors/down_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_hover_icon_modulate = Color(0.0705503, 4.81307e-07, 0.409062, 1)
+theme_override_colors/down_pressed_icon_modulate = Color(0.2549, 9.26036e-05, 0.874285, 1)
+theme_override_styles/up_down_buttons_separator = SubResource("StyleBoxFlat_4a0po")
+theme_override_styles/field_and_buttons_separator = SubResource("StyleBoxFlat_hnkix")
+min_value = 1.0
+max_value = 20.0
+value = 1.0
+rounded = true
+alignment = 2
 
 [node name="Caractéristiques" type="Panel" parent="Panneau"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.036
+anchor_top = 0.316
+anchor_right = 0.953
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("2_wfdud")
+
+[node name="titres" type="HBoxContainer" parent="Panneau/Caractéristiques"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.321
+anchor_right = 0.658
+offset_left = -279.5
+offset_right = 279.5
+offset_bottom = 42.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Titre" type="Label" parent="Panneau/Caractéristiques/titres"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Caractéristiques : "
+
+[node name="Bonus" type="Label" parent="Panneau/Caractéristiques/titres"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Bonus racial :"
+
+[node name="Total" type="Label" parent="Panneau/Caractéristiques/titres"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Total : "
+
+[node name="noms" type="VBoxContainer" parent="Panneau/Caractéristiques"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.158
+anchor_top = 0.594
+anchor_right = 0.158
+anchor_bottom = 0.594
+offset_top = -136.0
+offset_right = 180.0
+offset_bottom = 136.0
+grow_vertical = 2
+
+[node name="Force" type="Label" parent="Panneau/Caractéristiques/noms"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Force"
+
+[node name="Dextérité" type="Label" parent="Panneau/Caractéristiques/noms"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Dextérité"
+
+[node name="Constitution" type="Label" parent="Panneau/Caractéristiques/noms"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Constitution"
+
+[node name="Intelligence" type="Label" parent="Panneau/Caractéristiques/noms"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Intelligence"
+
+[node name="Sagesse" type="Label" parent="Panneau/Caractéristiques/noms"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Sagesse "
+
+[node name="Charisme" type="Label" parent="Panneau/Caractéristiques/noms"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Charisme"
+
+[node name="bonus" type="VBoxContainer" parent="Panneau/Caractéristiques"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.574
+anchor_top = 0.179
+anchor_right = 0.574
+anchor_bottom = 0.179
+offset_left = -20.0
+offset_top = -1.14441e-05
+offset_right = 20.0
+offset_bottom = 230.0
+grow_horizontal = 2
+
+[node name="Bonus_fo" type="Label" parent="Panneau/Caractéristiques/bonus"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "+0"
+
+[node name="Bonus_dex" type="Label" parent="Panneau/Caractéristiques/bonus"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "+0"
+
+[node name="Bonus_con" type="Label" parent="Panneau/Caractéristiques/bonus"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "+0 "
+
+[node name="Bonus_int" type="Label" parent="Panneau/Caractéristiques/bonus"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "+0"
+
+[node name="Bonus_sag" type="Label" parent="Panneau/Caractéristiques/bonus"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "+0"
+
+[node name="Bonus_cha" type="Label" parent="Panneau/Caractéristiques/bonus"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "+0"
 
 [connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]

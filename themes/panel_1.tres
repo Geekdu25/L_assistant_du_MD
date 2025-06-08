@@ -1,0 +1,17 @@
+[gd_resource type="StyleBoxFlat" format=3 uid="uid://cj72xp14mtrix"]
+
+[resource]
+bg_color = Color(0.989639, 0.338635, 0.411503, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.90417, 0.806837, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 12
+shadow_color = Color(0, 0, 0, 0.745098)
+shadow_size = 5
+shadow_offset = Vector2(2, 0)

@@ -27,6 +27,7 @@ func populate_classes_list():
 		classes_list_vbox.add_child(btn)
 
 func _on_classe_selected(classe):
+	CurrentPersonnage.classe = classe["nom"]
 	var string_bonus = ""
 	name_label.text = classe["nom"]
 	if len(classe["description"]) == 0:

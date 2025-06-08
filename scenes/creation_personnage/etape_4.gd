@@ -28,6 +28,7 @@ func populate_historiques_list():
 		classes_list_vbox.add_child(btn)
 
 func _on_historique_selected(historique):
+	CurrentPersonnage.historique = historique["nom"]
 	var string_bonus = ""
 	name_label.text = historique["nom"]
 	if len(historique["description"]) == 0:
