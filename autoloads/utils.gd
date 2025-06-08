@@ -1,5 +1,7 @@
 extends Node
 
+var all_carac = ["Force", "Dextérité", "Constitution", "Intelligence", "Sagesse", "Charisme"]
+
 func copy_file(src_path: String, dst_path: String) -> bool:
 	var src = FileAccess.open(src_path, FileAccess.READ)
 	if not src:

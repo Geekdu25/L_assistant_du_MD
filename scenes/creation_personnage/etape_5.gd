@@ -22,6 +22,10 @@ extends Control
 var string_bonus := ""
 var tmp := ""
 
+var toutes_races = Utils.charger_tout("races")
+var race_joueur = CurrentPersonnage.race
+var bonus = {}
+
 func _ready():
 	var nombres_generes = Utils.roll_stats_array()
 	for i in range(6):
@@ -43,24 +47,79 @@ func _ready():
 			propo_sagesse.text = string_bonus
 		else:
 			propo_charisme.text = string_bonus
+	for race in toutes_races:
+		if race["nom"] == race_joueur:
+			bonus = race["bonus_caracs"]
+	toutes_races = null
+	race_joueur = null
+	for j in Utils.all_carac:
+		if j in bonus:
+			if j == "Force":
+				bonus_force.text = "+"+str(int(bonus[j]))
+			elif j == "Dextérité":
+				bonus_dexterite.text = "+"+str(int(bonus[j]))
+			elif j == "Constitution":
+				bonus_constitution.text = "+"+str(int(bonus[j]))
+			elif j == "Intelligence":
+				bonus_intelligence.text = "+"+str(int(bonus[j]))
+			elif j == "Sagesse":
+				bonus_sagesse.text = "+"+str(int(bonus[j]))
+			else:
+				bonus_charisme.text = "+"+str(int(bonus[j]))
+	update_total("all", 10)
+
+func update_total(quoi, valeur):
+	if quoi == "all":
+		for carac in Utils.all_carac:
+			update_total(carac, valeur)
+	elif quoi == "Force":
+		if "Force" in bonus:
+			total_force.text = str(int(valeur+bonus["Force"]))
+		else:
+			total_force.text = str(int(valeur))
+	elif quoi == "Dextérité":
+		if "Dextérité" in bonus:
+			total_dexterite.text = str(int(valeur+bonus["Dextérité"]))
+		else:
+			total_dexterite.text = str(int(valeur))
+	elif quoi == "Constitution":
+		if "Constitution" in bonus:
+			total_constitution.text = str(int(valeur+bonus["Constitution"]))
+		else:
+			total_constitution.text = str(int(valeur))
+	elif quoi == "Intelligence":
+		if "Intelligence" in bonus:
+			total_intelligence.text = str(int(valeur+bonus["Intelligence"]))
+		else:
+			total_intelligence.text = str(int(valeur))
+	elif quoi == "Sagesse":
+		if "Sagesse" in bonus:
+			total_sagesse.text = str(int(valeur+bonus["Sagesse"]))
+		else:
+			total_sagesse.text = str(int(valeur))
+	elif quoi == "Charisme":
+		if "Charisme" in bonus:
+			total_charisme.text = str(int(valeur+bonus["Charisme"]))
+		else:
+			total_charisme.text = str(int(valeur))
 
 func values_changed_for(value:float):
-	new_value = int(value) + int(bonus_force[1:len(bonus_force)-1])
+	update_total("Force", value)
 
 func values_changed_dex(value:float):
-	pass
+	update_total("Dextérité", value)
 
 func values_changed_con(value:float):
-	pass
+	update_total("Constitution", value)
 
 func values_changed_int(value:float):
-	pass
+	update_total("Intelligence", value)
 
 func values_changed_sag(value:float):
-	pass
+	update_total("Sagesse", value)
 
 func values_changed_cha(value:float):
-	pass
+	update_total("Charisme", value)
 
 func _on_retour_pressed() -> void:
 	get_node("/root/Ecran_principal").change_page("res://scenes/creation_personnage/etape_4.tscn")
