@@ -64,6 +64,9 @@ Découvrez ici quelques captures d'écran du logiciel en action :
 <br />
 <br />
 <img src="docs/readme/capture_d_ecran_1.png" alt="Capture d'écran 1" title="Choix d'une race"/>
+<br />
+<br />
+<img src="docs/readme/capture_d_ecran_2.png" alt="Capture d'écran 2" title="Choix du niveau et des caractéristiques"/>
 <hr />
 <a name="credits"></a>
 <h1>5. Remerciements</h1>
