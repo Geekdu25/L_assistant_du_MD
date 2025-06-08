@@ -1,8 +1,9 @@
-HBoxContainer
-VBoxContainer
-Container
-Label
 SpinBox
+VBoxContainer
+HBoxContainer
+Label
+Control
+Container
 Panel
 Button
 ColorRect

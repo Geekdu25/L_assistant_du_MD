@@ -1,17 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfw5bhwiwi1se"]
+[gd_scene load_steps=5 format=3 uid="uid://bfw5bhwiwi1se"]
 
 [ext_resource type="Script" uid="uid://cduuh75lkh14i" path="res://scenes/creation_personnage/etape_5.gd" id="1_c2bmx"]
 [ext_resource type="StyleBox" uid="uid://cj72xp14mtrix" path="res://themes/panel_1.tres" id="2_wfdud"]
+[ext_resource type="Theme" uid="uid://cvkexbr0ggkk5" path="res://themes/spinbox_etape_5.tres" id="3_g1eyh"]
 
 [sub_resource type="Theme" id="Theme_g1eyh"]
 default_font_size = 30
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4a0po"]
-bg_color = Color(7.21961e-06, 0.780144, 0.433201, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hnkix"]
-bg_color = Color(0, 1, 0, 1)
-corner_detail = 12
 
 [node name="Frame" type="Control"]
 layout_mode = 3
@@ -139,8 +133,6 @@ theme_override_colors/up_pressed_icon_modulate = Color(7.70092e-07, 0.764169, 0.
 theme_override_colors/down_icon_modulate = Color(0, 0, 0, 1)
 theme_override_colors/down_hover_icon_modulate = Color(0.0705503, 4.81307e-07, 0.409062, 1)
 theme_override_colors/down_pressed_icon_modulate = Color(0.2549, 9.26036e-05, 0.874285, 1)
-theme_override_styles/up_down_buttons_separator = SubResource("StyleBoxFlat_4a0po")
-theme_override_styles/field_and_buttons_separator = SubResource("StyleBoxFlat_hnkix")
 min_value = 1.0
 max_value = 20.0
 value = 1.0
@@ -171,6 +163,7 @@ offset_left = -279.5
 offset_right = 279.5
 offset_bottom = 42.0
 grow_horizontal = 2
+theme_override_constants/separation = 50
 alignment = 1
 
 [node name="Titre" type="Label" parent="Panneau/Caractéristiques/titres"]
@@ -191,9 +184,9 @@ text = "Total : "
 [node name="noms" type="VBoxContainer" parent="Panneau/Caractéristiques"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.158
+anchor_left = 0.074
 anchor_top = 0.594
-anchor_right = 0.158
+anchor_right = 0.074
 anchor_bottom = 0.594
 offset_top = -136.0
 offset_right = 180.0
@@ -229,6 +222,70 @@ text = "Sagesse "
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Charisme"
+
+[node name="spinboxes" type="VBoxContainer" parent="Panneau/Caractéristiques"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.316
+anchor_top = 0.169
+anchor_right = 0.316
+anchor_bottom = 0.211
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="for" type="SpinBox" parent="Panneau/Caractéristiques/spinboxes"]
+layout_mode = 2
+theme = ExtResource("3_g1eyh")
+min_value = 3.0
+max_value = 18.0
+value = 10.0
+rounded = true
+alignment = 2
+
+[node name="dex" type="SpinBox" parent="Panneau/Caractéristiques/spinboxes"]
+layout_mode = 2
+theme = ExtResource("3_g1eyh")
+min_value = 3.0
+max_value = 18.0
+value = 10.0
+rounded = true
+alignment = 2
+
+[node name="con" type="SpinBox" parent="Panneau/Caractéristiques/spinboxes"]
+layout_mode = 2
+theme = ExtResource("3_g1eyh")
+min_value = 3.0
+max_value = 18.0
+value = 10.0
+rounded = true
+alignment = 2
+
+[node name="int" type="SpinBox" parent="Panneau/Caractéristiques/spinboxes"]
+layout_mode = 2
+theme = ExtResource("3_g1eyh")
+min_value = 3.0
+max_value = 18.0
+value = 10.0
+rounded = true
+alignment = 2
+
+[node name="sag" type="SpinBox" parent="Panneau/Caractéristiques/spinboxes"]
+layout_mode = 2
+theme = ExtResource("3_g1eyh")
+min_value = 3.0
+max_value = 18.0
+value = 10.0
+rounded = true
+alignment = 2
+
+[node name="cha" type="SpinBox" parent="Panneau/Caractéristiques/spinboxes"]
+layout_mode = 2
+theme = ExtResource("3_g1eyh")
+min_value = 3.0
+max_value = 18.0
+value = 10.0
+rounded = true
+alignment = 2
 
 [node name="bonus" type="VBoxContainer" parent="Panneau/Caractéristiques"]
 layout_mode = 1
@@ -272,5 +329,48 @@ text = "+0"
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "+0"
+
+[node name="totaux" type="VBoxContainer" parent="Panneau/Caractéristiques"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.853
+anchor_top = 0.553
+anchor_right = 0.853
+anchor_bottom = 0.553
+offset_left = -40.0
+offset_top = -115.0
+offset_bottom = 115.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="for" type="Label" parent="Panneau/Caractéristiques/totaux"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "10"
+
+[node name="dex" type="Label" parent="Panneau/Caractéristiques/totaux"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "10"
+
+[node name="con" type="Label" parent="Panneau/Caractéristiques/totaux"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "10"
+
+[node name="int" type="Label" parent="Panneau/Caractéristiques/totaux"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "10"
+
+[node name="sag" type="Label" parent="Panneau/Caractéristiques/totaux"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "10"
+
+[node name="cha" type="Label" parent="Panneau/Caractéristiques/totaux"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "10"
 
 [connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]
