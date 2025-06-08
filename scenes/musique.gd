@@ -47,8 +47,10 @@ func _on_new_category_pressed():
 	notifications.dialog_text = ""
 	notifications.get_ok_button().text = "Créer"
 	# Déconnecte d'abord tout
-	notifications.disconnect("confirmed", Callable(self, "_on_new_category_confirmed")) if notifications.is_connected("confirmed", Callable(self, "_on_new_category_confirmed")) else null
-	notifications.disconnect("confirmed", Callable(self, "_on_error_acknowledged")) if notifications.is_connected("confirmed", Callable(self, "_on_error_acknowledged")) else null
+	if notifications.is_connected("confirmed", Callable(self, "_on_new_category_confirmed")):
+		notifications.disconnect("confirmed", Callable(self, "_on_new_category_confirmed"))
+	if notifications.is_connected("confirmed", Callable(self, "_on_error_acknowledged")):
+		notifications.disconnect("confirmed", Callable(self, "_on_error_acknowledged"))
 	notifications.connect("confirmed", Callable(self, "_on_new_category_confirmed"), CONNECT_ONE_SHOT)
 	notifications.popup_centered()
 	new_category_line_edit.grab_focus()
