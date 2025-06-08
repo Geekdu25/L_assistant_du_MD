@@ -57,6 +57,9 @@ Néanmoins, j'ai déjà réussi à implémenter les fonctionnalités suivantes :
 <br />
 <br />
  - La possibilité de choisir sa race et sa classe et de voir leurs informations. Il est également possible de charger ses propres races et classes personnalisés !
+<br />
+<br />
+ - Etant donné qu'une ambiance sonore change tout autour d'une table de jeu de rôle, une fonctionnalité de gestion de musiques expérimentales est en cours de développement. Malheuresement (et j'en suis le premier navré), vous ne pouvez utiliser cette fonctionnalité qu'avec des fichiers au format .wav en 32000 Hz (voyez avec Audacity par exemple pour une conversion). Sachez que je vais tenter d'utiliser un plugin python me permettant de lire d'autres formats de fichiers, mais pour l'instant, je ne peux rien faire pour vous. Désolé !
 <hr />
 <a name="exemples"></a>
 <h1>4. Exemples</h1>
