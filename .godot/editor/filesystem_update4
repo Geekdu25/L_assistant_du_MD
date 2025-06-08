@@ -1,9 +1,0 @@
-res://themes/theme_popup.tres
-res://scenes/creation_personnage/etape_6.gd
-res://scenes/creation_personnage/etape_6.tscn
-res://scenes/creation_personnage/etape_1.tscn
-res://scenes/creation_personnage/etape_1.gd
-res://scenes/start.tscn
-res://scenes/start.gd
-res://scenes/musique.tscn
-res://scenes/musique.gd
