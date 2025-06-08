@@ -20,6 +20,7 @@ func _ready():
 	category_selector.connect("item_selected", Callable(self, "_on_category_changed"))
 	tree.connect("item_selected", Callable(self, "_on_music_selected"))
 	new_category_button.connect("pressed", Callable(self, "_on_new_category_pressed"))
+	delete_category_button.connect("pressed", Callable(self, "_on_delete_category_pressed"))
 
 func _update_buttons():
 	# Désactive l’import si aucune catégorie
@@ -31,11 +32,63 @@ func _update_buttons():
 	stop_button.disabled = not music_selected
 	delete_song_button.disabled = not music_selected
 
+func _on_delete_category_pressed():
+	var idx = category_selector.get_selected_id()
+	if idx == -1 or category_selector.item_count == 0:
+		return # Rien à supprimer
+	var category_name = category_selector.get_item_text(idx)
+	# Masque le champ de saisie si besoin
+	new_category_line_edit.hide()
+	notifications.dialog_text = "Voulez-vous vraiment supprimer la catégorie '%s' ?\nToutes les musiques qu'elle contient seront supprimées." % category_name
+	notifications.get_ok_button().text = "Supprimer"
+	# Déconnecte les anciens signaux
+	if notifications.is_connected("confirmed", Callable(self, "_on_confirm_delete_category")):
+		notifications.disconnect("confirmed", Callable(self, "_on_confirm_delete_category"))
+	if notifications.is_connected("confirmed", Callable(self, "_on_error_acknowledged")):
+		notifications.disconnect("confirmed", Callable(self, "_on_error_acknowledged"))
+	if notifications.is_connected("confirmed", Callable(self, "_on_new_category_confirmed")):
+		notifications.disconnect("confirmed", Callable(self, "_on_new_category_confirmed"))
+	notifications.connect("confirmed", Callable(self, "_on_confirm_delete_category"), CONNECT_ONE_SHOT)
+	notifications.popup_centered()
+
+func _on_confirm_delete_category():
+	var idx = category_selector.get_selected_id()
+	if idx == -1:
+		return
+	var category_name = category_selector.get_item_text(idx)
+	var base_path = "user://musics"
+	var category_path = base_path + "/" + category_name
+	var dir = DirAccess.open(base_path)
+	if dir and dir.dir_exists(category_name):
+		_delete_directory_recursive(category_path)
+	# Retire de l'UI
+	category_selector.remove_item(idx)
+	_update_buttons()
+
+func _delete_directory_recursive(path: String):
+	var dir = DirAccess.open(path)
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if file_name == "." or file_name == "..":
+				file_name = dir.get_next()
+				continue
+			var file_path = path + "/" + file_name
+			if dir.current_is_dir():
+				_delete_directory_recursive(file_path)
+			else:
+				DirAccess.remove_absolute(file_path)
+			file_name = dir.get_next()
+		dir.list_dir_end()
+	DirAccess.remove_absolute(path)
+
 func _on_category_changed(index):
 	_update_buttons()
 	# Tu pourras ajouter ici le rafraîchissement de la liste des musiques pour la catégorie
 
 func _populate_categories():
+	category_selector.clear()
 	var base_path = "user://musics"
 	var dir = DirAccess.open(base_path)
 	if dir:
