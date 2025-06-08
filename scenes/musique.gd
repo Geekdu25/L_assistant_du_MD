@@ -48,10 +48,25 @@ func _on_new_category_pressed():
 	notifications.connect("confirmed", Callable(self, "_on_new_category_confirmed"))
 	new_category_line_edit.grab_focus()
 
+func show_error_dialog(message: String):
+	new_category_line_edit.hide()
+	notifications.dialog_text = message
+	notifications.popup_centered()
+	notifications.get_ok_button().text = "OK"
+	notifications.connect("confirmed", Callable(self, "_on_error_acknowledged"), CONNECT_ONE_SHOT)
+
+func _on_error_acknowledged():
+	# Réaffiche le champ de saisie si besoin, ou rien si le dialogue se ferme
+	notifications.dialog_text = ""
+	new_category_line_edit.show()
+	new_category_line_edit.text = ""
+	notifications.get_ok_button().text = "Créer"
+	# Le bouton OK referme la popup
+
 func _on_new_category_confirmed():
 	var name = new_category_line_edit.text.strip_edges()
 	if name == "":
-		notifications.dialog_text = "Le nom ne peut pas être vide."
+		show_error_dialog("Le nom ne peut pas être vide.")
 		notifications.popup_centered()
 		return
 
@@ -65,14 +80,14 @@ func _on_new_category_confirmed():
 
 	# Vérification d'existence
 	if dir.dir_exists(name):
-		notifications.dialog_text = "Cette catégorie existe déjà."
+		show_error_dialog("Cette catégorie existe déjà.")
 		notifications.popup_centered()
 		return
 
 	# Création du dossier
 	var err = dir.make_dir(name)
 	if err != OK:
-		notifications.dialog_text = "Erreur à la création du dossier !"
+		show_error_dialog("Erreur à la création du dossier !")
 		notifications.popup_centered()
 		return
 
