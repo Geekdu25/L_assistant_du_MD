@@ -1,6 +1,11 @@
-Label
 Button
-ColorRect
+Tree
+OptionButton
+AcceptDialog
+FileDialog
+HBoxContainer
 VBoxContainer
+Label
+ColorRect
 RichTextLabel
 Panel

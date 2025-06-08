@@ -1,0 +1,4 @@
+res://autoloads/music_controller.gd
+res://scenes/musique.tscn
+res://themes/theme_popup.tres
+res://scenes/musique.gd

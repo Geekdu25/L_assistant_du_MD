@@ -38,7 +38,7 @@ func _process(delta: float):
 func _ready():
 	register_audio_player("music_1", musique_1)
 	register_audio_player("sound_1", son_1)
-	var loop_points_file = FileAccess.open("res://assets/sounds/loop_points.json", FileAccess.READ)
+	var loop_points_file = FileAccess.open("res://assets/sounds/music/loop_points.json", FileAccess.READ)
 	if loop_points_file:
 		var json = JSON.new()
 		var parse_result = json.parse(loop_points_file.get_as_text())
