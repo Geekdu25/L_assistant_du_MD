@@ -10,8 +10,7 @@ extends Control
 @onready var tree = $VBoxContainer/Tree
 @onready var new_category_button = $VBoxContainer/options_fichiers/new
 @onready var notifications = $notifications
-
-var new_category_line_edit := LineEdit.new()
+@onready var new_category_line_edit = $notifications/LineEdit
 
 func _ready():
 	# Toujours désactiver les boutons au démarrage
@@ -44,11 +43,9 @@ func _is_music_selected() -> bool:
 
 func _on_new_category_pressed():
 	notifications.dialog_text = "Nom de la nouvelle catégorie :"
-	notifications.clear()
 	new_category_line_edit.text = ""
-	notifications.add_child(new_category_line_edit)
-	notifications.get_ok_button().text = "Créer"
 	notifications.popup_centered()
+	notifications.get_ok_button().text = "Créer"
 	notifications.connect("confirmed", Callable(self, "_on_new_category_confirmed"))
 	new_category_line_edit.grab_focus()
 

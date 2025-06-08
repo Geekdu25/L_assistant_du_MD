@@ -121,4 +121,8 @@ filters = PackedStringArray(".mp3, .wav, .ogg")
 
 [node name="notifications" type="AcceptDialog" parent="."]
 
+[node name="LineEdit" type="LineEdit" parent="notifications"]
+offset_right = 68.5625
+offset_bottom = 31.0
+
 [connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]
