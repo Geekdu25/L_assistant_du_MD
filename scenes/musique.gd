@@ -56,6 +56,9 @@ func _on_confirm_delete_category():
 	if idx == -1:
 		return
 	var category_name = category_selector.get_item_text(idx)
+	if category_name == "":
+		show_error_dialog("Nom de catégorie invalide !")
+		return
 	var base_path = "user://musics"
 	var category_path = base_path + "/" + category_name
 	var dir = DirAccess.open(base_path)
@@ -70,7 +73,7 @@ func _on_confirm_delete_category():
 
 func _delete_directory_recursive(path: String):
 	# Ne supprime jamais le dossier racine des musiques
-	if path == "user://musics":
+	if path == "user://musics" or path == "user://musics/":
 		return
 	var dir = DirAccess.open(path)
 	if dir:
