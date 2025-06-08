@@ -115,15 +115,18 @@ func _on_fade_step(timer: Timer):
 			callback.call_deferred([])
 # Joue une musique avec gestion du fondu si nécessaire
 func play_music(path: String, loop: bool = false):
-	custom_loop_start = 0.0
-	custom_loop_end = 0.0
-	use_custom_loop = false
-	print("C'est ce fichier : ", path)
-	var audio_stream: AudioStream = load(path)
-	musique_1.stop()
-	musique_1.stream = audio_stream
-	musique_1.stream.set_loop(not use_custom_loop and loop)  # Désactiver la boucle si on utilise une boucle personnalisée
-	musique_1.play()
+	var file = FileAccess.open(path, FileAccess.READ)
+	if file:
+		var bytes = file.get_buffer(file.get_length())
+		var stream = AudioStreamWAV.new()
+		stream.data = bytes
+		stream.format = AudioStreamWAV.FORMAT_16_BITS  # adapte selon ton wav
+		stream.stereo = true  # ou false selon le fichier
+		stream.mix_rate = 32000  # ou la fréquence de ton wav
+		musique_1.stream = stream
+		musique_1.play()
+	else:
+		print("Impossible d'ouvrir le fichier wav :", path)
 
 func _internal_play_music(path: String, loop: bool):
 	if path != music_path:
