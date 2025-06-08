@@ -42,7 +42,6 @@ func _is_music_selected() -> bool:
 	return item != null and not item.is_root()  # selon ta logique d’arbre
 
 func _on_new_category_pressed():
-	notifications.dialog_text = "Nom de la nouvelle catégorie :"
 	new_category_line_edit.text = ""
 	notifications.popup_centered()
 	notifications.get_ok_button().text = "Créer"

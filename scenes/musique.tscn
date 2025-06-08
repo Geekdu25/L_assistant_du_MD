@@ -121,12 +121,14 @@ filters = PackedStringArray(".mp3, .wav, .ogg")
 
 [node name="notifications" type="AcceptDialog" parent="."]
 title = "Nommez votre catégorie."
+size = Vector2i(300, 100)
 ok_button_text = "Terminé"
-dialog_text = "Vous devez nommer votre nouvelle catégorie pour pouvoir l'utiliser."
 
 [node name="LineEdit" type="LineEdit" parent="notifications"]
 offset_right = 68.5625
 offset_bottom = 31.0
+placeholder_text = "Nom de la nouvelle catégorie..."
 max_length = 20
+caret_blink = true
 
 [connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]
