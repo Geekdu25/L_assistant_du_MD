@@ -420,6 +420,7 @@ layout_mode = 2
 text = "Libre à vous de les placer où vous le souhaitez dans le tableau à gauche, où d'utiliser les valeurs standard non-aléatoires que vous pouvez retrouver dans le manuel du joueur."
 
 [connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]
+[connection signal="pressed" from="continuer" to="." method="_on_continuer_pressed"]
 [connection signal="value_changed" from="Panneau/Caractéristiques/spinboxes/for" to="." method="values_changed_for"]
 [connection signal="value_changed" from="Panneau/Caractéristiques/spinboxes/dex" to="." method="values_changed_dex"]
 [connection signal="value_changed" from="Panneau/Caractéristiques/spinboxes/con" to="." method="values_changed_con"]

@@ -69,39 +69,52 @@ func _ready():
 	update_total("all", 10)
 
 func update_total(quoi, valeur):
+	var a := 10
 	if quoi == "all":
 		for carac in Utils.all_carac:
 			update_total(carac, valeur)
 	elif quoi == "Force":
 		if "Force" in bonus:
-			total_force.text = str(int(valeur+bonus["Force"]))
+			a = int(valeur+bonus["Force"])
 		else:
-			total_force.text = str(int(valeur))
+			a = int(valeur)
+		total_force.text = str(a)
+		CurrentPersonnage.force_carac = a
 	elif quoi == "Dextérité":
 		if "Dextérité" in bonus:
-			total_dexterite.text = str(int(valeur+bonus["Dextérité"]))
+			a = int(valeur+bonus["Dextérité"])
 		else:
-			total_dexterite.text = str(int(valeur))
+			a = int(valeur)
+		total_dexterite.text = str(a)
+		CurrentPersonnage.dexterite_carac = a
 	elif quoi == "Constitution":
 		if "Constitution" in bonus:
-			total_constitution.text = str(int(valeur+bonus["Constitution"]))
+			a = int(valeur+bonus["Constitution"])
 		else:
-			total_constitution.text = str(int(valeur))
+			a = int(valeur)
+		total_constitution.text = str(a)
+		CurrentPersonnage.constitution_carac = a
 	elif quoi == "Intelligence":
 		if "Intelligence" in bonus:
-			total_intelligence.text = str(int(valeur+bonus["Intelligence"]))
+			a = int(valeur+bonus["Intelligence"])
 		else:
-			total_intelligence.text = str(int(valeur))
+			a = int(valeur)
+		total_intelligence.text = str(a)
+		CurrentPersonnage.intelligence_carac = a
 	elif quoi == "Sagesse":
 		if "Sagesse" in bonus:
-			total_sagesse.text = str(int(valeur+bonus["Sagesse"]))
+			a = int(valeur+bonus["Sagesse"])
 		else:
-			total_sagesse.text = str(int(valeur))
+			a = int(valeur)
+		total_sagesse.text = str(a)
+		CurrentPersonnage.sagesse_carac = a
 	elif quoi == "Charisme":
 		if "Charisme" in bonus:
-			total_charisme.text = str(int(valeur+bonus["Charisme"]))
+			a = int(valeur+bonus["Charisme"])
 		else:
-			total_charisme.text = str(int(valeur))
+			a = int(valeur)
+		total_charisme.text = str(a)
+		CurrentPersonnage.charisme_carac = a
 
 func values_changed_for(value:float):
 	update_total("Force", value)
@@ -123,3 +136,7 @@ func values_changed_cha(value:float):
 
 func _on_retour_pressed() -> void:
 	get_node("/root/Ecran_principal").change_page("res://scenes/creation_personnage/etape_4.tscn")
+
+
+func _on_continuer_pressed() -> void:
+	get_node("/root/Ecran_principal").change_page("res://scenes/creation_personnage/etape_6.tscn")

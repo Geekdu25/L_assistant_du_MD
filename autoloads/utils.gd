@@ -78,3 +78,7 @@ func roll_stats_array() -> Array:
 	for i in range(6):
 		results.append(roll_stat())
 	return results
+
+func modif_from_carac(carac:int):
+	var modif = (carac-10)/2
+	return modif
