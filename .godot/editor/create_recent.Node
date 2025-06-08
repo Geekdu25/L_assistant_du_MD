@@ -1,11 +1,4 @@
-SpinBox
-VBoxContainer
-HBoxContainer
 Label
-Control
-Container
-Panel
-Button
-ColorRect
+VBoxContainer
 RichTextLabel
-ScrollContainer
+Panel

@@ -373,4 +373,50 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "10"
 
+[node name="nombres" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.768
+anchor_top = 0.163
+anchor_right = 0.979
+anchor_bottom = 0.753
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="numbers" type="VBoxContainer" parent="nombres"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="infos" type="RichTextLabel" parent="nombres/numbers"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+text = "Nous avons générés pour vous 6 nombres aléatoires pouvant faire office de valeurs pour vos caractéristiques :"
+
+[node name="Nombre_1" type="Label" parent="nombres/numbers"]
+layout_mode = 2
+
+[node name="Nombre_2" type="Label" parent="nombres/numbers"]
+layout_mode = 2
+
+[node name="Nombre_3" type="Label" parent="nombres/numbers"]
+layout_mode = 2
+
+[node name="Nombre_4" type="Label" parent="nombres/numbers"]
+layout_mode = 2
+
+[node name="Nombre_5" type="Label" parent="nombres/numbers"]
+layout_mode = 2
+
+[node name="Nombre_6" type="Label" parent="nombres/numbers"]
+layout_mode = 2
+
+[node name="fin" type="RichTextLabel" parent="nombres/numbers"]
+custom_minimum_size = Vector2(300, 125)
+layout_mode = 2
+text = "Libre à vous de les placer où vous le souhaitez dans le tableau à gauche, où d'utiliser les valeurs standard non-aléatoires que vous pouvez retrouver dans le manuel du joueur."
+
 [connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]

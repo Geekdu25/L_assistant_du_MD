@@ -15,7 +15,7 @@ func copy_file(src_path: String, dst_path: String) -> bool:
 	src.close()
 	dst.close()
 	return true
-	
+
 func calcul_default_level(level:int):
 	if 5 <= level and level < 9:
 		return 3
@@ -52,3 +52,35 @@ func charger_tout(quoi:String) -> Array:
 			file_name = dir.get_next()
 		dir.list_dir_end()
 	return result
+
+func genere_nombre_aleatoire(nombre):
+	pass
+
+func delete_maximum(liste):
+	if len(liste) < 1:
+		return null
+	var max = liste[0]
+	var i = 0
+	var indice = 0
+	for nombre in liste:
+		if nombre > max:
+			max = nombre
+			indice = i
+		i += 1
+	return [liste, max, indice]
+
+func genere_caracteristiques():
+	var nombres_generes = []
+	var current_de = []
+	var save = []
+	var nombre_final = 0
+	for loop in range(6):
+		current_de = []
+		nombre_final = 0
+		for loop2 in range(4):
+			current_de.append(genere_nombre_aleatoire(6))
+		save = current_de
+		var n = 0
+		for loop2 in range(3):
+			delete_maximum(current_de)
+	return nombres_generes
