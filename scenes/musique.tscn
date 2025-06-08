@@ -132,3 +132,4 @@ max_length = 20
 caret_blink = true
 
 [connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]
+[connection signal="confirmed" from="notifications" to="." method="_on_new_category_confirmed"]

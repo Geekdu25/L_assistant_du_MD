@@ -48,5 +48,38 @@ func _on_new_category_pressed():
 	notifications.connect("confirmed", Callable(self, "_on_new_category_confirmed"))
 	new_category_line_edit.grab_focus()
 
+func _on_new_category_confirmed():
+	var name = new_category_line_edit.text.strip_edges()
+	if name == "":
+		notifications.dialog_text = "Le nom ne peut pas être vide."
+		notifications.popup_centered()
+		return
+
+	# Vérification et création du dossier racine musics si besoin
+	var base_path = "user://musics"
+	var dir = DirAccess.open(base_path)
+	if not dir:
+		DirAccess.make_dir_recursive_absolute(base_path)
+		dir = DirAccess.open(base_path)
+	var category_path = base_path + "/" + name
+
+	# Vérification d'existence
+	if dir.dir_exists(name):
+		notifications.dialog_text = "Cette catégorie existe déjà."
+		notifications.popup_centered()
+		return
+
+	# Création du dossier
+	var err = dir.make_dir(name)
+	if err != OK:
+		notifications.dialog_text = "Erreur à la création du dossier !"
+		notifications.popup_centered()
+		return
+
+	# Ajout à l'UI
+	category_selector.add_item(name)
+	category_selector.select(category_selector.item_count - 1)
+	_update_buttons()
+
 func _on_retour_pressed() -> void:
 	get_node("/root/Ecran_principal").change_page("res://scenes/start.tscn")
