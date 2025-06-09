@@ -115,18 +115,28 @@ func _on_fade_step(timer: Timer):
 			callback.call_deferred([])
 # Joue une musique avec gestion du fondu si nécessaire
 func play_music(path: String, loop: bool = false):
-	var file = FileAccess.open(path, FileAccess.READ)
-	if file:
-		var bytes = file.get_buffer(file.get_length())
-		var stream = AudioStreamWAV.new()
-		stream.data = bytes
-		stream.format = AudioStreamWAV.FORMAT_16_BITS  # adapte selon ton wav
-		stream.stereo = true  # ou false selon le fichier
-		stream.mix_rate = 32000  # ou la fréquence de ton wav
-		musique_1.stream = stream
+	if path.ends_with(".wav"):
+		var file = FileAccess.open(path, FileAccess.READ)
+		if file:
+			var bytes = file.get_buffer(file.get_length())
+			var stream = AudioStreamWAV.new()
+			stream.data = bytes
+			stream.format = AudioStreamWAV.FORMAT_16_BITS  # adapte selon ton wav
+			stream.stereo = true  # ou false selon le fichier
+			stream.mix_rate = 32000  # ou la fréquence de ton wav
+			musique_1.stream = stream
+			musique_1.play()
+		else:
+			print("Impossible d'ouvrir le fichier wav :", path)
+	elif path.ends_with(".ogg"):
+		var file = FileAccess.open(path, FileAccess.READ)
+		var ogg = AudioStreamOggVorbis.new()
+		ogg.data = file.get_buffer(file.get_length())
+		file.close()
+		musique_1.stream = ogg
 		musique_1.play()
-	else:
-		print("Impossible d'ouvrir le fichier wav :", path)
+
+
 
 func _internal_play_music(path: String, loop: bool):
 	if path != music_path:

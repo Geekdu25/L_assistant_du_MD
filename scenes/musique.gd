@@ -29,21 +29,18 @@ func _ready():
 	_refresh_tree()
 
 func _on_play_pressed():
-	if MusicController.musique_1.stream_paused:
-		MusicController.musique_1.stream_paused = false
-	else:
-		var idx_cat = category_selector.get_selected_id()
-		var item = tree.get_selected()
-		if idx_cat == -1 or item == null or item.get_parent() == null:
-			show_error_dialog("Veuillez sélectionner une catégorie et une musique à jouer.")
-			return
-		var category_name = category_selector.get_item_text(idx_cat)
-		var file_name = item.get_text(0)
-		var full_path = "user://musics/" + category_name + "/" + file_name
-		MusicController.play_music(full_path, false) # à adapter si tu veux la boucle
+	var idx_cat = category_selector.get_selected_id()
+	var item = tree.get_selected()
+	if idx_cat == -1 or item == null or item.get_parent() == null:
+		show_error_dialog("Veuillez sélectionner une catégorie et une musique à jouer.")
+		return
+	var category_name = category_selector.get_item_text(idx_cat)
+	var file_name = item.get_text(0)
+	var full_path = "user://musics/" + category_name + "/" + file_name
+	MusicController.play_music(full_path, false) # à adapter si tu veux la boucle
 
 func _on_pause_pressed():
-	MusicController.musique_1.stream_paused = true
+	MusicController.musique_1.stream_paused = not MusicController.musique_1.stream_paused
 
 func _on_stop_pressed():
 	MusicController.musique_1.stop()
