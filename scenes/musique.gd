@@ -86,6 +86,30 @@ func _on_files_selected(paths):
 		var success = Utils.copy_file(file_path, destination)
 		if not success:
 			show_error_dialog("Erreur lors de la copie de '%s'.".format([file_name]))
+		if file_name.ends_with(".ogg") or file_name.ends_with(".mp3"):
+			var wav_name = file_name.get_basename() + ".wav"
+			var wav_destination = target_dir + "/" + wav_name
+			var ffmpeg_cmd = "ffmpeg"
+			var args = ["-y", "-i", destination, wav_destination]
+			var ffmpeg_path = ""
+			var result = OS.execute(ffmpeg_cmd, args, true)
+			if result != 0:
+				# Si ffmpeg n'est pas accessible, essaie le binaire fourni
+				# (Penser à inclure ffmpeg.exe pour Windows, ffmpeg pour Linux dans res://ffmpeg/)
+				var os_name = OS.get_name()
+				if os_name == "Windows":
+					ffmpeg_path = "res://tools/ffmpeg/ffmpeg.exe"
+				elif os_name == "Linux":
+					ffmpeg_path = "res://tools/ffmpeg/ffmpeg"
+				if ffmpeg_path != "" and FileAccess.file_exists(ffmpeg_path):
+					var tmp_ffmpeg = "user://ffmpeg_tmp"
+					FileAccess.copy(ffmpeg_path, tmp_ffmpeg)
+					OS.set_executable(tmp_ffmpeg, true)
+					result = OS.execute(tmp_ffmpeg, args, true)
+					DirAccess.remove_absolute(tmp_ffmpeg)
+			if result != 0:
+				show_error_dialog("La conversion de '%s' en WAV a échoué.".format([file_name]))
+				continue
 	_refresh_tree()
 
 
