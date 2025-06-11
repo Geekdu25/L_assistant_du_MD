@@ -1,5 +1,9 @@
 extends Control
 
+@onready var musique = $musique
+
+func _ready() -> void:
+	musique.disabled = (not Utils.mpv)
 
 func _on_retour_pressed() -> void:
 	get_node("/root/Ecran_principal").change_page("res://scenes/ecran_titre.tscn")

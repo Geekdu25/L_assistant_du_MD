@@ -4,3 +4,8 @@
 
 [node name="Gestion_des_dossiers" type="Node"]
 script = ExtResource("1_r7jf4")
+
+[node name="mpv_manquant" type="AcceptDialog" parent="."]
+title = "Dépendances manquantes"
+dialog_text = "Attention ! Le logiciel mpv est nécessaire pour profiter pleinement de ce logiciel.
+Installez-le avec : sudo apt install mpv"

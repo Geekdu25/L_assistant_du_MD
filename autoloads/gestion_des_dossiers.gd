@@ -1,5 +1,6 @@
 extends Node
 
+@onready var mpv_manquant = $mpv_manquant
 var _missing_folders := []
 const REQUIRED_FOLDERS := [
 	"user://saves",
@@ -24,6 +25,15 @@ func verifie_dossiers(parent):
 		_show_popup(missing_folders, parent)
 	else:
 		proceed_to_next_scene(parent)
+
+func ensure_mpv():
+	var result = OS.execute("which", ["mpv"], [])
+	if result != 0:
+		print("Attention ! mpv est manquant ! Installez-le avec : sudo apt install mpv")
+		mpv_manquant.popup_centered()
+		Utils.mpv = false
+	else:
+		Utils.mpv = true
 
 func check_file_in_folder(file:String, folder:String):
 	var dir = DirAccess.open(folder)

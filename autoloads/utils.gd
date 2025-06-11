@@ -1,5 +1,6 @@
 extends Node
 
+var mpv = false
 var all_carac = ["Force", "Dextérité", "Constitution", "Intelligence", "Sagesse", "Charisme"]
 
 func copy_file(src_path: String, dst_path: String) -> bool:

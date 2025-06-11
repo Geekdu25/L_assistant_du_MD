@@ -1,3 +1,10 @@
 res://scenes/musique.tscn
 res://themes/theme_popup.tres
 res://scenes/musique.gd
+res://autoloads/music_controller.gd
+res://autoloads/gestion_des_dossiers.gd
+res://scenes/ecran_principal.gd
+res://autoloads/utils.gd
+res://autoloads/gestion_des_dossiers.tscn
+res://scenes/start.tscn
+res://scenes/start.gd
