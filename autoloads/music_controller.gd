@@ -18,13 +18,9 @@ func _kill_old_socket():
 		OS.execute("rm", ["-f", ipc_path], [])
 
 func send_mpv_command(cmd: String):
-	var script_path = "/home/etienne/mpv_send.sh"
-	var cmd_dict = {"command": ["cycle", "pause"]}
-	cmd = JSON.stringify(cmd_dict)
-	var result = []
-	# On passe le JSON sur stdin du script bash !
-	var code = OS.execute(script_path, [], result, cmd)
-	print("[MUSIC] Résultat OS.execute direct : code =", code, " sortie =", result)
+	print(cmd)
+	var result = OS.execute("echo", [cmd, "socat - UNIX-CONNECT:/tmp/mdmusic"])
+	print("[MUSIC] Résultat OS.execute direct : sortie =", result)
 
 func play_music(godot_path: String):
 	print("[MUSIC] play_music appelé avec", godot_path)
