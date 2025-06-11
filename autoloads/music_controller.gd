@@ -18,8 +18,11 @@ func _kill_old_socket():
 		OS.execute("rm", ["-f", ipc_path], [])
 
 func send_mpv_command(cmd: String):
-	var script_path = ProjectSettings.globalize_path("/home/etienne/mpv_send.sh")
-	var bash_cmd = "echo '%s' | \"%s\"" % [cmd, script_path] # <-- quotes !
+	var script_path = "/home/etienne/mpv_send.sh"
+	var cmd_dict = {"command": ["cycle", "pause"]}
+	cmd = JSON.stringify(cmd_dict) # Donne la bonne chaîne JSON
+	print("CHAINE JSON:", cmd)
+	var bash_cmd = "printf '%s' | \"%s\"" % [cmd, script_path]
 	print("Commande lancée :", bash_cmd)
 	var result = []
 	var code = OS.execute("bash", ["-c", bash_cmd], result, false)
@@ -48,7 +51,7 @@ func pause_music():
 	if not playing:
 		print("[MUSIC] Pas de musique en cours")
 		return
-	send_mpv_command("{'command': ['cycle', 'pause']}")
+	send_mpv_command("{\"command\": [\"cycle\", \"pause\"]}")
 
 func stop_music():
 	print("[MUSIC] stop_music appelé")
@@ -56,7 +59,7 @@ func stop_music():
 		print("[MUSIC] Pas de musique en cours")
 		return
 	print("[MUSIC] Envoi commande quit à", ipc_path)
-	send_mpv_command("{'command': ['quit']}")
+	send_mpv_command("{\"command\": [\"quit\"]}")
 	await get_tree().create_timer(0.2).timeout
 	_kill_old_socket()
 	playing = false
