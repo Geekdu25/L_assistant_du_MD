@@ -3,6 +3,7 @@ extends Node
 
 var mpv_pid: int = -1
 var mpv_socket_path: String = "/tmp/mpvsocket"
+var music_path: String = ""
 
 func _ready():
 	# Nettoie une ancienne socket si besoin
@@ -11,6 +12,7 @@ func _ready():
 
 func play_music(path: String):
 	path = ProjectSettings.globalize_path(path)
+	music_path = path
 	stop_music()
 	if FileAccess.file_exists(mpv_socket_path):
 		OS.execute("rm", ["-f", mpv_socket_path], [])

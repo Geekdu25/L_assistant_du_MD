@@ -26,6 +26,7 @@ func _ready():
 	play_button.connect("pressed", Callable(self, "_on_play_pressed"))
 	pause_button.connect("pressed", Callable(self, "_on_pause_pressed"))
 	stop_button.connect("pressed", Callable(self, "_on_stop_pressed"))
+	delete_song_button.connect("pressed", Callable(self, "_on_delete_song_pressed"))
 	_refresh_tree()
 
 func _on_play_pressed():
@@ -98,6 +99,30 @@ func _update_buttons():
 	pause_button.disabled = not music_selected
 	stop_button.disabled = not music_selected
 	delete_song_button.disabled = not music_selected
+
+func _on_delete_song_pressed():
+	var idx_cat = category_selector.get_selected_id()
+	var item = tree.get_selected()
+	if idx_cat == -1 or item == null or item.get_parent() == null:
+		show_error_dialog("Veuillez sélectionner une musique à supprimer.")
+		return
+	var category_name = category_selector.get_item_text(idx_cat)
+	var file_name = item.get_text(0)
+	var godot_path = "user://musics/" + category_name + "/" + file_name
+	var abs_path = ProjectSettings.globalize_path(godot_path)
+
+	# Si la musique sélectionnée est en cours de lecture, stoppe-la
+	if MusicController.music_path == abs_path:
+		MusicController.stop_music()
+
+	# Supprime le fichier
+	var err = DirAccess.remove_absolute(abs_path)
+	if err != OK:
+		show_error_dialog("Impossible de supprimer la musique.")
+		return
+
+	_refresh_tree()
+	_update_buttons()
 
 func _on_delete_category_pressed():
 	var idx = category_selector.get_selected_id()
