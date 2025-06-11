@@ -78,13 +78,7 @@ func pause_music():
 	if not playing or not FileAccess.file_exists(ipc_path):
 		print("[MUSIC] Pas de musique en cours ou socket introuvable")
 		return
-	var f = FileAccess.open(ipc_path, FileAccess.WRITE)
-	if f:
-		print("[MUSIC] Envoi commande pause à", ipc_path)
-		f.store_line('{"command": ["cycle", "pause"]}')
-		f.close()
-	else:
-		print("[MUSIC] Impossible d'ouvrir le socket en écriture :", ipc_path)
+	send_mpv_command('{"command": ["cycle", "pause"]}')
 
 func stop_music():
 	print("[MUSIC] stop_music appelé")
@@ -93,13 +87,8 @@ func stop_music():
 		playing = false
 		music_path = ""
 		return
-	var f = FileAccess.open(ipc_path, FileAccess.WRITE)
-	if f:
-		print("[MUSIC] Envoi commande quit à", ipc_path)
-		f.store_line('{"command": ["quit"]}')
-		f.close()
-	else:
-		print("[MUSIC] Impossible d'ouvrir le socket en écriture pour stop :", ipc_path)
+	print("[MUSIC] Envoi commande quit à", ipc_path)
+	send_mpv_command('{"command": ["quit"]}')
 	await get_tree().create_timer(0.2).timeout
 	_kill_old_socket()
 	playing = false
