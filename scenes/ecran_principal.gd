@@ -7,6 +7,7 @@ func _ready():
 	change_page("res://scenes/ecran_titre.tscn")
 	GestionDesDossiers.verifie_dossiers(get_tree().current_scene)
 	GestionDesDossiers.ensure_mpv()
+	GestionDesDossiers.setup_script_for_mpv()
 
 func change_page(page_path: String):
 	if current_page:

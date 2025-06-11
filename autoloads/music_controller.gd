@@ -17,6 +17,11 @@ func _kill_old_socket():
 	if FileAccess.file_exists(ipc_path):
 		OS.execute("rm", ["-f", ipc_path], [])
 
+func send_mpv_command(cmd: String):
+	var script_path = ProjectSettings.globalize_path("user://mpv_send.sh")
+	var result = []
+	OS.execute(script_path, [cmd], result, false)
+
 func play_music(godot_path: String):
 	print("[MUSIC] play_music appelé avec", godot_path)
 	stop_music()
@@ -26,7 +31,7 @@ func play_music(godot_path: String):
 	# Copie temporaire si caractères spéciaux
 	var tmp_path = "/tmp/mdmusic_current.ogg"
 	if FileAccess.file_exists(tmp_path):
-		OS.remove(tmp_path)
+		DirAccess.remove_absolute(tmp_path)
 	var src = FileAccess.open(abs_path, FileAccess.READ)
 	var dst = FileAccess.open(tmp_path, FileAccess.WRITE)
 	if src and dst:
@@ -48,6 +53,14 @@ func play_music(godot_path: String):
 	]
 	var pid = OS.create_process(mpv_path, args)
 	print("[MUSIC] mpv lancé avec PID :", pid)
+	var dir = DirAccess.open("/tmp")
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			print("[DEBUG] Fichier vu dans /tmp par Godot :", file_name)
+			file_name = dir.get_next()
+		dir.list_dir_end()
 	var elapsed := 0.0
 	var timeout := 2.0
 	while not FileAccess.file_exists(ipc_path) and elapsed < timeout:

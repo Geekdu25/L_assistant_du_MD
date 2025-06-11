@@ -14,6 +14,21 @@ const REQUIRED_FOLDERS := [
 
 # Supprime la variable globale de popup_instance
 
+func setup_script_for_mpv():
+	# Lis le contenu du script dans res://
+	var src = FileAccess.open("res://scripts/mpv_send.sh", FileAccess.READ)
+	var script_text = src.get_as_text()
+	src.close()
+
+	# Écris-le dans user://
+	var dst_path = "user://mpv_send.sh"
+	var dst = FileAccess.open(dst_path, FileAccess.WRITE)
+	dst.store_string(script_text)
+	dst.close()
+
+	# Rends-le exécutable (nécessite un système POSIX)
+	OS.execute("chmod", ["+x", ProjectSettings.globalize_path(dst_path)], [], false)
+
 func verifie_dossiers(parent):
 	_missing_folders.clear()
 	var missing_folders = []
