@@ -23,6 +23,21 @@ func play_music(godot_path: String):
 	await get_tree().process_frame
 	var abs_path = ProjectSettings.globalize_path(godot_path)
 	print("[MUSIC] Chemin absolu :", abs_path)
+	# Copie temporaire si caractères spéciaux
+	var tmp_path = "/tmp/mdmusic_current.ogg"
+	if FileAccess.file_exists(tmp_path):
+		OS.remove(tmp_path)
+	var src = FileAccess.open(abs_path, FileAccess.READ)
+	var dst = FileAccess.open(tmp_path, FileAccess.WRITE)
+	if src and dst:
+		dst.store_buffer(src.get_buffer(src.get_length()))
+		src.close()
+		dst.close()
+		print("[MUSIC] Fichier copié vers chemin simple :", tmp_path)
+		abs_path = tmp_path
+	else:
+		print("[MUSIC] ERREUR : Impossible de copier la musique vers un chemin simple")
+		return
 	music_path = abs_path
 	_kill_old_socket()
 	var args = [
@@ -31,20 +46,18 @@ func play_music(godot_path: String):
 		"--input-ipc-server=" + ipc_path,
 		abs_path
 	]
-	print("[MUSIC] Lancement mpv :", mpv_path, args)
-	# TEST: OS.execute (bloquant, juste pour log)
-	var output = []
-	var err = []
-	var exit_code = OS.execute(mpv_path, args, output, true, err)
-	print("[MUSIC] mpv OS.execute exit code:", exit_code)
-	print("[MUSIC] mpv stdout:", output)
-	print("[MUSIC] mpv stderr:", err)
-	# TEST: socket existe ?
+	var pid = OS.create_process(mpv_path, args)
+	print("[MUSIC] mpv lancé avec PID :", pid)
+	var elapsed := 0.0
+	var timeout := 2.0
+	while not FileAccess.file_exists(ipc_path) and elapsed < timeout:
+		await get_tree().create_timer(0.05).timeout
+		elapsed += 0.05
 	if FileAccess.file_exists(ipc_path):
 		print("[MUSIC] Socket mpv prêt :", ipc_path)
 		playing = true
 	else:
-		print("[MUSIC] ERREUR : Socket mpv NON créé après OS.execute :", ipc_path)
+		print("[MUSIC] ERREUR : Socket mpv NON créé après 2s :", ipc_path)
 		playing = false
 
 func pause_music():
