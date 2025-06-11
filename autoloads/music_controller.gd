@@ -5,6 +5,7 @@ const MPV_SOCKET = "/tmp/mdmusic"
 
 var music_path: String = ""
 var mpv_pid: int = -1
+var playing = false
 
 func play_music(path: String):
 	# Stop la musique en cours si besoin
@@ -19,24 +20,34 @@ func play_music(path: String):
 		abs_path
 	]
 	# Démarre mpv en tâche de fond (sans bloquer Godot)
-	mpv_pid = OS.create_process("mpv", args)	
+	mpv_pid = OS.create_process("mpv", args)
 	# Optionnel : tu peux vérifier que le fichier existe avant
 	if not FileAccess.file_exists(abs_path):
 		push_error("Fichier musical introuvable : %s" % abs_path)
 		music_path = ""
 		return
+	playing = true
+
+func send_mpv_command(cmd: String):
+	var script_path = "/home/etienne/mpv_send.sh"
+	var result = []
+	var code = OS.execute(script_path, [cmd], result)
+	print("[MUSIC] Résultat OS.execute : code =", code, " sortie =", result)
 
 func pause_music():
-	var cmd = JSON.stringify({"command": ["cycle", "pause"]})
-	var result = []
-	# Le 1er argument est la commande JSON
-	var code = OS.execute("/home/etienne/mpv_send.sh", [cmd], result)
+	print("[MUSIC] pause_music appelé")
+	if not playing:
+		print("[MUSIC] Pas de musique en cours")
+		return
+	send_mpv_command(JSON.stringify({"command": ["cycle", "pause"]}))
 
 func stop_music():
-	var cmd = JSON.stringify({"command": ["quit"]})
-	var result = []
-	# Le 1er argument est la commande JSON
-	var code = OS.execute("/home/etienne/mpv_send.sh", [cmd], result)
+	print("[MUSIC] stop_music appelé")
+	if not playing:
+		print("[MUSIC] Pas de musique en cours")
+		return
+	send_mpv_command(JSON.stringify({"command": ["quit"]}))
+	playing = false
 
 # Optionnel : pour vérifier que mpv tourne
 func is_music_playing() -> bool:
