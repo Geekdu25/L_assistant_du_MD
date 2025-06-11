@@ -1,38 +1,44 @@
+class_name Music_Controller
 extends Node
 
-# Chemin du socket mpv (à adapter si tu changes l'option --input-ipc-server)
-const MPV_SOCKET = "/tmp/mdmusic"
+var mpv_path := "mpv"
+var process_id := 0
+var ipc_path := ""
+var playing := false
+var music_path := ""
 
-var music_path: String = ""
-var mpv_pid: int = -1
-var playing = false
+func _ready():
+	if OS.get_name() == "Windows":
+		ipc_path = "\\\\.\\pipe\\mdmusic"
+	else:
+		ipc_path = "/tmp/mdmusic"
 
-func play_music(path: String):
-	# Stop la musique en cours si besoin
-	if music_path != "":
-		stop_music()	
-	var abs_path = ProjectSettings.globalize_path(path)
-	music_path = abs_path	
-	# Lance mpv avec le socket IPC
-	var args = [
-		"--no-video",
-		"--input-ipc-server=" + MPV_SOCKET,
-		abs_path
-	]
-	# Démarre mpv en tâche de fond (sans bloquer Godot)
-	mpv_pid = OS.create_process("mpv", args)
-	# Optionnel : tu peux vérifier que le fichier existe avant
-	if not FileAccess.file_exists(abs_path):
-		push_error("Fichier musical introuvable : %s" % abs_path)
-		music_path = ""
-		return
-	playing = true
+func _kill_old_socket():
+	if FileAccess.file_exists(ipc_path):
+		OS.execute("rm", ["-f", ipc_path], [])
 
 func send_mpv_command(cmd: String):
 	var script_path = "/home/etienne/mpv_send.sh"
+	var cmd_b64 = Marshalls.utf8_to_base64(cmd)
 	var result = []
-	var code = OS.execute(script_path, [cmd], result)
+	var code = OS.execute(script_path, [cmd_b64], result)
 	print("[MUSIC] Résultat OS.execute : code =", code, " sortie =", result)
+
+func play_music(godot_path: String):
+	print("[MUSIC] play_music appelé avec", godot_path)
+	stop_music()
+	await get_tree().process_frame
+	var abs_path = ProjectSettings.globalize_path(godot_path)
+	var args = [
+		"--no-video",
+		"--quiet",
+		"--input-ipc-server=" + ipc_path,
+		abs_path
+	]
+	print(ipc_path)
+	process_id = OS.create_process(mpv_path, args)
+	print("[MUSIC] mpv lancé avec PID :", process_id)
+	playing = true
 
 func pause_music():
 	print("[MUSIC] pause_music appelé")
@@ -46,9 +52,9 @@ func stop_music():
 	if not playing:
 		print("[MUSIC] Pas de musique en cours")
 		return
+	print("[MUSIC] Envoi commande quit à", ipc_path)
 	send_mpv_command(JSON.stringify({"command": ["quit"]}))
+	await get_tree().create_timer(0.2).timeout
+	_kill_old_socket()
 	playing = false
-
-# Optionnel : pour vérifier que mpv tourne
-func is_music_playing() -> bool:
-	return music_path != ""
+	music_path = ""
