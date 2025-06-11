@@ -10,6 +10,7 @@ func _ready():
 		OS.execute("rm", ["-f", mpv_socket_path], [])
 
 func play_music(path: String):
+	path = ProjectSettings.globalize_path(path)
 	stop_music()
 	if FileAccess.file_exists(mpv_socket_path):
 		OS.execute("rm", ["-f", mpv_socket_path], [])
