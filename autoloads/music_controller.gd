@@ -21,7 +21,8 @@ func play_music(path: String):
 		path
 	]
 	mpv_pid = OS.create_process("mpv", args)
-	print("mpv lancé avec pid : ", mpv_pid)
+	# Attendre que la socket soit créée avant de pouvoir envoyer des commandes
+	await_socket_ready()
 
 func pause_music():
 	_send_mpv_command({"command": ["cycle", "pause"]})
@@ -30,10 +31,16 @@ func stop_music():
 	_send_mpv_command({"command": ["quit"]})
 	mpv_pid = -1
 
+func await_socket_ready(timeout := 2.0):
+	# Attend jusqu'à 2 secondes que le socket apparaisse (ou moins si déjà là)
+	var elapsed = 0.0
+	while not FileAccess.file_exists(mpv_socket_path) and elapsed < timeout:
+		await get_tree().create_timer(0.05).timeout
+		elapsed += 0.05
+
 func _send_mpv_command(cmd: Dictionary):
 	if not FileAccess.file_exists(mpv_socket_path):
 		print("Socket mpv introuvable, mpv doit être lancé d’abord.")
 		return
 	var json_cmd = JSON.stringify(cmd) + "\n"
-	# Utilise socat pour écrire dans la socket
 	OS.execute("socat", ["-", "UNIX-CONNECT:" + mpv_socket_path], [], json_cmd)
