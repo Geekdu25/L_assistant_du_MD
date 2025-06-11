@@ -17,22 +17,12 @@ func _kill_old_socket():
 	if FileAccess.file_exists(ipc_path):
 		OS.execute("rm", ["-f", ipc_path], [])
 
-func send_mpv_command(cmd: String) -> void:
-	# Chemin absolu du script mpv_send.sh dans user://
-	var script_path := ProjectSettings.globalize_path("user://mpv_send.sh")
-	var result := []
-	# Commande exemple à passer : '{"command": ["cycle", "pause"]}'
-	# On vérifie d'abord que le script existe
-	if not FileAccess.file_exists("user://mpv_send.sh"):
-		print("[MUSIC] ERREUR : Script mpv_send.sh absent à ", script_path)
-		return
-	# (Facultatif) Vérifier si socat est visible via PATH dans l'environnement Godot
-	var socat_check := []
-	OS.execute("which", ["socat"], socat_check, false)
-	print("[MUSIC] which socat :", socat_check)
-	# Appel du script avec la commande JSON comme argument
-	var code := OS.execute(script_path, [cmd], result, false)
-	print("[MUSIC] Résultat OS.execute : code =", code, " sortie =", result)
+func send_mpv_command(cmd: String):
+	var script_path = ProjectSettings.globalize_path("user://mpv_send.sh")
+	var bash_cmd = "echo '%s' | %s" % [cmd, script_path]
+	var result = []
+	var code = OS.execute("bash", ["-c", bash_cmd], result, false)
+	print("[MUSIC] Résultat bash direct : code =", code, " sortie =", result)
 
 func play_music(godot_path: String):
 	print("[MUSIC] play_music appelé avec", godot_path)
