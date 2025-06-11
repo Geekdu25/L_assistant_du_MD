@@ -39,6 +39,7 @@ func play_music(godot_path: String):
 	process_id = OS.create_process(mpv_path, args)
 	print("[MUSIC] mpv lancé avec PID :", process_id)
 	playing = true
+	await get_tree().create_timer(0.5).timeout
 
 func pause_music():
 	print("[MUSIC] pause_music appelé")
