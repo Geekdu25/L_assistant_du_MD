@@ -19,7 +19,8 @@ func _kill_old_socket():
 
 func send_mpv_command(cmd: String):
 	var script_path = ProjectSettings.globalize_path("user://mpv_send.sh")
-	var bash_cmd = "echo '%s' | %s" % [cmd, script_path]
+	var bash_cmd = "echo '%s' | \"%s\"" % [cmd, script_path] # <-- quotes !
+	print("Commande lancée :", bash_cmd)
 	var result = []
 	var code = OS.execute("bash", ["-c", bash_cmd], result, false)
 	print("[MUSIC] Résultat bash direct : code =", code, " sortie =", result)
