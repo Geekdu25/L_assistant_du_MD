@@ -40,10 +40,10 @@ func _on_play_pressed():
 	MusicController.play_music(full_path)
 
 func _on_pause_pressed():
-	MusicController.musique_1.stream_paused = not MusicController.musique_1.stream_paused
+	MusicController.pause_music()
 
 func _on_stop_pressed():
-	MusicController.musique_1.stop()
+	MusicController.stop_music()
 
 func _on_import_pressed():
 	$Selection_de_musiques.popup_centered()
