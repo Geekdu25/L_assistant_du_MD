@@ -119,7 +119,7 @@ ok_button_text = "Open"
 cancel_button_text = "Annuler"
 file_mode = 1
 access = 2
-filters = PackedStringArray("*.wav")
+filters = PackedStringArray("*.wav, *.ogg, *.mp3")
 
 [node name="notifications" type="AcceptDialog" parent="."]
 title = "Nommez votre catégorie."
