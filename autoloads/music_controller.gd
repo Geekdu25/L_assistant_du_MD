@@ -20,13 +20,11 @@ func _kill_old_socket():
 func send_mpv_command(cmd: String):
 	var script_path = "/home/etienne/mpv_send.sh"
 	var cmd_dict = {"command": ["cycle", "pause"]}
-	cmd = JSON.stringify(cmd_dict) # Donne la bonne chaîne JSON
-	print("CHAINE JSON:", cmd)
-	var bash_cmd = "printf '%s' | \"%s\"" % [cmd, script_path]
-	print("Commande lancée :", bash_cmd)
+	cmd = JSON.stringify(cmd_dict)
 	var result = []
-	var code = OS.execute("bash", ["-c", bash_cmd], result, false)
-	print("[MUSIC] Résultat bash direct : code =", code, " sortie =", result)
+	# On passe le JSON sur stdin du script bash !
+	var code = OS.execute(script_path, [], result, cmd)
+	print("[MUSIC] Résultat OS.execute direct : code =", code, " sortie =", result)
 
 func play_music(godot_path: String):
 	print("[MUSIC] play_music appelé avec", godot_path)
