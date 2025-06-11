@@ -9,11 +9,9 @@ var mpv_pid: int = -1
 func play_music(path: String):
 	# Stop la musique en cours si besoin
 	if music_path != "":
-		stop_music()
-	
+		stop_music()	
 	var abs_path = ProjectSettings.globalize_path(path)
-	music_path = abs_path
-	
+	music_path = abs_path	
 	# Lance mpv avec le socket IPC
 	var args = [
 		"--no-video",
@@ -21,8 +19,7 @@ func play_music(path: String):
 		abs_path
 	]
 	# Démarre mpv en tâche de fond (sans bloquer Godot)
-	mpv_pid = OS.create_process("mpv", args)
-	
+	mpv_pid = OS.create_process("mpv", args)	
 	# Optionnel : tu peux vérifier que le fichier existe avant
 	if not FileAccess.file_exists(abs_path):
 		push_error("Fichier musical introuvable : %s" % abs_path)
@@ -33,21 +30,13 @@ func pause_music():
 	var cmd = JSON.stringify({"command": ["cycle", "pause"]})
 	var result = []
 	# Le 1er argument est la commande JSON
-	var code = OS.execute("/chemin/vers/mpv_send.sh", [cmd], result)
+	var code = OS.execute("/home/etienne/mpv_send.sh", [cmd], result)
 
 func stop_music():
-	_send_mpv_command({"command": ["quit"]})
-	music_path = ""
-	mpv_pid = -1
-
-func _send_mpv_command(cmd_dict: Dictionary) -> int:
-	var json_cmd = JSON.stringify(cmd_dict)
-	var args = ["-", "UNIX-CONNECT:" + MPV_SOCKET]
+	var cmd = JSON.stringify({"command": ["quit"]})
 	var result = []
-	var exit_code = OS.execute("socat", args, result, json_cmd)
-	if exit_code != 0:
-		push_error("Erreur d'envoi à mpv : %s" % result)
-	return exit_code
+	# Le 1er argument est la commande JSON
+	var code = OS.execute("/home/etienne/mpv_send.sh", [cmd], result)
 
 # Optionnel : pour vérifier que mpv tourne
 func is_music_playing() -> bool:
