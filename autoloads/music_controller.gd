@@ -43,11 +43,13 @@ func play_music(godot_path: String):
 
 func pause_music():
 	print("[MUSIC] pause_music appelé")
-	send_mpv_command_json('{"command": ["cycle", "pause"]}')
+	var json_cmd = JSON.stringify({"command": ["cycle", "pause"]}) + "\n"
+	send_mpv_command_json(json_cmd)
 
 func stop_music():
 	print("[MUSIC] stop_music appelé")
-	send_mpv_command_json('{"command": ["quit"]}')
+	var json_cmd = JSON.stringify({"command": ["quit"]}) + "\n"
+	send_mpv_command_json(json_cmd)
 	await get_tree().create_timer(0.2).timeout
 	_kill_old_socket()
 	playing = false
