@@ -40,12 +40,15 @@ func _on_play_pressed():
 	var file_name = item.get_text(0)
 	var full_path = "user://musics/" + category_name + "/" + file_name
 	MusicController.play_music(full_path)
+	_update_buttons()
 
 func _on_pause_pressed():
 	MusicController.pause_music()
+	_update_buttons()
 
 func _on_stop_pressed():
 	MusicController.stop_music()
+	_update_buttons()
 
 func _on_import_pressed():
 	$Selection_de_musiques.popup_centered()
