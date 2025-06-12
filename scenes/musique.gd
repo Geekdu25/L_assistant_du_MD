@@ -13,7 +13,6 @@ extends Control
 @onready var new_category_line_edit = $notifications/LineEdit
 
 func _ready():
-	add_to_group("musique_ui")
 	_populate_categories()
 	# Toujours désactiver les boutons au démarrage
 	_update_buttons()
@@ -106,9 +105,6 @@ func _update_buttons():
 			var category_name = category_selector.get_item_text(idx_cat)
 			var file_name = item.get_text(0)
 			selected_path = ProjectSettings.globalize_path("user://musics/" + category_name + "/" + file_name)
-	play_button.disabled = not music_selected or (MusicController.playing and MusicController.music_path == selected_path)
-	pause_button.disabled = not MusicController.playing
-	stop_button.disabled = not MusicController.playing
 	delete_song_button.disabled = not music_selected
 
 func _on_delete_song_pressed():
