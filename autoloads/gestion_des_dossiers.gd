@@ -19,9 +19,8 @@ func setup_script_for_mpv():
 	var src = FileAccess.open("res://scripts/mpv_send.sh", FileAccess.READ)
 	var script_text = src.get_as_text()
 	src.close()
-
 	# Écris-le dans user://
-	var dst_path = "user://.dm_mpv_send.sh"
+	var dst_path = ProjectSettings.globalize_path("user://.dm_mpv_send.sh")
 	var dst = FileAccess.open(dst_path, FileAccess.WRITE)
 	dst.store_string(script_text)
 	dst.close()

@@ -5,3 +5,4 @@ res://scenes/musique.tscn
 res://autoloads/gestion_des_dossiers.tscn
 res://scenes/start.tscn
 res://autoloads/music_controller.gd
+res://autoloads/gestion_des_dossiers.gd
