@@ -90,14 +90,20 @@ func _on_files_selected(paths):
 	_refresh_tree()
 
 
+
 func _update_buttons():
-	# Désactive l’import si aucune catégorie
-	import_button.disabled = (category_selector.item_count == 0)
-	# Désactive lecture/pause/stop/delete si aucune musique sélectionnée
 	var music_selected = _is_music_selected()
-	play_button.disabled = not music_selected
-	pause_button.disabled = not music_selected
-	stop_button.disabled = not music_selected
+	var selected_path = ""
+	if music_selected:
+		var idx_cat = category_selector.get_selected_id()
+		var item = tree.get_selected()
+		if idx_cat != -1 and item != null:
+			var category_name = category_selector.get_item_text(idx_cat)
+			var file_name = item.get_text(0)
+			selected_path = ProjectSettings.globalize_path("user://musics/" + category_name + "/" + file_name)
+	play_button.disabled = not music_selected or (MusicController.playing and MusicController.music_path == selected_path)
+	pause_button.disabled = not MusicController.playing
+	stop_button.disabled = not MusicController.playing
 	delete_song_button.disabled = not music_selected
 
 func _on_delete_song_pressed():
