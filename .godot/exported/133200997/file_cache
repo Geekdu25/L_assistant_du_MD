@@ -9,7 +9,7 @@ res://scenes/creation_personnage/etape_6.tscn::4ae7282b60b2eb28c389364e68aad54e:
 res://scenes/creation_personnage/personnalisation.tscn::e3e09960332760f554b1ad4b110cf77b::1749580908::res://.godot/exported/133200997/export-4da9469acdd3099736600fa123e2ed17-personnalisation.scn
 res://scenes/interface_utilisateur/popup.tscn::6aa48a45fd5cdab3b045489816da7b56::1749580908::res://.godot/exported/133200997/export-b8b025802364d5359ca3a8a2996a565e-popup.scn
 res://scenes/a_propos.tscn::fc1786810b0f56a0f1d248cb4a2049f8::1749580908::res://.godot/exported/133200997/export-02cb3b7059e2508faaa3498ee16a7121-a_propos.scn
-res://scenes/ecran_principal.tscn::60b33d4033100571f42d6722dc78d58c::1749738168::res://.godot/exported/133200997/export-35f06c677e9cdea8187954f13e808eb5-ecran_principal.scn
+res://scenes/ecran_principal.tscn::60b33d4033100571f42d6722dc78d58c::1749739171::res://.godot/exported/133200997/export-35f06c677e9cdea8187954f13e808eb5-ecran_principal.scn
 res://scenes/ecran_titre.tscn::48818a925166246da89f21ab41cdacc4::1749580908::res://.godot/exported/133200997/export-06d5b7b55dbe486573316b4b4460e1d5-ecran_titre.scn
 res://scenes/informations.tscn::50c1849d859976335e902b7a99831ed9::1749580908::res://.godot/exported/133200997/export-5a82c9507754389e4cb17633d8a9fc60-informations.scn
 res://scenes/juridique.tscn::b6ab90ccb25d979804a32bba4ee81bd1::1749580908::res://.godot/exported/133200997/export-062a64e53a46c8baa625794bc853cd0e-juridique.scn
@@ -17,4 +17,4 @@ res://scenes/musique.tscn::82187a3fcfb8fdbc76bc86d988df8cda::1749738039::res://.
 res://scenes/start.tscn::a611e0365f84655178066f96d0aacbb6::1749738039::res://.godot/exported/133200997/export-e2cd3ad146e88a9ce40b77a5da0ea9b1-start.scn
 res://themes/panel_1.tres::5c0388507868dab2862585b8ca9e9670::1749580908::res://.godot/exported/133200997/export-d49675094065e21c800a66fd2b1c7dbb-panel_1.res
 res://themes/spinbox_etape_5.tres::7eac6ff0d58a8170151b8ade6e0e28d1::1749580908::res://.godot/exported/133200997/export-238ccb36d4744f3c6ad2ddefd0a92353-spinbox_etape_5.res
-res://themes/theme_popup.tres::6839179f0d81fd7f3fbc423ad71289b7::1749736481::res://.godot/exported/133200997/export-0e4675b500a4e34afbb267357547de65-theme_popup.res
+res://themes/theme_popup.tres::6839179f0d81fd7f3fbc423ad71289b7::1749738908::res://.godot/exported/133200997/export-0e4675b500a4e34afbb267357547de65-theme_popup.res
