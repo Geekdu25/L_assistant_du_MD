@@ -21,7 +21,7 @@ func setup_script_for_mpv():
 	src.close()
 
 	# Écris-le dans user://
-	var dst_path = "/home/etienne/.dm_mpv_send.sh"
+	var dst_path = "user://.dm_mpv_send.sh"
 	var dst = FileAccess.open(dst_path, FileAccess.WRITE)
 	dst.store_string(script_text)
 	dst.close()
@@ -43,8 +43,9 @@ func verifie_dossiers(parent):
 
 func ensure_mpv():
 	var result = OS.execute("which", ["mpv"], [])
+	result += OS.execute("which", ["socat"])
 	if result != 0:
-		print("Attention ! mpv est manquant ! Installez-le avec : sudo apt install mpv")
+		print("Attention ! mpv et/ou socat est manquant ! Installez-le(s) avec : sudo apt install mpv et sudo apt install socat")
 		mpv_manquant.popup_centered()
 		Utils.mpv = false
 	else:

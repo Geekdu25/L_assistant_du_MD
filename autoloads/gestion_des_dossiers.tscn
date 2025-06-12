@@ -7,5 +7,5 @@ script = ExtResource("1_r7jf4")
 
 [node name="mpv_manquant" type="AcceptDialog" parent="."]
 title = "Dépendances manquantes"
-dialog_text = "Attention ! Le logiciel mpv est nécessaire pour profiter pleinement de ce logiciel.
-Installez-le avec : sudo apt install mpv"
+dialog_text = "Attention ! Les logiciels mpv et socat sont nécessaires pour profiter pleinement de ce logiciel.
+Installez-les avec : sudo apt install mpv et sudo apt install socat"
