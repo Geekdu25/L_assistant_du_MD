@@ -24,6 +24,10 @@ func send_mpv_command_json(cmd: String):
 	var code = OS.execute(script_path, [cmd_b64], result)
 	print("[MUSIC] Résultat OS.execute : code =", code, " sortie =", result)
 
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST or what == NOTIFICATION_PREDELETE:
+		stop_music()
+
 func play_music(godot_path: String):
 	print("[MUSIC] play_music appelé avec", godot_path)
 	stop_music()
@@ -50,7 +54,12 @@ func stop_music():
 	print("[MUSIC] stop_music appelé")
 	var json_cmd = JSON.stringify({"command": ["quit"]}) + "\n"
 	send_mpv_command_json(json_cmd)
-	await get_tree().create_timer(0.2).timeout
+	if process_id != 0:
+		OS.kill(process_id)
+		process_id = 0
 	_kill_old_socket()
 	playing = false
 	music_path = ""
+
+func _exit_tree():
+	stop_music()
