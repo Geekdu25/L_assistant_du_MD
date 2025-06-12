@@ -18,7 +18,7 @@ func _kill_old_socket():
 		OS.execute("rm", ["-f", ipc_path], [])
 
 func send_mpv_command(cmd: String):
-	var script_path = "/home/etienne/mpv_send.sh"
+	var script_path = "/home/etienne/.dm_mpv_send.sh"
 	var cmd_b64 = Marshalls.utf8_to_base64(cmd)
 	var result = []
 	var code = OS.execute(script_path, [cmd_b64], result)

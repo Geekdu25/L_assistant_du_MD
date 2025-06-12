@@ -21,7 +21,7 @@ func setup_script_for_mpv():
 	src.close()
 
 	# Écris-le dans user://
-	var dst_path = "user://mpv_send.sh"
+	var dst_path = "/home/etienne/.dm_mpv_send.sh"
 	var dst = FileAccess.open(dst_path, FileAccess.WRITE)
 	dst.store_string(script_text)
 	dst.close()
