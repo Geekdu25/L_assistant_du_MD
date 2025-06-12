@@ -1,0 +1,5 @@
+res://scenes/musique.tscn
+res://themes/theme_popup.tres
+res://autoloads/gestion_des_dossiers.tscn
+res://scenes/start.tscn
+res://scenes/musique.gd

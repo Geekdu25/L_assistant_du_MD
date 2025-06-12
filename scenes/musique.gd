@@ -13,6 +13,7 @@ extends Control
 @onready var new_category_line_edit = $notifications/LineEdit
 
 func _ready():
+	add_to_group("musique_ui")
 	_populate_categories()
 	# Toujours désactiver les boutons au démarrage
 	_update_buttons()
@@ -89,7 +90,8 @@ func _on_files_selected(paths):
 			show_error_dialog("Erreur lors de la copie de '%s'.".format([file_name]))
 	_refresh_tree()
 
-
+func on_music_stopped_by_end():
+	_update_buttons()
 
 func _update_buttons():
 	var music_selected = _is_music_selected()
