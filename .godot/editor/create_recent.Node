@@ -1,10 +1,10 @@
+HBoxContainer
 AcceptDialog
 LineEdit
 Button
 Tree
 OptionButton
 FileDialog
-HBoxContainer
 VBoxContainer
 Label
 ColorRect

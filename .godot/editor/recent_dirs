@@ -1,3 +1,4 @@
+res://scenes/creation_personnage
 /home/etienne
 /home/etienne/.Android/Sdk
 /usr/lib/jvm/java-17-openjdk-amd64
@@ -6,4 +7,3 @@ res://scenes
 res://autoloads
 /home/etienne/Documents/GitHub/L_assistant_du_MD/scenes
 res://assets/pictures
-res://scenes/creation_personnage
