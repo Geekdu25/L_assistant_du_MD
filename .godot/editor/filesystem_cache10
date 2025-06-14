@@ -1,5 +1,5 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1749805565
+::res://::1749897872
 export_presets.cfg::TextFile/TextFile::-1::1749749298::0::1::::<><><>0<>0<><>::
 README.md::TextFile/TextFile::-1::1749748546::0::1::::<><><>0<>0<><>::
 ::res://assets/::1749580908
@@ -36,18 +36,18 @@ logo_godot.png::CompressedTexture2D/CompressedTexture2D::5995975227271414047::17
 a_propos.gd::GDScript/GDScript::7393469748640010979::1749580908::0::1::::<>Control<><>0<>0<><>::
 a_propos.tscn::PackedScene/PackedScene::6914686182434496935::1749580908::0::1::::<><><>0<>0<><>::uid://ddlpmp0kgv7gp::::res://scenes/a_propos.gd
 ecran_principal.gd::GDScript/GDScript::3453270503465457540::1749736661::0::1::::<>Node<><>0<>0<><>::
-ecran_principal.tscn::PackedScene::4921267547473724064::1749750555::0::1::::<><><>0<>0<><>::uid://bpg14i6q4wqhw::::res://scenes/ecran_principal.gd
+ecran_principal.tscn::PackedScene/PackedScene::4921267547473724064::1749750555::0::1::::<><><>0<>0<><>::uid://bpg14i6q4wqhw::::res://scenes/ecran_principal.gd
 ecran_titre.gd::GDScript/GDScript::8687173747209873006::1749580908::0::1::::Ecran_titre<>Control<><>0<>0<><>::
 ecran_titre.tscn::PackedScene/PackedScene::4286685495590982797::1749580908::0::1::::<><><>0<>0<><>::uid://dv1eqnwouskuo::::res://scenes/ecran_titre.gd
 informations.gd::GDScript/GDScript::3957898632789326903::1749580908::0::1::::<>Control<><>0<>0<><>::
 informations.tscn::PackedScene/PackedScene::6648649947410408997::1749580908::0::1::::<><><>0<>0<><>::uid://bwniaoer2aboh::::res://scenes/informations.gd
 juridique.gd::GDScript/GDScript::5543599179598797021::1749580908::0::1::::A_propos<>Control<><>0<>0<><>::
 juridique.tscn::PackedScene/PackedScene::1973463214164880951::1749580908::0::1::::<><><>0<>0<><>::uid://ddlpmp0kgv7gp::::res://scenes/a_propos.gd
-musique.gd::GDScript::3880681808038897387::1749750553::0::1::::<>Control<><>0<>0<><>::
+musique.gd::GDScript/GDScript::3880681808038897387::1749750553::0::1::::<>Control<><>0<>0<><>::
 musique.tscn::PackedScene/PackedScene::1684573299780857639::1749738039::0::1::::<><><>0<>0<><>::uid://bvj3i6lrrbnyp::::res://scenes/musique.gd<>uid://c7u7hd7ux2nk5::::res://assets/pictures/play.png<>uid://ctcreyq6mnbnb::::res://assets/pictures/pause.png<>uid://dj733wtq1g75x::::res://assets/pictures/stop.png<>uid://bfluyt5p67j8k::::res://assets/pictures/poubelle.png
 start.gd::GDScript/GDScript::2038938786044138752::1749643122::0::1::::<>Control<><>0<>0<><>::
 start.tscn::PackedScene/PackedScene::8036851040964124302::1749738039::0::1::::<><><>0<>0<><>::uid://4bxa2v5okacm::::res://scenes/start.gd
-::res://scenes/creation_personnage/::1749580908
+::res://scenes/creation_personnage/::1749805846
 etape_1.gd::GDScript/GDScript::902010651844326870::1749580908::0::1::::<>Control<><>0<>0<><>::
 etape_1.tscn::PackedScene/PackedScene::7860118820054482201::1749580908::0::1::::<><><>0<>0<><>::uid://m368pdnsgxf7::::res://scenes/creation_personnage/etape_1.gd
 etape_2.gd::GDScript/GDScript::1613346522275795195::1749580908::0::1::::<>Control<><>0<>0<><>::
@@ -57,7 +57,7 @@ etape_3.tscn::PackedScene/PackedScene::1839449643621924670::1749580908::0::1::::
 etape_4.gd::GDScript/GDScript::7881620583288689450::1749580908::0::1::::<>Control<><>0<>0<><>::
 etape_4.tscn::PackedScene/PackedScene::2404882445895570781::1749580908::0::1::::<><><>0<>0<><>::uid://dkj6e0iojvgik::::res://scenes/creation_personnage/etape_4.gd
 etape_5.gd::GDScript/GDScript::5025924021398954626::1749580908::0::1::::<>Control<><>0<>0<><>::
-etape_5.tscn::PackedScene/PackedScene::2784604910091852912::1749580908::0::1::::<><><>0<>0<><>::uid://cduuh75lkh14i::::res://scenes/creation_personnage/etape_5.gd<>uid://cj72xp14mtrix::::res://themes/panel_1.tres<>uid://cvkexbr0ggkk5::::res://themes/spinbox_etape_5.tres
+etape_5.tscn::PackedScene::2784604910091852912::1749805846::0::1::::<><><>0<>0<><>::uid://cduuh75lkh14i::::res://scenes/creation_personnage/etape_5.gd<>uid://cj72xp14mtrix::::res://themes/panel_1.tres<>uid://cvkexbr0ggkk5::::res://themes/spinbox_etape_5.tres
 etape_6.gd::GDScript/GDScript::962250474302263478::1749580908::0::1::::<>Control<><>0<>0<><>::
 etape_6.tscn::PackedScene/PackedScene::4557429504286276011::1749580908::0::1::::<><><>0<>0<><>::uid://nyeeigg1s08a::::res://scenes/creation_personnage/etape_6.gd
 personnalisation.gd::GDScript/GDScript::7066704865076317837::1749580908::0::1::::<>Control<><>0<>0<><>::
@@ -65,7 +65,7 @@ personnalisation.tscn::PackedScene/PackedScene::6251107255566698203::1749580908:
 ::res://scenes/interface_utilisateur/::1749580908
 popup.tscn::PackedScene/PackedScene::6243666570784931252::1749580908::0::1::::<><><>0<>0<><>::uid://dx7pxqpl7x7ef::::res://themes/theme_popup.tres
 ::res://scripts/::1749734135
-::res://themes/::1749750289
+::res://themes/::1749805846
 panel_1.tres::StyleBoxFlat/StyleBoxFlat::5472282309672510563::1749580908::0::1::::<><><>0<>0<><>::
 spinbox_etape_5.tres::Theme/Theme::6267734882485534986::1749580908::0::1::::<><><>0<>0<><>::
-theme_popup.tres::Theme::8840618235124432485::1749750289::0::1::::<><><>0<>0<><>::
+theme_popup.tres::Theme::8840618235124432485::1749805846::0::1::::<><><>0<>0<><>::
