@@ -4,10 +4,10 @@ extends Control
 
 func _ready() -> void:
 	var classes = Utils.charger_tout("classes")
-	var sa_classe := {}
+	var sa_classe := []
 	for classe in classes:
 		if classe.get("nom") == CurrentPersonnage.classe:
-			sa_classe = classe.get("capacites_classes")
+			sa_classe = classe.get("capacites_classe")
 	for capacite in sa_classe:
 		print(capacite)
 
