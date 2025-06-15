@@ -1,3 +1,7 @@
+Label
+VBoxContainer
+ScrollContainer
+Panel
 HBoxContainer
 AcceptDialog
 LineEdit
@@ -5,8 +9,5 @@ Button
 Tree
 OptionButton
 FileDialog
-VBoxContainer
-Label
 ColorRect
 RichTextLabel
-Panel
