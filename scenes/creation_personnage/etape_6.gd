@@ -17,21 +17,31 @@ func _ready() -> void:
 	for capacite in capacites:
 		if capacite.get("niveau", 0) <= niveau:
 			var lbl = Label.new()
-			lbl.text = "Niveau %d - %s :\n%s" % [capacite.get("niveau", 0), capacite.get("nom", ""), capacite.get("description", "")]
+			lbl.text = "%d - %s :\n%s" % [capacite.get("niveau", 0), capacite.get("nom", ""), capacite.get("description", "")]
 			lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-			lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL  # <-- Ajouté
+			lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 			conteneur.add_child(lbl)
 			if capacite.has("options"):
 				for opt in capacite.options:
 					var opt_lbl = Label.new()
 					opt_lbl.text = "    • %s : %s" % [opt.get("nom", ""), opt.get("description", "")]
 					opt_lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-					opt_lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL  # <-- Ajouté
+					opt_lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 					conteneur.add_child(opt_lbl)
+
+	# Force la largeur après ajout pour que les labels prennent toute la place
+	call_deferred("_resize_labels")
+
+func _resize_labels():
+	var width = conteneur.size.x
+	for child in conteneur.get_children():
+		if child is Label:
+			child.custom_minimum_size = Vector2(width, 0)
 
 func clear_container(container):
 	for child in container.get_children():
 		child.queue_free()
+
 
 func _on_retour_pressed() -> void:
 	get_node("/root/Ecran_principal").change_page("res://scenes/creation_personnage/etape_5.tscn")
