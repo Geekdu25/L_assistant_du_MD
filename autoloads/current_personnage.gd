@@ -2,6 +2,7 @@ extends Node
 
 var race := "Haut-elfe"
 var classe := "Barbare"
+var sous_classe := "Berserker"
 var historique := "Acolyte"
 var niveau := 1
 var argent := 0

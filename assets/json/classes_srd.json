@@ -10,28 +10,60 @@
 	  "Intimidation",
 	  "Nature",
 	  "Perception",
-	  "Survie",    
+	  "Survie"
 	],
 	"sauvegardes": [
 	  "Force",
 	  "Constitution"
 	],
 	"equipement_initial": [
-	  {"Hache à deux mains":1, "#guerre_corps":1},  {"Hachette":2, "#courante":1}, {"Paquetage d'explorateur":1}, {"Javeline":4}
+	  {"Hache à deux mains": 1, "#guerre_corps": 1},
+	  {"Hachette": 2, "#courante": 1},
+	  {"Paquetage d'explorateur": 1},
+	  {"Javeline": 4}
 	],
-	"maitrises":{"Armures":["#legere", "#intermediaire", "Bouclier"], "Armes":["#courante", "#guerre"], "Outils":[]},
+	"maitrises": {
+	  "Armures": ["#legere", "#intermediaire", "Bouclier"],
+	  "Armes": ["#courante", "#guerre"],
+	  "Outils": []
+	},
 	"sorts_disponibles": [],
 	"capacites_classe": [
 	  {
 		"niveau": 1,
-		"nom": "Style de combat",
-		"description": "Vous adoptez un style de combat."
+		"nom": "Rage",
+		"description": "Au combat vous êtes animé par une férocité bestiale."
+	  },
+	  {
+		"niveau": 1,
+		"nom": "Défense sans armure",
+		"description": "Tant que vous ne portez pas d'armure, votre CA est égale à 10 + votre modificateur de dextérité + votre modificateur de constitution. Vous conservez ce bénéfice si vous vous servez d'un bouclier."
 	  },
 	  {
 		"niveau": 2,
-		"nom": "Action Surprenante",
-		"description": "Vous pouvez jouer une action supplémentaire lors de votre tour."
-	  }
+		"nom": "Témérité",
+		"description": ""
+	  },
+	  {
+		"niveau": 2,
+		"nom": "Sens du danger",
+		"description": "En atteignant le niveau 2, vous acquérez un don surnaturel qui vous permet d'esquiver plus aisément les dangers qu'un autre que vous remarquerait trop tard."
+	  },
+	  {
+		"niveau": 3,
+		"type": "choix",
+		"nom": "Voix primitive",
+		"description": "Au niveau 3, vous choisissez une voie",
+		"options": [
+		  {
+			"nom": "Berserker",
+			"description": "La voie du berserker est un chemin pavé de fureur débridée et poisseux de sang."
+		  }
+		]
+	  },
+    {"niveau":20,
+     "nom":"Champion primitif",
+    "description":"Au niveau 20, vous devenez l'incarnationde la puissance du monde sauvage. Vos valeurs de force et de constitution augmentent de 4.Votre maximum pour ces valeurs est désormais de 24."}
 	]
   }
 ]
