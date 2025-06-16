@@ -1,0 +1,7 @@
+res://scenes/creation_personnage/etape_6.tscn
+res://themes/theme_popup.tres
+res://assets/json/classes_srd.json
+res://scenes/creation_personnage/etape_6.gd
+res://scenes/creation_personnage/etape_5.tscn
+res://autoloads/current_personnage.gd
+res://scenes/creation_personnage/etape_5.gd

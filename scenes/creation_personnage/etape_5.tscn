@@ -398,6 +398,7 @@ text = "Libre à vous de les placer où vous le souhaitez dans le tableau à gau
 
 [connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]
 [connection signal="pressed" from="continuer" to="." method="_on_continuer_pressed"]
+[connection signal="value_changed" from="Panneau/Niveau/SpinBox" to="." method="_on_niveau_changed"]
 [connection signal="value_changed" from="Panneau/Caractéristiques/conteneur_de_valeurs/spinboxes/for" to="." method="values_changed_for"]
 [connection signal="value_changed" from="Panneau/Caractéristiques/conteneur_de_valeurs/spinboxes/dex" to="." method="values_changed_dex"]
 [connection signal="value_changed" from="Panneau/Caractéristiques/conteneur_de_valeurs/spinboxes/con" to="." method="values_changed_con"]

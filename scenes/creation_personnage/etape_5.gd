@@ -140,3 +140,7 @@ func _on_retour_pressed() -> void:
 
 func _on_continuer_pressed() -> void:
 	get_node("/root/Ecran_principal").change_page("res://scenes/creation_personnage/etape_6.tscn")
+
+
+func _on_niveau_changed(value: float) -> void:
+	CurrentPersonnage.niveau = int(value)
