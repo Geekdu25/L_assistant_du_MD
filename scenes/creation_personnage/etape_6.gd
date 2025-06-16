@@ -3,7 +3,7 @@ extends Control
 @onready var conteneur = $Panel/scrolleur/conteneur_infos
 
 func _ready() -> void:
-	clear_container(conteneur) # Nettoie l'affichage précédent
+	clear_container(conteneur)
 	var classes = Utils.charger_tout("classes")
 	var capacites := []
 	var niveau = CurrentPersonnage.niveau
@@ -18,14 +18,15 @@ func _ready() -> void:
 		if capacite.get("niveau", 0) <= niveau:
 			var lbl = Label.new()
 			lbl.text = "Niveau %d - %s :\n%s" % [capacite.get("niveau", 0), capacite.get("nom", ""), capacite.get("description", "")]
-			lbl.autowrap = true
+			lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+			lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL  # <-- Ajouté
 			conteneur.add_child(lbl)
-			# Si la capacité propose des options
 			if capacite.has("options"):
 				for opt in capacite.options:
 					var opt_lbl = Label.new()
-					opt_lbl.text = "  • %s : %s" % [opt.get("nom", ""), opt.get("description", "")]
-					opt_lbl.autowrap = true
+					opt_lbl.text = "    • %s : %s" % [opt.get("nom", ""), opt.get("description", "")]
+					opt_lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+					opt_lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL  # <-- Ajouté
 					conteneur.add_child(opt_lbl)
 
 func clear_container(container):
