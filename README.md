@@ -92,8 +92,3 @@ Un grand merci à lui sans qui ce logiciel n'aurait pas pu exister. (Je ne suis 
 (Note : Le logo de Godot Game Engine est sous licence : Creative Commons By 4.0. <a href="https://creativecommons.org/licenses/by/4.0">https://creativecommons.org/licenses/by/4.0</a>
 Il est accessible à l'adresse : <a href="https://godotengine.org/press/">https://godotengine.org/press</a>)
 <br />
-<br />
-<br />
-Ce projet inclut des binaires de [FFmpeg](https://ffmpeg.org/) pour la conversion audio, distribués sous licence LGPL ou GPL.  
-Consultez le fichier [FFMPEG_LICENSE.txt](tools/ffmpeg/FFMPEG_LICENSE.txt) pour les détails de la licence.  
-Sources disponibles sur [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html).
