@@ -15,7 +15,7 @@ config/description="Cette application est conçue pour aider les maîtres du don
 config/version="1.0.0"
 run/main_scene="uid://ccd5s7qai6j5i"
 config/quit_on_go_back=false
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 run/low_processor_mode=true
 boot_splash/image="uid://co14jiqeo0g3m"
 config/icon="uid://dcoh41aa6em5x"
@@ -33,6 +33,10 @@ CurrentPersonnage="*res://autoloads/current_personnage.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+
+[dotnet]
+
+project/assembly_name="L-assistant du MD"
 
 [rendering]
 
